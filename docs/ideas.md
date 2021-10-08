@@ -1,8 +1,8 @@
 # Project Ideas
 
-**Team Name**
+*Team Name*
 
-**Application Name**
+*Application Name*
 
 ## Team Overview
 
