@@ -7,7 +7,7 @@ Appication Name: *Course Overflow*
 ## Team Overview
 * [Jesse Brookins](https://github.com/Merlin1A)
 * [Johno Pomerat](https://github.com/sperek27)
-* [Lynn Li](https://github.com/lynnli01)
+* [Lynn Li](https://github.com/lynnli0)
 
 ## Innovative Idea
 Course Overflow is designed to be an information repository on courses at
