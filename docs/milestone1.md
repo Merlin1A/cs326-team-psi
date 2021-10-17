@@ -1,6 +1,7 @@
 # Milestone 1
 
 ## Wireframes & Data Interaction 
+#### To see complete wireframe, click [here](https://whimsical.com/milestone-1-98mvoPfqyD4uwHfWMFg2bq)
 * The first screen users will see is the welcome page where users will be prompted to either login or create an account.
 
 <img width="815" alt="login" src="https://user-images.githubusercontent.com/38598996/137637357-ce0369c4-e4cd-43ac-b2ff-dbb6a2ab76ea.png">)
