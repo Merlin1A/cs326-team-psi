@@ -7,9 +7,9 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="main.css">
   </head>
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light justify-content-between">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -18,6 +18,8 @@
       <li class="nav-item active">
         <a class="nav-link" href="#">Course Overflow <span class="sr-only">(current)</span></a>
       </li>
+    </ul>
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
       <li class="nav-item active">
         <a class="nav-link" href="#">My Account<span class="sr-only">(current)</span></a>
       </li>
@@ -30,22 +32,41 @@
   <body>
     <div class="col d-flex justify-content-center mb-2">
         <div class="card rounded-lg w-75 shadow">
-        <div class="card-body">
-        <h5 class="card-title">CS326: Web Programming <span class="badge
-                badge-warning">IE</span> <span class="badge
-                badge-danger">300+</span></h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        </div>
+          <div class="card-body">
+            <h5 class="card-title">CS326: Web Programming <span class="badge
+                    badge-warning">IE</span> <span class="badge
+                    badge-danger">300+</span></h5>
+            <p class="card-text">Taught by: *insert professor name*</p>
+            <div class = "btn-toolbar justify-content-between">
+              <div class = "badge">
+                <button type="button" class="btn btn-info">
+                  Ratings <span class="badge badge-light">3080</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
+                <button type="button" class="btn btn-info">
+                  Reviews <span class="badge badge-light">980</span>
+                  <span class="sr-only">unread messages</span>
+                </button>
+                <button class="btn btn-primary" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Click to see more
+                </button>
+              </div>
+            </div>
+            <div id="collapseOne" class="collapse show">
+              <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
     <div class="col d-flex justify-content-center mb-2">
         <div class="card rounded-lg w-75 shadow">
-        <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
+          <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
         </div>
     </div>
     <div class="col d-flex justify-content-center mb-2">

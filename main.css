@@ -1,0 +1,14 @@
+.positive{
+    background-color: lightgreen;
+    width: 150px;
+    height: 150px;
+    display:inline-block;
+}
+
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
