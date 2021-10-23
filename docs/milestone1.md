@@ -24,6 +24,14 @@ metrics, and has no system for statistics, workload, or sorting reviews. For
 the CICS course guides, they are generally uninformative, detailed by short
 paragraph-sized blurbs which are often years outdated.
 
+## Division of Labor
+* [Jesse Brookins](https://github.com/Merlin1A)
+    what I did
+* [Johno Pomerat](https://github.com/sperek27)
+    what I did
+* [Lynn Li](https://github.com/lynnli0)
+    what I did
+
 ## Part 0: Data Interactions
 
 #### CRUD
@@ -46,6 +54,8 @@ The website will have a couple of pages. One for viewing classes, with different
 
 * Upon clicking a card, it will expand to show information about the course as well as the course's ratings and reviews. Users will also be able to click on buttons to get the course website or contact the instructor. 
 <img width="815" alt="course-info" src="https://user-images.githubusercontent.com/38598996/137637584-5150ffe1-fe7d-4669-a1cb-1455a42705cc.png">
+
+
 
 * If a user wants to change their account information, such as update their email or change their password, they can do so by clicking the account button on the navbar.
 <img width="815" alt="account-settings" src="https://user-images.githubusercontent.com/38598996/137637616-035aa596-3aec-4ac8-bb49-7ac2ffe28db7.png">
