@@ -28,7 +28,9 @@ paragraph-sized blurbs which are often years outdated.
 * [Jesse Brookins](https://github.com/Merlin1A)
 what I did
 * [Johno Pomerat](https://github.com/sperek27)
-what I did
+Built the initial wireframe using bootstrap collaborated with Jesse and Lynn on
+designing the page layout as well. Iterated on wireframe and assisted with
+everything else
 * [Lynn Li](https://github.com/lynnli0)
 what I did
 
