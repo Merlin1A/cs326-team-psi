@@ -26,11 +26,11 @@ paragraph-sized blurbs which are often years outdated.
 
 ## Division of Labor
 * [Jesse Brookins](https://github.com/Merlin1A)
-    what I did
+what I did
 * [Johno Pomerat](https://github.com/sperek27)
-    what I did
+what I did
 * [Lynn Li](https://github.com/lynnli0)
-    what I did
+what I did
 
 ## Part 0: Data Interactions
 
