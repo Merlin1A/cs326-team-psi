@@ -26,7 +26,7 @@ paragraph-sized blurbs which are often years outdated.
 
 ## Part 0: Data Interactions
 
-### CRUD
+#### CRUD
 * Creation: User Accounts, Reviews, & Data Points
 * Read: Viewing Courses & Statistics
 * Updating: Overall Course Statistics & Course Ratings
