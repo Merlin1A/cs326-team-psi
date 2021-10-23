@@ -1,6 +1,10 @@
 # Milestone 1
 
-## Wireframes & Data Interaction 
+## Part 0: Data Interactions
+
+The website will have a couple of pages. One for viewing classes, with different ways of sorting them, i.e. by order in which you have to take them, by overall rating, by specific ratings, etc. For each course, there will also be a page full of stats, reviews, and other relevant information for the course. On each of these pages, there will be a button to have a popup to write a review and add a datapoint. And on the course reviews, once you have added a data point, you can write a review and upvote/downvote other reviews. Finally, there will be pages for creating an account and login. We will have database storing various pieces of information. This database would support creation through user accounts, data points, and reviews. It would support read via viewing courses, statistics, etc. It would support updating through updating upvote counts and overall course statistics with every additional datapoint. Finally, it would support deletion as once reviews receive a sufficent number of downvotes they will be deleted. Additionally, users will have the ability to delete their account.
+
+## Part 1: Data Interaction 
 #### To see complete wireframe, click [here](https://whimsical.com/milestone-1-98mvoPfqyD4uwHfWMFg2bq)
 * The first screen users will see is the welcome page where users will be prompted to either login or create an account.
 
