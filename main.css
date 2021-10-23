@@ -89,3 +89,18 @@
 #enter-review{
     height: 15vh;
 }
+
+.thumbs-up{
+    color:green;
+    font-size:x-large;
+}
+
+.thumbs-down{
+    color:darkred;
+    font-size:x-large;
+}
+
+.icon,
+.numberreviews{
+    float:left;
+}
