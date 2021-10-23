@@ -104,3 +104,13 @@
 .numberreviews{
     float:left;
 }
+
+.rating-cat{
+    padding-top: 3vh;
+    text-align: center;
+}
+
+.more-reviews{
+    margin:0 auto;
+    display:block;
+}
