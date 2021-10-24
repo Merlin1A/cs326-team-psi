@@ -32,7 +32,7 @@ Built the initial wireframe using bootstrap collaborated with Jesse and Lynn on
 designing the page layout as well. Iterated on wireframe and assisted with
 everything else
 * [Lynn Li](https://github.com/lynnli0)
-what I did
+Designed and created the inital layout/wireframe using Whimiscal with Jesse and Johno. Drafted and create the templates for settings.html, createacc.html, and ratings.html as well as the content in the card expansion for index.html.
 
 ## Part 0: Data Interactions
 
@@ -61,3 +61,24 @@ The website will have a couple of pages. One for viewing classes, with different
 
 * If a user wants to change their account information, such as update their email or change their password, they can do so by clicking the account button on the navbar.
 <img width="815" alt="account-settings" src="https://user-images.githubusercontent.com/38598996/137637616-035aa596-3aec-4ac8-bb49-7ac2ffe28db7.png">
+
+## Part 2: HTML Pages
+* login page
+<img width="815" alt="login-page" src="https://user-images.githubusercontent.com/38598996/138575530-95e3aaf7-08ef-416c-a27d-329b8c45ae4d.png">
+
+* create an account/sign-up page
+<img width="815" alt="account-create" src="https://user-images.githubusercontent.com/38598996/138575602-d2204ac1-07d3-4859-b638-93561dce308a.png">
+
+* homepage with rankings
+<img width="815" alt="rankings" src="https://user-images.githubusercontent.com/38598996/138575546-55bcf0fb-f97a-4874-96c3-09c4d9dc91e8.png">
+
+* rankings card expanded
+<img width="815" alt="expanded-ranking" src="https://user-images.githubusercontent.com/38598996/138575567-9a899305-071e-4d93-a8db-78e19e152997.png">
+
+* rating page 
+<img width="815" alt="ratings" src="https://user-images.githubusercontent.com/38598996/138575580-a613cf70-e098-4313-ae74-663868b39aa2.png">
+
+
+* account settings
+<img width="815" alt="Screen Shot 2021-10-23 at 8 43 29 PM" src="https://user-images.githubusercontent.com/38598996/138575635-77436e8d-a14e-459e-982f-3846b5d6aabb.png">
+
