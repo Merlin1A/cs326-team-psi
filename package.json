@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/Merlin1A/cs326-team-psi/issues"
   },
-  "homepage": "https://github.com/Merlin1A/cs326-team-psi#readme"
+  "homepage": "https://github.com/Merlin1A/cs326-team-psi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
