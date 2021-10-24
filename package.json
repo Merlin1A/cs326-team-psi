@@ -1,0 +1,22 @@
+{
+  "name": "cs326-team-psi",
+  "version": "1.0.0",
+  "description": "COMPSCI 326 Final Project",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Merlin1A/cs326-team-psi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Merlin1A/cs326-team-psi/issues"
+  },
+  "homepage": "https://github.com/Merlin1A/cs326-team-psi#readme"
+}
