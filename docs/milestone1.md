@@ -26,7 +26,7 @@ paragraph-sized blurbs which are often years outdated.
 
 ## Division of Labor
 * [Jesse Brookins](https://github.com/Merlin1A)
-what I did
+Created the login page, and helped design and iterate the page layout. Assisted with numerous page features. 
 * [Johno Pomerat](https://github.com/sperek27)
 Built the initial wireframe using bootstrap collaborated with Jesse and Lynn on
 designing the page layout as well. Iterated on wireframe and assisted with
