@@ -67,7 +67,7 @@ The website will have a couple of pages. One for viewing classes, with different
 <img width="815" alt="login-page" src="https://user-images.githubusercontent.com/38598996/138575530-95e3aaf7-08ef-416c-a27d-329b8c45ae4d.png">
 
 * create an account/sign-up page
-<img width="815" alt="account-creation" src="https://user-images.githubusercontent.com/38598996/138575538-486a0978-56ed-40f9-90a4-54e6efdd1af2.png">
+<img width="815" alt="account-create" src="https://user-images.githubusercontent.com/38598996/138575602-d2204ac1-07d3-4859-b638-93561dce308a.png">
 
 * homepage with rankings
 <img width="815" alt="rankings" src="https://user-images.githubusercontent.com/38598996/138575546-55bcf0fb-f97a-4874-96c3-09c4d9dc91e8.png">
@@ -80,5 +80,5 @@ The website will have a couple of pages. One for viewing classes, with different
 
 
 * account settings
-<img width="815" alt="account-settings" src="https://user-images.githubusercontent.com/38598996/138575576-ee06a2b0-c213-478f-a2df-f15871d386b9.png">
+<img width="815" alt="Screen Shot 2021-10-23 at 8 43 29 PM" src="https://user-images.githubusercontent.com/38598996/138575635-77436e8d-a14e-459e-982f-3846b5d6aabb.png">
 
