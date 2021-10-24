@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+      <title>Course Overflow</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
   </head>
+  <body>
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light justify-content-between">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -29,7 +31,6 @@
     </ul>
   </div>
 </nav>
-  <body>
     <div class="settings">
         <div class="col d-flex justify-content-center mb-2 centered">
             <div class="card border-dark card rounded-lg w-50 shadow text-center">
@@ -37,16 +38,20 @@
                 <h5 class="card-title">Account settings</h5> <br>
                 <form>
                   <div class="form-group">
-                    <label for="email">Update your email</label>
-                    <input type="new-email" class="form-control" id="new-email" aria-describedby="newemail" placeholder="New email"><br>
-                    <input type="confirm-email" class="form-control" id="confirm-email" aria-describedby="confirmemail" placeholder="Confirm email">
+                    <label>Update your email</label>
+                    <input class="form-control" id="new-email"
+                    aria-describedby="new-email" placeholder="New email"><br>
+                    <input class="form-control" id="confirm-email"
+                    aria-describedby="confirm-email" placeholder="Confirm email">
                   </div>
                     <button type="submit" class="btn btn-secondary">change email</button> 
                     <br><br><br>
                     <div class="form-group">
-                    <label for="email">Update your password</label>
-                    <input type="new-password" class="form-control" id="new-password" aria-describedby="newpassword" placeholder="New password"><br>
-                    <input type="confirm-email" class="form-control" id="confirm-password" aria-describedby="confirmpassword" placeholder="Confirm password">
+                        <label>"Update your password</label>
+                    <input class="form-control" id="new-password"
+                    aria-describedby="new-password" placeholder="New password"><br>
+                    <input class="form-control" id="confirm-password"
+                    aria-describedby="confirm-password" placeholder="Confirm password">
                     </div>
                     <button type="submit" class="btn btn-secondary">change password</button>
                     <br><br>
