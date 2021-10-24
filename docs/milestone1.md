@@ -61,3 +61,24 @@ The website will have a couple of pages. One for viewing classes, with different
 
 * If a user wants to change their account information, such as update their email or change their password, they can do so by clicking the account button on the navbar.
 <img width="815" alt="account-settings" src="https://user-images.githubusercontent.com/38598996/137637616-035aa596-3aec-4ac8-bb49-7ac2ffe28db7.png">
+
+## Part 2: HTML Pages
+* login page
+<img width="815" alt="login-page" src="https://user-images.githubusercontent.com/38598996/138575530-95e3aaf7-08ef-416c-a27d-329b8c45ae4d.png">
+
+* create an account/sign-up page
+<img width="815" alt="account-creation" src="https://user-images.githubusercontent.com/38598996/138575538-486a0978-56ed-40f9-90a4-54e6efdd1af2.png">
+
+* homepage with rankings
+<img width="815" alt="rankings" src="https://user-images.githubusercontent.com/38598996/138575546-55bcf0fb-f97a-4874-96c3-09c4d9dc91e8.png">
+
+* rankings card expanded
+<img width="815" alt="expanded-ranking" src="https://user-images.githubusercontent.com/38598996/138575567-9a899305-071e-4d93-a8db-78e19e152997.png">
+
+* rating page 
+<img width="815" alt="ratings" src="https://user-images.githubusercontent.com/38598996/138575580-a613cf70-e098-4313-ae74-663868b39aa2.png">
+
+
+* account settings
+<img width="815" alt="account-settings" src="https://user-images.githubusercontent.com/38598996/138575576-ee06a2b0-c213-478f-a2df-f15871d386b9.png">
+
