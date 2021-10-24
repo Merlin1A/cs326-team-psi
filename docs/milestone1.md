@@ -32,7 +32,7 @@ Built the initial wireframe using bootstrap collaborated with Jesse and Lynn on
 designing the page layout as well. Iterated on wireframe and assisted with
 everything else
 * [Lynn Li](https://github.com/lynnli0)
-Designed and created the inital layout/wireframe using Whimiscal with Jesse and Johno. Drafted and create the templates for settings.html, createacc.html, and ratings.html as well as the content in the card expansion for index.html. Assisted with numerous page features as well. 
+Designed and created the inital layout/wireframe using Whimiscal with Jesse and Johno. Drafted and create the templates for settings.html, createacc.html, and ratings.html as well as the content in the card expansion for index.html.
 
 ## Part 0: Data Interactions
 
