@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import express from 'express';
 
 const JSONfile = './persistent.json';
+const jsonCourses = './courses.json';
 const PORT = 3000; 
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
@@ -49,8 +50,8 @@ app.post('/account/create', (req, res) => {
 });
 
 app.get('/courses', (req, res) => {
-  // TODO
-  res.send()
+  const courses = JSON.parse(fs.readFileSync(jsonCourses));
+  res.send(JSON.stringify(courses));
 });
 
 app.get('/course/reviews', (req, res) => {
