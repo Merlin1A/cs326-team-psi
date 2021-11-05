@@ -28,6 +28,8 @@ Designed and created the inital layout/wireframe using Whimiscal with Jesse and 
 * Deletion: Downvoted Reviews & Account Termination
 
 #### API Details 
+We are creating an in-house API that will act as an intermediary between our database and interface. It will deliver a user response from the server (receiving a request) and send a response from the server back to the user, which will appear in our interface. The following section details our API endpoints.
+
 ##### API Endpoints
 * (POST) /account/create: sends data from user's input (new account information such as email, name, and password) to the server and creates a new account for the user to access the site
 * (GET) /account/login: retrieves user's login information from server in order for them to access the site
@@ -38,3 +40,20 @@ Designed and created the inital layout/wireframe using Whimiscal with Jesse and 
 * (POST) /courses/review/vote: sends data from user's input (new vote from user) to server and creates new vote for course
 * (GET) /courses/review/get: retrieves the course reviews from server 
 * (POST) /courses/survey/new: sends data from user's input (new survey filled by user) to server 
+
+##### Objects used
+* Course Object 
+{ <br />
+  course_name: str,<br />
+  course_description: str, <br />
+  professors: str[], <br />
+  overall_rating: number, <br />
+  difficulty: number, <br />
+  num_reviews: number, <br />
+  criteria: str[] <br />
+}
+
+# Part 3: Deployment
+
+##### Heroku Site Deployment:
+https://courseoverflow.herokuapp.com
