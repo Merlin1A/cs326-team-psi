@@ -1,5 +1,6 @@
 {
   "name": "cs326-team-psi",
+  "type": "module",
   "version": "1.0.0",
   "description": "COMPSCI 326 Final Project",
   "main": "app.js",
