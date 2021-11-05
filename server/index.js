@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import express from express;
 
 const JSONfile = './persistent.json';
-const port = 3000;
+const PORT = process.env.PORT || 80;
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
@@ -76,6 +76,6 @@ app.get('*', (req, res) => {
   res.send('NO FOOL');
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+    console.log(`Example app listening at http://localhost:${PORT}`);
 });
