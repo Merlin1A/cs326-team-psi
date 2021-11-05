@@ -41,6 +41,18 @@ We are creating an in-house API that will act as an intermediary between our dat
 * (GET) /courses/review/get: retrieves the course reviews from server 
 * (POST) /courses/survey/new: sends data from user's input (new survey filled by user) to server 
 
+##### Objects used
+* Course Object 
+{
+  course_name: str,
+  course_description: str,
+  professors: str[],
+  overall_rating: number,
+  difficulty: number,
+  num_reviews: number,
+  criteria: str[]
+}
+
 # Part 3: Deployment
 
 ##### Heroku Site Deployment:
