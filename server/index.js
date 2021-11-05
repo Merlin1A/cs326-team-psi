@@ -1,7 +1,7 @@
 'use strict';
 import * as http from 'http';
 import * as fs from 'fs';
-import express from express;
+import express from 'express';
 
 const JSONfile = './persistent.json';
 const PORT = process.env.PORT || 80;
