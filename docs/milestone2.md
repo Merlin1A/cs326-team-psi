@@ -40,3 +40,8 @@ We are creating an in-house API that will act as an intermediary between our dat
 * (POST) /courses/review/vote: sends data from user's input (new vote from user) to server and creates new vote for course
 * (GET) /courses/review/get: retrieves the course reviews from server 
 * (POST) /courses/survey/new: sends data from user's input (new survey filled by user) to server 
+
+# Part 3: Deployment
+
+##### Heroku Site Deployment:
+https://courseoverflow.herokuapp.com
