@@ -7,6 +7,7 @@
   "overall_rating": 89,
   "overall_difficulty": 94,
   "number_reviews": 293,
+  "number_ratings": 300,
   "course_criteria": ["200+"]
 },
 {
@@ -16,7 +17,88 @@
   "overall_rating": 79,
   "overall_difficulty": 96,
   "number_reviews": 239,
+  "number_ratings": 300,
   "course_criteria": ["200+"]
+},
+{
+  "course_name": "CS230: Computer Systems Principles ",
+  "course_description": "Large-scale software systems like Google - deployed over a world-wide network of hundreds of thousands of computers - have become a part of our lives. These are systems success stories - they are reliable, available (nearly all the time), handle an unbelievable amount of load from users around the world, yet provide virtually instantaneous results. On the other hand, many computer systems don't perform nearly as well as Google - hence the now-clich?.In this class, we study the scientific principles behind the construction of high-performance, scalable systems. The course begins with a discussion of C language, and moves up the stack from there to the features of modern architectures, assembly languages, and operating system services such as I/O and synchronization.",
+  "professors": ["Meng-Chieh Chiu"],
+  "overall_rating": 90,
+  "overall_difficulty": 80,
+  "number_reviews": 249,
+  "number_ratings": 330,
+  "course_criteria": ["200+"]
+},
+{
+  "course_name": "CS 240: Reasoning Under Uncertainty",
+  "course_description": "Development of mathematical reasoning skills for problems that involve uncertainty. Each concept will be illustrated by real-world examples and demonstrated through in-class and homework exercises. Counting and probability -- basic counting problems, probability definitions, mean, variance, binomial distribution, discrete random variables, continuous random variables, Markov and Chebyshev bounds, Laws of large number, and central limit theorem. Probabilistic reasoning -- conditional probability and odds, Bayes' Law, Markov Chains, Bayesian Network, Markov Decision Processes.",
+  "professors": ["Peter Haas", "Jie Xiong"],
+  "overall_rating": 89,
+  "overall_difficulty": 89,
+  "number_reviews": 209,
+  "number_ratings": 100,
+  "course_criteria": ["200+"]
+},
+{
+  "course_name": "CS 311: Introduction to Algorithms",
+  "course_description": "This course will introduce you to algorithms in a variety of areas of interest, such as sorting, searching, string-processing, and graph algorithms.  You will learn to study the performance of various algorithms within a formal, mathematical framework.  You will also learn how to design very efficient algorithms for many kinds of problems.  There will be one or more programming assignments as well to help you relate the empirical performance of an algorithm to theoretical predictions.  Mathematical experience (as provided by COMPSCI 250) is required.  You should also be able to program in Java, C, or some other closely related language.",
+  "professors": ["David Barrington", "Daniel Sheldon", "Ramesh Sitaraman"],
+  "overall_rating": 74,
+  "overall_difficulty": 76,
+  "number_reviews": 109,
+  "number_ratings": 320,
+  "course_criteria": ["300+"]
+},
+{
+  "course_name": "CS 320: Introduction to Software Engineering",
+  "course_description": "In this course, students learn and gain practical experience with software engineering principles and techniques.  The practical experience centers on a semester-long team project in which a software development project is carried through all the stages of the software life cycle.  Topics in this course include requirements analysis, specification, design, abstraction, programming style, testing, maintenance, communication, teamwork, and software project management. Particular emphasis is placed on communication and negotiation skills and on designing and developing maintainable software.  Use of computer required.  Several written assignments, in-class presentations, and a term project.  This course satisfies the IE Requirement.",
+  "professors": ["Gordon Anderson", "David Fisher"],
+  "overall_rating": 90,
+  "overall_difficulty": 92,
+  "number_reviews": 199,
+  "number_ratings": 313,
+  "course_criteria": ["300+", "IE"]
+},
+{
+  "course_name": "CS 326: Web Programming",
+  "course_description": "The web is arguably today's most important application platform. Web browsers run on practically every device, and even many phone applications are in fact web applications under the covers. This course will cover a broad range of client-side web technologies, including HTTP itself, HTML5, CSS, and JavaScript; it will additionally cover key concepts for the server side of web applications, including key value stores and SQL servers. This course will also cover key concepts and technologies including AJAX, JavaScript libraries (e.g., jQuery), and web security. This course is hands-on and heavily project-based; students will construct a substantial dynamic web application based on the concepts, technologies, and techniques presented during lectures and in readings. This course satisfies the IE Requirement.",
+  "professors": ["Emery Berger"],
+  "overall_rating": 99,
+  "overall_difficulty": 87,
+  "number_reviews": 409,
+  "number_ratings": 319,
+  "course_criteria": ["300+", "IE"]
+},
+{
+  "course_name": "CS 325: Introduction to Human Computer Interaction",
+  "course_description": "In this course, we will challenge you to broaden your grasp of what a user interface can and should be, and try your hand at doing better yourself. It is a fast-paced, hands-on, project-based experience that will challenge many of your ideas of what computer science is and can be.",
+  "professors": ["Mahmood Jasim"],
+  "overall_rating": 81,
+  "overall_difficulty": 56,
+  "number_reviews": 129,
+  "number_ratings": 240,
+  "course_criteria": ["300+"]
+}, 
+{
+  "course_name": "CS 345: Practice and Applications of Data Management",
+  "course_description": "Computing has become data-driven, and databases are now at the heart of commercial applications. The purpose of this course is to provide a comprehensive introduction to the use of data management systems within the context of various applications. Some of the covered topics include application-driven database design, schema refinement, implementation of basic transactions, data on the web, and data visualization.",
+  "professors": ["Jaime Davila", "Marco Serafini"],
+  "overall_rating": 72,
+  "overall_difficulty": 51,
+  "number_reviews": 189,
+  "number_ratings": 378,
+  "course_criteria": ["300+"]
+}, 
+{
+  "course_name": "CS 383: Artificial Intelligence",
+  "course_description": "The course explores key concepts underlying intelligent systems, which are increasingly deployed in consumer products and onlineservices. Topics includeproblem solving, state-space representation, heuristicsearch techniques, game playing, knowledge representation, logical reasoning, automated planning, reasoning underuncertainty, decision theory and machine learning. We will examine the use of these concepts in the design of intelligent agents in the context of several applications.",
+  "professors": ["Matthew Rattigan"],
+  "overall_rating": 34,
+  "overall_difficulty": 78,
+  "number_reviews": 334,
+  "number_ratings": 212,
+  "course_criteria": ["300+"]
 }
 ]}
 
