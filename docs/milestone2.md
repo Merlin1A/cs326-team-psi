@@ -43,14 +43,14 @@ We are creating an in-house API that will act as an intermediary between our dat
 
 ##### Objects used
 * Course Object 
-{
-  course_name: str,
-  course_description: str,
-  professors: str[],
-  overall_rating: number,
-  difficulty: number,
-  num_reviews: number,
-  criteria: str[]
+{ <br />
+  course_name: str,<br />
+  course_description: str, <br />
+  professors: str[], <br />
+  overall_rating: number, <br />
+  difficulty: number, <br />
+  num_reviews: number, <br />
+  criteria: str[] <br />
 }
 
 # Part 3: Deployment
