@@ -28,6 +28,8 @@ Designed and created the inital layout/wireframe using Whimiscal with Jesse and 
 * Deletion: Downvoted Reviews & Account Termination
 
 #### API Details 
+We are creating an in-house API that will act as an intermediary between our database and interface. It will deliver a user response from the server (receiving a request) and send a response from the server back to the user, which will appear in our interface. The following section details our API endpoints.
+
 ##### API Endpoints
 * (POST) /account/create: sends data from user's input (new account information such as email, name, and password) to the server and creates a new account for the user to access the site
 * (GET) /account/login: retrieves user's login information from server in order for them to access the site
