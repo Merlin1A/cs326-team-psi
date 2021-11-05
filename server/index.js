@@ -5,18 +5,18 @@ import express from 'express';
 
 const JSONfile = './persistent.json';
 const jsonCourses = './courses.json';
-const PORT = 3000; 
+const PORT = process.env.PORT || 80;
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
 
 function reload(filename) {
-    if (fs.existsSync(filename)) {
-        memory = JSON.parse(fs.readFileSync(JSONfile));
-    }
-    else {
-        memory = {};
-    }
+  if (fs.existsSync(filename)) {
+    memory = JSON.parse(fs.readFileSync(JSONfile));
+  }
+  else {
+    memory = {};
+  }
 }
 
 reload(JSONfile);
@@ -75,10 +75,10 @@ app.post('/course/survey/new', (req, res) => {
 });
 
 
-app.get('*', (req, res) => {
-  res.send('NO FOOL');
-});
+// app.get('*', (req, res) => {
+//   res.send('NO FOOL');
+// });
 
 app.listen(PORT, () => {
-    console.log(`Example app listening at http://localhost:${PORT}`);
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });
