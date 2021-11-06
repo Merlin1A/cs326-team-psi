@@ -1,7 +1,7 @@
 {"course_array": 
 [
 {
-  "course_name": "CS250: Introduction to Computation",
+  "course_name": "CS 250: Introduction to Computation",
   "course_description": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
   "professors": ["David Barrington", "Ghazaleh Parvini"],
   "overall_rating": 89,
@@ -11,7 +11,7 @@
   "course_criteria": ["200+"]
 },
 {
-  "course_name": "CS220: Programming Methodology",
+  "course_name": "CS 220: Programming Methodology",
   "course_description": "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.",
   "professors": ["Marius Minea"],
   "overall_rating": 79,
@@ -21,7 +21,7 @@
   "course_criteria": ["200+"]
 },
 {
-  "course_name": "CS230: Computer Systems Principles ",
+  "course_name": "CS 230: Computer Systems Principles ",
   "course_description": "Large-scale software systems like Google - deployed over a world-wide network of hundreds of thousands of computers - have become a part of our lives. These are systems success stories - they are reliable, available (nearly all the time), handle an unbelievable amount of load from users around the world, yet provide virtually instantaneous results. On the other hand, many computer systems don't perform nearly as well as Google - hence the now-clich?.In this class, we study the scientific principles behind the construction of high-performance, scalable systems. The course begins with a discussion of C language, and moves up the stack from there to the features of modern architectures, assembly languages, and operating system services such as I/O and synchronization.",
   "professors": ["Meng-Chieh Chiu"],
   "overall_rating": 90,

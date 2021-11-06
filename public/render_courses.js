@@ -26,7 +26,7 @@ function getProgressColor(progress) {
 }
 
 function getCourseCode(course){
-  return course.substring(0, 5).replace(/\s/g,'').toLowerCase();
+  return course.substring(0, 6).replace(/\s/g,'').toLowerCase();
 }
 
 
