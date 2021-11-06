@@ -4,7 +4,7 @@ function validateAcc(){
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let retype = document.getElementById('retype-password').value;
-    if(email.length === 0 || name === "Name" || username === "Username" || password === "Passoword" || retype === "Retype password"){
+    if(email.length === 0 || name.length === 0 || username.length === 0 || password.length === 0 || retype.length === 0){
         alert("Please fill in all fields in order to sign up.")
     } 
     else {
