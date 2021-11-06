@@ -11,11 +11,12 @@ Appication Name: *Course Overflow*
 
 ## Division of Labor
 * [Jesse Brookins](https://github.com/Merlin1A)
-Created the login page, and helped design and iterate the page layout. Assisted with numerous page features. 
+Added logic to programmatically generate the reviews for each course from 'dummy' json data. Also collaborated with Johno and Lynn on the API structure, and helped implement it. 
 * [Johno Pomerat](https://github.com/sperek27)
-Built the initial wireframe using bootstrap collaborated with Jesse and Lynn on
-designing the page layout as well. Iterated on wireframe and assisted with
-everything else
+Designed and wrote the internal architecture of the dummy server. Created
+client-side logic to process GET requests to enable dynamic creation of the
+wireframe pages. Wrote all the logic to render courses dynamically on the
+landing page. Assisted Jesse and Lynn by fixing bugs and writing documentation.
 * [Lynn Li](https://github.com/lynnli0)
 Designed and created the inital layout/wireframe using Whimiscal with Jesse and Johno. Drafted and create the templates for settings.html, createacc.html, and ratings.html as well as the content in the card expansion for index.html.
 

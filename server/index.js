@@ -55,8 +55,8 @@ app.get('/courses', (req, res) => {
 });
 
 app.get('/course/reviews', (req, res) => {
-  // TODO
-  res.send()
+  const reviews = JSON.parse(fs.readFileSync('./server/reviews/' + req.query.coursecode + '.json'));
+  res.send(JSON.stringify(reviews));
 });
 
 app.post('/course/review/new', (req, res) => {
@@ -74,10 +74,6 @@ app.post('/course/survey/new', (req, res) => {
   res.send()
 });
 
-
-// app.get('*', (req, res) => {
-//   res.send('NO FOOL');
-// });
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
