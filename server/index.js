@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import express from 'express';
 
 const JSONfile = './persistent.json';
-const jsonCourses = '/server/courses.json';
+const jsonCourses = './server/courses.json';
 const PORT = process.env.PORT || 80;
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
@@ -22,7 +22,7 @@ function reload(filename) {
 reload(JSONfile);
 app.use(express.json()); // lets you handle JSON input
 
-app.use('/', express.static('/public/'));
+app.use('/', express.static('./public/'));
 
 app.get('/account', (req, res) => {
   // TODO
