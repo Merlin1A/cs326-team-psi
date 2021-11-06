@@ -118,7 +118,7 @@ function populateCourses(data) {
                           Reviews <span class="badge badge-light">${course['number_reviews']}</span>
                           <span class="sr-only">unread messages</span>
                         </button>
-                        <a onclick="getReviews(this.id)" class="btn btn-primary" id=${getCourseCode(course.course_name) + "details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
+                        <a onclick="getReviews(this.id.substring(0, 5))" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
                           Click to see more
                         </a>
                         <a class="btn btn-warning" href="ratings.html">
@@ -206,7 +206,7 @@ function populateCourses(data) {
 }
 
 function getCourses() {
-    $.getJSON('https://courseoverflow.herokuapp.com/courses', function(data) {populateCourses(data);});
+  $.getJSON('https://courseoverflow.herokuapp.com/courses', function(data) {populateCourses(data);});
 }
 
 function getReviews(id){
