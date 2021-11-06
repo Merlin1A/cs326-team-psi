@@ -25,6 +25,40 @@ function getProgressColor(progress) {
   }
 }
 
+function getCourseCode(course){
+  return course.substring(0, 5).replace(/\s/g,'').toLowerCase();
+}
+
+
+function populateReviews(data){
+  if (data.hasOwnProperty('reviews') && data.hasOwnProperty('course_code')){
+    const reviews_id = document.getElementById(data['course_code']);
+    reviews_id.innerHTML = '';
+    const reviews = data['reviews'];
+
+    reviews.forEach(function(review){
+      reviews_id.innerHTML += `<div class="card">
+      <div class="card-header"></div>
+      <div class="card-body">${review['comment']}
+        <hr>
+        <div class="row">
+          <div class="col">
+            <div class="icon"><ion-icon name="thumbs-up-sharp" class="thumbs-up"></ion-icon></div>
+            <div class="numberreviews pl-2"><p>${review['upvotes']} people liked this review</p></div>
+          </div>
+          <div class="col">
+            <div class="icon"><ion-icon name="thumbs-down-sharp" class="thumbs-down"></ion-icon></div>
+            <div class="numberreviews pl-2"><p>${review['downvotes']} people disliked this review</p></div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <br>`
+    });
+  }
+}
+
+
 function getCourseCriteria(criteriaArr) {
   let ans = ''
   criteriaArr.forEach(function(criteria) {
@@ -52,96 +86,105 @@ function populateCourses(data) {
         let course_id = 1;
         courses.forEach(function(course) {
             ranking.innerHTML += `<div class="ranking">
-      <div class="col d-flex justify-content-center mb-2">
-          <div class="card rounded-lg w-75 shadow">
-            <div class="card-body">
-              <div class="row">
-              <div class="col">
-              <h5 class="card-title">${course['course_name']} ${getCourseCriteria(course['course_criteria'])}</h5>
-              <p class="card-text">Taught by: ${formatProfessors(course['professors'])}</p>
-              </div>
-              <div class="col justify-content-end">
-            <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
-              <span class="progress-left">
-                <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
-              </span>
-              <span class="progress-right">
-                <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
-              </span>
-              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                <div class="h3 font-weight-bold">${course['overall_rating']}%</div>
-              </div>
-            </div>
-          </div>
-            </div>
-              <div class = "btn-toolbar justify-content-between">
-                <div class = "badge">
-                  <button type="button" class="btn btn-info">
-                    Ratings <span class="badge badge-light">${course['number_ratings']}</span>
-                    <span class="sr-only">unread messages</span>
-                  </button>
-                  <button type="button" class="btn btn-info">
-                    Reviews <span class="badge badge-light">${course['number_reviews']}</span>
-                    <span class="sr-only">unread messages</span>
-                  </button>
-                  <a class="btn btn-primary" data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
-                    Click to see more
-                  </a>
-                  <a class="btn btn-warning" href="ratings.html">
-                    Rate or review this class 
-                  </a>
-                </div>
-              </div>
-              <div id="${"collapse" + String(course_id)}" class="collapse">
-                <div class="card-body">
-                  <div class="card-header">Course Description</div>
-                  ${course['course_description']}
-                </div>
-                <br><hr>
-                <div class="card-body">
-                  <div class="card-title"><h5>Ratings</h5></div>
-                  <div class="row">
+            <div class="col d-flex justify-content-center mb-2">
+                <div class="card rounded-lg w-75 shadow">
+                  <div class="card-body">
+                    <div class="row">
                     <div class="col">
-                      <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
-                        <span class="progress-left">
-                          <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
-                        </span>
-                        <span class="progress-right">
-                          <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
-                        </span>
-                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                          <div class="h3 font-weight-bold">${course['overall_rating']}%</div>
-                        </div>
-                      </div>
-                      <p class="rating-cat">Overall Rating</p>
+                    <h5 class="card-title">${course['course_name']} ${getCourseCriteria(course['course_criteria'])}</h5>
+                    <p class="card-text">Taught by: ${formatProfessors(course['professors'])}</p>
                     </div>
-                    <div class="col">
-                      <div class="progress mx-auto justify-content-end" data-value='${course['overall_difficulty']}'>
-                        <span class="progress-left">
-                          <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
-                        </span>
-                        <span class="progress-right">
-                          <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
-                        </span>
-                        <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                          <div class="h3 font-weight-bold">${course['overall_difficulty']}%</div>
-                        </div>
-                      </div>
-                      <p class="rating-cat">Difficulty</p>
+                    <div class="col justify-content-end">
+                  <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
+                    <span class="progress-left">
+                      <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
+                    </span>
+                    <span class="progress-right">
+                      <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
+                    </span>
+                    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                      <div class="h3 font-weight-bold">${course['overall_rating']}%</div>
                     </div>
                   </div>
                 </div>
+                  </div>
+                    <div class = "btn-toolbar justify-content-between">
+                      <div class = "badge">
+                        <button type="button" class="btn btn-info">
+                          Ratings <span class="badge badge-light">${course['number_ratings']}</span>
+                          <span class="sr-only">unread messages</span>
+                        </button>
+                        <button type="button" class="btn btn-info">
+                          Reviews <span class="badge badge-light">${course['number_reviews']}</span>
+                          <span class="sr-only">unread messages</span>
+                        </button>
+                        <a onclick="getReviews(this.id)" class="btn btn-primary" id=${getCourseCode(course.course_name) + "details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
+                          Click to see more
+                        </a>
+                        <a class="btn btn-warning" href="ratings.html">
+                          Rate or review this class 
+                        </a>
+                      </div>
+                    </div>
+                    <div id="${"collapse" + String(course_id)}" class="collapse">
+                      <div class="card-body">
+                        <div class="card-header">Course Description</div>
+                        ${course['course_description']}
+                      </div>
+                      <br><hr>
+                      <div class="card-body">
+                        <div class="card-title"><h5>Ratings</h5></div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
+                              <span class="progress-left">
+                                <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
+                              </span>
+                              <span class="progress-right">
+                                <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
+                              </span>
+                              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h3 font-weight-bold">${course['overall_rating']}%</div>
+                              </div>
+                            </div>
+                            <p class="rating-cat">Overall Rating</p>
+                          </div>
+                          <div class="col">
+                            <div class="progress mx-auto justify-content-end" data-value='${course['overall_difficulty']}'>
+                              <span class="progress-left">
+                                <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
+                              </span>
+                              <span class="progress-right">
+                                <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
+                              </span>
+                              <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                                <div class="h3 font-weight-bold">${course['overall_difficulty']}%</div>
+                              </div>
+                            </div>
+                            <p class="rating-cat">Difficulty</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="card-body" id="${getCourseCode(course.course_name)}">
+                      <div class="card-title"><h5>Reviews</h5></div>
+                
+                      </div>
+                    </div>
+                  </div>
               </div>
             </div>
-        </div>
-      </div>
-    </div>`;
-    course_id += 1;
+        </div>`;
+        course_id += 1;
         });
     }   
 }
+
 function getCourses() {
-    $.getJSON('https://courseoverflow.herokuapp.com/courses', function(data) {populateCourses(data);});
+    $.getJSON('http://localhost:3000/courses', function(data) {populateCourses(data);});
+}
+
+function getReviews(id){
+  $.getJSON('http://localhost:3000/course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
 }
 
 window.onload = getCourses();
