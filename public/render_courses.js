@@ -206,11 +206,11 @@ function populateCourses(data) {
 }
 
 function getCourses() {
-    $.getJSON('http://localhost:3000/courses', function(data) {populateCourses(data);});
+    $.getJSON('https://courseoverflow.herokuapp.com/courses', function(data) {populateCourses(data);});
 }
 
 function getReviews(id){
-  $.getJSON('http://localhost:3000/course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
+  $.getJSON('https://courseoverflow.herokuapp.com/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
 }
 
 window.onload = getCourses();

@@ -5,7 +5,7 @@ import express from 'express';
 
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
-const PORT = 3000;
+const PORT = process.env.PORT || 80;
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
