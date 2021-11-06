@@ -30,23 +30,29 @@
     </ul>
   </div>
 </nav>
-<div class="btn-group ml-5 px-5">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Filter
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">100 Level</a>
-    <a class="dropdown-item" href="#">200 Level</a>
-    <a class="dropdown-item" href="#">300 Level</a>
-    <a class="dropdown-item" href="#">400 Level</a>
-  </div>
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Sort
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="#">Rankings</a>
-    <a class="dropdown-item" href="#">Average Time Spent</a>
-    <a class="dropdown-item" href="#">Most Reviewed</a>
+<div class="btn-group">
+  <div class="filters_nav">
+    <div class="dropdown">
+    <button type="button" id="filterCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Filter
+    </button>
+    <div class="dropdown-menu" aria-labelledby="filterCourses">
+      <a class="dropdown-item" href="#">100 Level</a>
+      <a class="dropdown-item" href="#">200 Level</a>
+      <a class="dropdown-item" href="#">300 Level</a>
+      <a class="dropdown-item" href="#">400 Level</a>
+    </div>
+    </div>
+    <div class="dropdown">
+    <button type="button" id="sortCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Sort
+    </button>
+    <div class="dropdown-menu" aria-labelledby="sortCourses">
+      <a class="dropdown-item" href="#">Rankings</a>
+      <a class="dropdown-item" href="#">Overall Difficulty</a>
+      <a class="dropdown-item" href="#">Most Reviewed</a>
+    </div>
+    </div>
   </div>
     </div>
     </div>
@@ -59,6 +65,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="render_courses.js"></script>
-    <script defer src="progress_bar.js"></script>
+    <script src="render_navbar_internal.js"></script>
   </body>
 </html>

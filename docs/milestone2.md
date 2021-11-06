@@ -41,16 +41,25 @@ We are creating an in-house API that will act as an intermediary between our dat
 * (GET) /courses/review/get: retrieves the course reviews from server 
 * (POST) /courses/survey/new: sends data from user's input (new survey filled by user) to server 
 
-##### Objects used
-* Course Object 
+##### Objects used in populating json files
+* Course Object <br />
 { <br />
-  course_name: str,<br />
-  course_description: str, <br />
-  professors: str[], <br />
-  overall_rating: number, <br />
-  difficulty: number, <br />
-  num_reviews: number, <br />
-  criteria: str[] <br />
+  "course_name": String,<br />
+  "course_description": String, <br />
+  "professors": String[], <br />
+  "overall_rating": Number, <br />
+  "overall_difficulty": Number, <br />
+  "number_reviews": Number, <br />
+  "number_ratings": Number, <br />
+  "course_criteria": String[] <br />
+}
+
+* Review Object <br />
+{ <br />
+  "user_id": Number, <br />
+  "comment": String, <br />
+  "upvotes": Number, <br />
+  "downvotes": String <br />
 }
 
 # Part 3: Deployment
