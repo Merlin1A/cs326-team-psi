@@ -11,7 +11,7 @@ Appication Name: *Course Overflow*
 
 ## Division of Labor
 * [Jesse Brookins](https://github.com/Merlin1A)
-Added logic to programmatically generate the reviews for each course from 'dummy' json data. Also collaborarted with Johno and Lynn on the API structure, and helped implement it. 
+Added logic to programmatically generate the reviews for each course from 'dummy' json data. Also collaborated with Johno and Lynn on the API structure, and helped implement it. 
 * [Johno Pomerat](https://github.com/sperek27)
 Built the initial wireframe using bootstrap collaborated with Jesse and Lynn on
 designing the page layout as well. Iterated on wireframe and assisted with
