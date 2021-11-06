@@ -1,0 +1,29 @@
+{ 
+    "course_code": "cs325",
+    "reviews":
+    [
+    {
+        "uid": 107,
+        "user_id": 504,
+        "comment": "High life single-origin coffee locavore wes anderson mlkshk, helvetica sustainable next level vice dreamcatcher synth cred banh mi. Butcher Austin +1 wes anderson dreamcatcher. Raw denim jean shorts tofu etsy, artisan food truck seitan thundercats. VHS butcher american apparel freegan vice wayfarers Austin, you probably haven't heard of them high life 3 wolf moon. Readymade squid freegan before they sold out, Austin terry richardson quinoa farm-to-table. Iphone echo park brunch, DIY lo-fi marfa vinyl readymade thundercats tofu artisan quinoa art party. Pitchfork messenger bag ethical cred portland.",
+        "upvotes": 8,
+        "downvotes": 4
+
+    },
+    {
+        "uid": 108,
+        "user_id": 505,
+        "comment": "High life single-origin coffee locavore wes anderson mlkshk, helvetica sustainable next level vice dreamcatcher synth cred banh mi. Butcher Austin +1 wes anderson dreamcatcher. Raw denim jean shorts tofu etsy, artisan food truck seitan thundercats. VHS butcher american apparel freegan vice wayfarers Austin, you probably haven't heard of them high life 3 wolf moon. Readymade squid freegan before they sold out, Austin terry richardson quinoa farm-to-table. Iphone echo park brunch, DIY lo-fi marfa vinyl readymade thundercats tofu artisan quinoa art party. Pitchfork messenger bag ethical cred portland.",
+        "upvotes": 2,
+        "downvotes": 10
+
+    },
+    {
+        "uid": 109,
+        "user_id": 506,
+        "comment": "High life single-origin coffee locavore wes anderson mlkshk, helvetica sustainable next level vice dreamcatcher synth cred banh mi. Butcher Austin +1 wes anderson dreamcatcher. Raw denim jean shorts tofu etsy, artisan food truck seitan thundercats. VHS butcher american apparel freegan vice wayfarers Austin, you probably haven't heard of them high life 3 wolf moon. Readymade squid freegan before they sold out, Austin terry richardson quinoa farm-to-table. Iphone echo park brunch, DIY lo-fi marfa vinyl readymade thundercats tofu artisan quinoa art party. Pitchfork messenger bag ethical cred portland.",
+        "upvotes": 26,
+        "downvotes": 9
+    }
+    ]
+}
