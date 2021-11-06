@@ -31,22 +31,26 @@
   </div>
 </nav>
 <div class="btn-group ml-5 px-5">
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="dropdown">
+  <button type="button" id="filterCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Filter
   </button>
-  <div class="dropdown-menu">
+  <div class="dropdown-menu" aria-labelledby="filterCourses">
     <a class="dropdown-item" href="#">100 Level</a>
     <a class="dropdown-item" href="#">200 Level</a>
     <a class="dropdown-item" href="#">300 Level</a>
     <a class="dropdown-item" href="#">400 Level</a>
   </div>
-  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  </div>
+  <div class="dropdown">
+  <button type="button" id="sortCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Sort
   </button>
-  <div class="dropdown-menu">
+  <div class="dropdown-menu" aria-labelledby="sortCourses">
     <a class="dropdown-item" href="#">Rankings</a>
-    <a class="dropdown-item" href="#">Average Time Spent</a>
+    <a class="dropdown-item" href="#">Overall Difficulty</a>
     <a class="dropdown-item" href="#">Most Reviewed</a>
+  </div>
   </div>
     </div>
     </div>
