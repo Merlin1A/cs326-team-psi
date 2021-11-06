@@ -16,7 +16,7 @@ function populateSettings() {
                 <button type="submit" class="btn btn-secondary">change email</button> 
                 <br><br><br>
                 <div class="form-group">
-                    <label>"Update your password</label>
+                    <label>Update your password</label>
                 <input class="form-control" id="new-password"
                 aria-describedby="new-password" placeholder="New password"><br>
                 <input class="form-control" id="confirm-password"
