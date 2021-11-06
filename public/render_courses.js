@@ -140,9 +140,8 @@ function populateCourses(data) {
         });
     }   
 }
-//https://courseoverflow.herokuapp.com/courses
 function getCourses() {
-    $.getJSON('http://localhost:3000/courses', function(data) {populateCourses(data);});
+    $.getJSON('https://courseoverflow.herokuapp.com/courses', function(data) {populateCourses(data);});
 }
 
 window.onload = getCourses();
