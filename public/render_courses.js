@@ -210,7 +210,7 @@ function getCourses() {
 }
 
 function getReviews(id){
-  $.getJSON('https://courseoverflow.herokuapp.com/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
+  $.getJSON('https://courseoverflow.herokuapp.com/course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
 }
 
 window.onload = getCourses();
