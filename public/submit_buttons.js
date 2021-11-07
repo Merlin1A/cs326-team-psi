@@ -56,5 +56,16 @@ function validateRating(){
     }
 }
 
+function validateReview(){
+    let review = document.getElementById('enter-review').value;
+    if(review.length === 0){
+        alert("Please enter a review.");
+    }
+    else{
+        alert("Review succesfully submitted");
+    }
+}
+
 document.getElementById('sign-up').addEventListener('click', validateAcc);
 document.getElementById('rating-submit').addEventListener('click', validateRating);
+document.getElementById('review-submit').addEventListener('click', validateReview);
