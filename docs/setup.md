@@ -10,5 +10,6 @@
   with
   
   const PORT = 3000;
+
 5. From the root directory, run "npm start"
 6. The website can be reached at http://localhost:3000/
