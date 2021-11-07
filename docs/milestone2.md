@@ -11,7 +11,7 @@ Appication Name: *Course Overflow*
 
 ## Division of Labor
 * [Jesse Brookins](https://github.com/Merlin1A)
-Added logic to programmatically generate the reviews for each course from 'dummy' json data. Wrote logic for voting functionality. Also collaborated with Johno and Lynn on the API structure, and helped implement it. 
+Added logic to programmatically generate the reviews for each course from 'dummy' json data. Wrote logic for voting functionality and the associated html/ stylings. Also collaborated with Johno and Lynn on the API structure, and helped implement it. 
 * [Johno Pomerat](https://github.com/sperek27)
 Designed and wrote the internal architecture of the dummy server. Created
 client-side logic to process GET requests to enable dynamic creation of the
