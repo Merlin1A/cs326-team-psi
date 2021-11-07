@@ -3,6 +3,8 @@ import * as http from 'http';
 import * as fs from 'fs';
 import express from 'express';
 
+const { MongoClient } = require("mongodb");
+
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
 const PORT = process.env.PORT || 80;
@@ -11,7 +13,7 @@ const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
 
-MongoClient.connect(url, function(err, db) {
+MongoClient.connect(uri, function(err, db) {
   if (err) throw err;
   console.log("Database created!");
   db.close();
