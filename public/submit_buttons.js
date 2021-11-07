@@ -4,9 +4,21 @@ function validateAcc(){
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let retype = document.getElementById('retype-password').value;
-    if(email.length === 0 || name.length === 0 || username.length === 0 || password.length === 0 || retype.length === 0){
-        alert("Please fill in all fields in order to sign up.")
+    if(email.length === 0 || !email.endsWith("umass.edu")){
+        alert("Please enter a valid email in order to sign up.");
     } 
+    else if (name.length === 0){
+        alert("Please enter your name.");
+    }
+    else if (username.length === 0){
+        alert("Please enter a username");
+    }
+    else if(password.length === 0){
+        alert("Please enter a password");
+    }
+    else if (retype.length === 0 || retype !== password){
+        alert("Please confirm your password");
+    }
     else {
         alert("You are now signed up!");
     }
