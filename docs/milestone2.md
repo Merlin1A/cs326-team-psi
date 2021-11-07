@@ -58,10 +58,11 @@ We are creating an in-house API that will act as an intermediary between our dat
 
 * Review Object <br />
 { <br />
+  "uid": Number, <br />
   "user_id": Number, <br />
   "comment": String, <br />
   "upvotes": Number, <br />
-  "downvotes": String <br />
+  "downvotes": Number <br />
 }
 
 # Part 3: Deployment
