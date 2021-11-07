@@ -18,7 +18,7 @@ client-side logic to process GET requests to enable dynamic creation of the
 wireframe pages. Wrote all the logic to render courses dynamically on the
 landing page. Assisted Jesse and Lynn by fixing bugs and writing documentation.
 * [Lynn Li](https://github.com/lynnli0)
-Designed and created the inital layout/wireframe using Whimiscal with Jesse and Johno. Drafted and create the templates for settings.html, createacc.html, and ratings.html as well as the content in the card expansion for index.html.
+Help generate 'dummy' JSON data for the courses landing page. Cleaned up the user interface. Implemented validation/alert systems for ratings and account creation upon submission to ensure user data is correct. Collaborated Jesse and Johno with documentation and API structure. 
 
 ## Part 1: API Planning
 
