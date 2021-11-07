@@ -31,7 +31,6 @@ function getCourseCode(course){
 
 function upVote(id){
   const button = document.getElementById(id);
-  console.log("yes please daddy");
 
   if(button.children[0].classList.contains('thumbs-up')){
     button.children[0].classList.remove('thumbs-up');
@@ -233,8 +232,8 @@ function populateCourses(data) {
     });    
 }
 
-//const websiteName = 'https://courseoverflow.herokuapp.com/';
-const websiteName = 'http://localhost:3000/';
+const websiteName = 'https://courseoverflow.herokuapp.com/';
+// const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function(data) {populateCourses(data);});
