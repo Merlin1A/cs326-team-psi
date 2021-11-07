@@ -205,12 +205,22 @@ function populateCourses(data) {
     });    
 }
 
+//const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
+
 function getCourses() {
-  $.getJSON('https://courseoverflow.herokuapp.com/courses', function(data) {populateCourses(data);});
+  $.getJSON(websiteName + "courses", function(data) {populateCourses(data);});
 }
 
 function getReviews(id){
-  $.getJSON('https://courseoverflow.herokuapp.com/course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
+  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
+}
+
+function postUpvote(courseName, rid, upvote) {
+  let vote = upvote ? "up" : "down";
+  $.post(websiteName + "course/review/vote/?vote=" + vote + "%uid=" + String(rid) + "%coursecode=" + getCourseCode(courseName), function( data ) {
+    populateReviews(courseName);
+  });
 }
 
 window.onload = getCourses();
