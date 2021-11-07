@@ -2,8 +2,7 @@
 import * as http from 'http';
 import * as fs from 'fs';
 import express from 'express';
-
-const { MongoClient } = require("mongodb");
+import MongoClient from "mongodb";
 
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
