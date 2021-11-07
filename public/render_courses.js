@@ -29,12 +29,40 @@ function getCourseCode(course){
   return course.substring(0, 6).replace(/\s/g,'').toLowerCase();
 }
 
+function upVote(id){
+  const button = document.getElementById(id);
+  console.log("yes please daddy");
+
+  if(button.children[0].classList.contains('thumbs-up')){
+    button.children[0].classList.remove('thumbs-up');
+    button.children[0].classList.add('thumbs-up-clicked');
+  }
+  else{
+    button.children[0].classList.remove('thumbs-up-clicked');
+    button.children[0].classList.add('thumbs-up');
+  }
+}
+
+function downVote(id){
+  const button = document.getElementById(id);
+
+  if(button.children[0].classList.contains('thumbs-down')){
+    button.children[0].classList.remove('thumbs-down');
+    button.children[0].classList.add('thumbs-down-clicked');
+  }
+  else{
+    button.children[0].classList.remove('thumbs-down-clicked');
+    button.children[0].classList.add('thumbs-down');
+  }
+}
+
 
 function populateReviews(data){
   if (data.hasOwnProperty('reviews') && data.hasOwnProperty('course_code')){
     const reviews_id = document.getElementById(data['course_code']);
     reviews_id.innerHTML = '';
     const reviews = data['reviews'];
+    const courseCode = data['course_code'];
 
     reviews.forEach(function(review){
       reviews_id.innerHTML += `<div class="card">
@@ -43,11 +71,11 @@ function populateReviews(data){
         <hr>
         <div class="row">
           <div class="col">
-            <div class="icon"><ion-icon name="thumbs-up-sharp" class="thumbs-up"></ion-icon></div>
+            <button onclick = "upVote(this.id)" type="button" class="icon" id=${courseCode + '_upvote'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-up-sharp" class="thumbs-up"></ion-icon></button>
             <div class="numberreviews pl-2"><p>${review['upvotes']} people liked this review</p></div>
           </div>
           <div class="col">
-            <div class="icon"><ion-icon name="thumbs-down-sharp" class="thumbs-down"></ion-icon></div>
+            <button onclick = "downVote(this.id)" type="button" class="icon" id=${courseCode + '_downvote'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-down-sharp" class="thumbs-down"></ion-icon></button>
             <div class="numberreviews pl-2"><p>${review['downvotes']} people disliked this review</p></div>
           </div>
         </div>
@@ -205,12 +233,22 @@ function populateCourses(data) {
     });    
 }
 
+//const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
+
 function getCourses() {
-  $.getJSON('https://courseoverflow.herokuapp.com/courses', function(data) {populateCourses(data);});
+  $.getJSON(websiteName + "courses", function(data) {populateCourses(data);});
 }
 
 function getReviews(id){
-  $.getJSON('https://courseoverflow.herokuapp.com/course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
+  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
+}
+
+function postUpvote(courseName, rid, upvote) {
+  let vote = upvote ? "up" : "down";
+  $.post(websiteName + "course/review/vote/?vote=" + vote + "%uid=" + String(rid) + "%coursecode=" + getCourseCode(courseName), function( data ) {
+    populateReviews(courseName);
+  });
 }
 
 window.onload = getCourses();
