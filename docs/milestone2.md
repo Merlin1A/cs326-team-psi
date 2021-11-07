@@ -32,15 +32,16 @@ Help generate 'dummy' JSON data for the courses landing page. Cleaned up the use
 We are creating an in-house API that will act as an intermediary between our database and interface. It will deliver a user response from the server (receiving a request) and send a response from the server back to the user, which will appear in our interface. The following section details our API endpoints.
 
 ##### API Endpoints
-* (POST) /account/create: sends data from user's input (new account information such as email, name, and password) to the server and creates a new account for the user to access the site
-* (GET) /account/login: retrieves user's login information from server in order for them to access the site
-* (PUT) /account/update: updates user's existing account information
-* (DELETE) /account/delete: deletes user's account 
-* (GET) /courses/get: retrieves course information from server
-* (POST) /courses/review/new: sends data from user's input (new review written by user) to the server and creates a new review for course 
-* (POST) /courses/review/vote: sends data from user's input (new vote from user) to server and creates new vote for course
-* (GET) /courses/review/get: retrieves the course reviews from server 
-* (POST) /courses/survey/new: sends data from user's input (new survey filled by user) to server 
+* (GET) /: Gets static HTML and client-side javascript from public folder and relays it to the user.
+* (POST) /account/create: sends data from user's input (new account information such as email, name, and password) to the server and creates a new account for the user to access the site.
+* (GET) /account/login: retrieves user's login information from server in order for them to access the site.
+* (PUT) /account/update: updates user's existing account information.
+* (DELETE) /account/delete: deletes user's account.
+* (GET) /courses: retrieves course information from server, this information comes in the form of a list of course objects as outlined below.
+* (POST) /courses/review/new: sends data from user's input (new review written by user) to the server and creates a new review for course.
+* (POST) /courses/review/vote: sends data from user's input (new vote from user) to server and creates new vote for course.
+* (GET) /courses/reviews: retrieves the course reviews from server this data comes as a list of review objects as outlined below.
+* (POST) /courses/survey/new: sends data from user's input (new survey filled by user) to server.
 
 ##### Objects used in populating json files
 * Course Object <br />
