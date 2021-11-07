@@ -2,7 +2,7 @@
 import * as http from 'http';
 import * as fs from 'fs';
 import express from 'express';
-import MongoClient from "mongodb";
+import { default as mongodb } from 'mongodb';
 
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
@@ -11,6 +11,8 @@ const uri = process.env.MONGODB_URI;
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
+
+let MongoClient = mongodb.MongoClient;
 
 MongoClient.connect(uri, function(err, db) {
   if (err) throw err;
