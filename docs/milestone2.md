@@ -11,17 +11,16 @@ Appication Name: *Course Overflow*
 
 ## Division of Labor
 * [Jesse Brookins](https://github.com/Merlin1A)
-Added logic to programmatically generate the reviews for each course from 'dummy' json data. Wrote logic for voting functionality. Also collaborated with Johno and Lynn on the API structure, and helped implement it. 
+Added logic to programmatically generate the reviews for each course from 'dummy' json data. Wrote logic for voting functionality and the associated html/ stylings. Also collaborated with Johno and Lynn on the API structure, and helped implement it. 
 * [Johno Pomerat](https://github.com/sperek27)
 Designed and wrote the internal architecture of the dummy server. Created
 client-side logic to process GET requests to enable dynamic creation of the
 wireframe pages. Wrote all the logic to render courses dynamically on the
-landing page. Implemented POST requests for posting upvotes to the dummy server. 
-Assisted Jesse and Lynn by fixing bugs and writing documentation.
+landing page. Assisted Jesse and Lynn by fixing bugs and writing documentation.
 * [Lynn Li](https://github.com/lynnli0)
 Designed and created the inital layout/wireframe using Whimiscal with Jesse and Johno. Drafted and create the templates for settings.html, createacc.html, and ratings.html as well as the content in the card expansion for index.html.
 
-## Part 0: Data Interactions
+## Part 1: API Planning
 
 #### Project API Planning
 * Creation: User Accounts, Reviews & Data Points
@@ -65,7 +64,18 @@ We are creating an in-house API that will act as an intermediary between our dat
   "downvotes": Number <br />
 }
 
-# Part 3: Deployment
+## Part 2: Front-end Implementation
+* CREATE 
+<img width="1429" alt="create" src="https://user-images.githubusercontent.com/38598996/140628206-ed8387f7-0172-44d1-af3a-fd5a85df5e87.png">
+* DELETE
+<img width="764" alt="delete" src="https://user-images.githubusercontent.com/38598996/140628208-9eee65cc-1a22-4b8b-a1be-abf26494d33c.png">
+* READ
+<img width="1157" alt="read" src="https://user-images.githubusercontent.com/38598996/140628210-e7e60eba-554c-4d94-a5bf-8f18a03ac5b6.png">
+* UPDATE 
+<img width="1157" alt="update" src="https://user-images.githubusercontent.com/38598996/140628215-89b8834f-6468-41e1-ac03-554a6a1569ab.png">
+
+
+## Part 3: Deployment
 
 ##### Heroku Site Deployment:
 https://courseoverflow.herokuapp.com
