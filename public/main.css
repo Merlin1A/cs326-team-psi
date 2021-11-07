@@ -95,9 +95,19 @@
     font-size:x-large;
 }
 
+.thumbs-up-clicked{
+  color:darkgreen;
+  font-size:x-large;
+}
+
 .thumbs-down{
-    color:darkred;
+    color:red;
     font-size:x-large;
+}
+
+.thumbs-down-clicked{
+  color:darkred;
+  font-size:x-large;
 }
 
 .icon,
