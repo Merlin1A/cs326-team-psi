@@ -6,9 +6,16 @@ import express from 'express';
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
 const PORT = process.env.PORT || 80;
+const uri = process.env.MONGODB_URI;
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  console.log("Database created!");
+  db.close();
+});
 
 function reload(filename) {
   if (fs.existsSync(filename)) {
