@@ -24,4 +24,5 @@ function validateAcc(){
     }
 }
 
+
 document.getElementById('sign-up').addEventListener('click', validateAcc);
