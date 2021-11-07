@@ -26,12 +26,16 @@ function getProgressColor(progress) {
 }
 
 function getCourseCode(course){
+  if (!course.includes(' ')) {
+    return course;
+  }
   return course.substring(0, 6).replace(/\s/g,'').toLowerCase();
 }
 
 function upVote(id){
+  const params = id.split('_');
+  postVote(params[0], params[1], params[2]);
   const button = document.getElementById(id);
-  console.log("yes please daddy");
 
   if(button.children[0].classList.contains('thumbs-up')){
     button.children[0].classList.remove('thumbs-up');
@@ -44,6 +48,9 @@ function upVote(id){
 }
 
 function downVote(id){
+  const params = id.split('_');
+  postVote(params[0], params[1], params[2]);
+
   const button = document.getElementById(id);
 
   if(button.children[0].classList.contains('thumbs-down')){
@@ -65,17 +72,18 @@ function populateReviews(data){
     const courseCode = data['course_code'];
 
     reviews.forEach(function(review){
+      let rid = review['uid'];
       reviews_id.innerHTML += `<div class="card">
       <div class="card-header"></div>
       <div class="card-body">${review['comment']}
         <hr>
         <div class="row">
           <div class="col">
-            <button onclick = "upVote(this.id)" type="button" class="icon" id=${courseCode + '_upvote'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-up-sharp" class="thumbs-up"></ion-icon></button>
+            <button onclick = "upVote(this.id)" type="button" class="icon" id=${courseCode + '_' + String(rid) + '_up'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-up-sharp" class="thumbs-up"></ion-icon></button>
             <div class="numberreviews pl-2"><p>${review['upvotes']} people liked this review</p></div>
           </div>
           <div class="col">
-            <button onclick = "downVote(this.id)" type="button" class="icon" id=${courseCode + '_downvote'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-down-sharp" class="thumbs-down"></ion-icon></button>
+            <button onclick = "downVote(this.id)" type="button" class="icon" id=${courseCode + '_' + String(rid) + '_down'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-down-sharp" class="thumbs-down"></ion-icon></button>
             <div class="numberreviews pl-2"><p>${review['downvotes']} people disliked this review</p></div>
           </div>
         </div>
@@ -244,10 +252,9 @@ function getReviews(id){
   $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
 }
 
-function postUpvote(courseName, rid, upvote) {
-  let vote = upvote ? "up" : "down";
-  $.post(websiteName + "course/review/vote/?vote=" + vote + "%uid=" + String(rid) + "%coursecode=" + getCourseCode(courseName), function( data ) {
-    populateReviews(courseName);
+function postVote(courseName, rid, vote) {
+  $.post(websiteName + "course/review/vote?vote=" + vote + "&rid=" + String(rid) + "&coursecode=" + getCourseCode(courseName), function( data ) {
+    getReviews(courseName);
   });
 }
 
