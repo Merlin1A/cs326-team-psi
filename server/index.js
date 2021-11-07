@@ -14,11 +14,11 @@ let memory = {};
 
 let MongoClient = mongodb.MongoClient;
 
-MongoClient.connect(uri, function(err, db) {
-  if (err) throw err;
-  console.log("Database created!");
-  db.close();
-});
+// MongoClient.connect(uri, function(err, db) {
+//   if (err) throw err;
+//   console.log("Database created!");
+//   db.close();
+// });
 
 function reload(filename) {
   if (fs.existsSync(filename)) {
