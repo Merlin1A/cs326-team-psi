@@ -2,23 +2,15 @@
 import * as http from 'http';
 import * as fs from 'fs';
 import express from 'express';
-import { default as mongodb } from 'mongodb';
+import { MongoClient } from 'mongodb';
 
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
 const PORT = process.env.PORT || 80;
-const uri = process.env.MONGODB_URI;
 const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
 
-let MongoClient = mongodb.MongoClient;
-
-// MongoClient.connect(uri, function(err, db) {
-//   if (err) throw err;
-//   console.log("Database created!");
-//   db.close();
-// });
 
 function reload(filename) {
   if (fs.existsSync(filename)) {
