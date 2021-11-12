@@ -2,7 +2,6 @@
 import * as http from 'http';
 import * as fs from 'fs';
 import express from 'express';
-import { MongoClient } from 'mongodb';
 
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
@@ -11,6 +10,16 @@ const headerText = {'Content-Type': 'application/json;charset=utf-8'};
 const app = express();
 let memory = {};
 
+// Test MongoDB
+const { MongoClient } = require('mongodb');
+const uri = process.env.MONGODB_URI;
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+// Test MongoDB
 
 function reload(filename) {
   if (fs.existsSync(filename)) {
