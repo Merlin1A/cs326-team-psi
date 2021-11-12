@@ -15,8 +15,12 @@ import * as mongodb from 'mongodb';
 const uri = process.env.MONGODB_URI;
 const client = new mongodb.MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
-  const collection = client.db("test").collection("devices");
+  const collection = client.db("sample_airbnb").collection("listingsAndReviews");
   // perform actions on the collection object
+  const query = {"_id": "10006546"};
+  const document = collection.findOne(query);
+  console.log(document);
+
   client.close();
 });
 // Test MongoDB
