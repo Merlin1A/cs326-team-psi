@@ -14,6 +14,7 @@ let memory = {};
 import * as mongodb from 'mongodb';
 const uri = process.env.MONGODB_URI;
 const client = new mongodb.MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+console.log(uri);
 client.connect(err => {
   const collection = client.db("sample_airbnb").collection("listingsAndReviews");
   // perform actions on the collection object
