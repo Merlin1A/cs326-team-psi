@@ -5,8 +5,8 @@ import express from 'express';
 
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
-const PORT = process.env.PORT || 80;
-const headerText = {'Content-Type': 'application/json;charset=utf-8'};
+const PORT = process.env.PORT || 3000;
+const headerText = { 'Content-Type': 'application/json;charset=utf-8' };
 const app = express();
 let memory = {};
 
@@ -14,7 +14,6 @@ let memory = {};
 import { MongoClient } from "mongodb";
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
-console.log(uri);
 
 async function run() {
   try {
@@ -31,7 +30,6 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
 // Test MongoDB
 
 function reload(filename) {
