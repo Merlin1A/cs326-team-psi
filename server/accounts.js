@@ -2,8 +2,7 @@ import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local'
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.MONGODB_URI;
-
+const uri = process.env.MONGODB_URI + 'accounts?retryWrites=true&w=majority';
 
 // Passport configuration
 export const authStrat = new LocalStrategy(
