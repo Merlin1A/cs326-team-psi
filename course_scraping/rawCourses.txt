@@ -132,8 +132,7 @@
 
 <h2><a href="https://people.cs.umass.edu/~mfiterau/teaching/COMPSCI589.html" name="589" id="589">COMPSCI 589: Machine Learning  </a></h2>
 <h3>Instructor(s): Justin Domke, Madalina Fiterau Brostean</h3>
-<p>This course will introduce core machine learning models and algorithms for classification, regression, clustering, and dimensionality reduction. On the theory side, the course will cover the mathematical foundations behind the most common machine learning algorithms. It will focus on understanding models and the relationships between them. On the applied side, the course will focus on effectively using machine learning methods to solve real-world problems with an emphasis on model selection, regularization, design of experiments, and presentation and interpretation of results.
-The course will be held in a flipped-classroom manner, with students being assigned pre-recorded videos, and the lectures being reserved for discussions, including Q&amp;A on the lecture topics, exercises, connecting the lecture abstractions to real-world application, implementation considerations and demos. The assignments will involve both mathematical problems and implementation tasks. Knowledge of a high-level programming language is absolutely necessary. Python is most commonly used, but languages such as Matlab, R, Scala, Julia would also be suitable. Strong foundations in linear algebra, calculus, probability and statistics are essential for the successful completion of this course.Undergraduate Prerequisites: COMPSCI 383 and MATH 235. 3 credits.</p>
+<p>This course will introduce core machine learning models and algorithms for classification, regression, clustering, and dimensionality reduction. On the theory side, the course will cover the mathematical foundations behind the most common machine learning algorithms. It will focus on understanding models and the relationships between them. On the applied side, the course will focus on effectively using machine learning methods to solve real-world problems with an emphasis on model selection, regularization, design of experiments, and presentation and interpretation of results. The course will be held in a flipped-classroom manner, with students being assigned pre-recorded videos, and the lectures being reserved for discussions, including Q&amp;A on the lecture topics, exercises, connecting the lecture abstractions to real-world application, implementation considerations and demos. The assignments will involve both mathematical problems and implementation tasks. Knowledge of a high-level programming language is absolutely necessary. Python is most commonly used, but languages such as Matlab, R, Scala, Julia would also be suitable. Strong foundations in linear algebra, calculus, probability and statistics are essential for the successful completion of this course.Undergraduate Prerequisites: COMPSCI 383 and MATH 235. 3 credits.</p>
 
 <h2><a href="https://people.cs.umass.edu/~arun/590CC/" name="590CC" id="590CC">COMPSCI 590CC: Cloud Computing  </a></h2>
 <h3>Instructor(s): Arun Venkataramani</h3>
@@ -202,15 +201,6 @@ The course will be held in a flipped-classroom manner, with students being assig
 <h2><a href="https://blogs.umass.edu/jobara/" name="698W" id="698W">COMPSCI 698W: Practicum - CS Research Writing Practicum  </a></h2>
 <h3>Instructor(s): Justin Obara</h3>
 <p>This CS research writing class uses a workshop format to focus on structure and phrasing while engaging students in a process-based approach to writing. Instruction will emphasize genre and discourse analysis and engage students in activities to strengthen audience awareness. As such, students will analyze representative examples of computer science research writing for stylistic and argumentative conventions and then integrate the awareness of these conventions and  moves  into their own writing. Students will produce or substantially revise a complete piece of writing. 6 weeks. 1 credit.</p>
-
-<h2><a href="" name="701" id="701">COMPSCI 701: Advanced Topics in Computer Science  </a></h2>
-<p>Advanced Topics in Computer Science Master's Project: Advanced research project in Computer Science.
-The 3 credit option is for the second semester of a two semester sequence, 701Y followed by 701.
-The 6 credit option is for a project that will be begun and completed within the same semester. 6 credits.</p>
-
-<h2><a href="http://www.cs.umass.edu/grads/synthesis-and-ms-project" name="701Y" id="701Y">COMPSCI 701Y: Advanced Topics in Computer Science (1st Semester)  </a></h2>
-<p>Advanced Topics in Computer Science Master's Project: Advanced research project in Computer Science.
-Indicates the first semester of a two-semester sequence, 701Y (3 credits) followed by 701 (3 credits), with grade for both assigned at the end. 3 credits.</p>
 
 <h2><a href="http://www.cs.umass.edu/~barring/cs741" name="741" id="741">COMPSCI 741: Complexity Theory  </a></h2>
 <h3>Instructor(s): David Barrington</h3>
