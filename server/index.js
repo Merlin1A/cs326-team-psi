@@ -11,26 +11,26 @@ const app = express();
 let memory = {};
 
 // Test MongoDB
-import { MongoClient } from "mongodb";
-const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri);
+// import { MongoClient } from "mongodb";
+// const uri = process.env.MONGODB_URI;
+// const client = new MongoClient(uri);
 
-async function run() {
-  try {
-    await client.connect();
-    const database = client.db("sample_mflix");
-    const movies = database.collection("movies");
-    const query = { title: "Blacksmith Scene" };
+// async function run() {
+//   try {
+//     await client.connect();
+//     const database = client.db("sample_mflix");
+//     const movies = database.collection("movies");
+//     const query = { title: "Blacksmith Scene" };
 
-    const movie = await movies.findOne(query);
-    // since this method returns the matched document, not a cursor, print it directly
-    console.log(movie);
-  } finally {
-    await client.close();
-  }
-}
-run().catch(console.dir);
-// Test MongoDB
+//     const movie = await movies.findOne(query);
+//     // since this method returns the matched document, not a cursor, print it directly
+//     console.log(movie);
+//   } finally {
+//     await client.close();
+//   }
+// }
+// run().catch(console.dir);
+// // Test MongoDB
 
 function reload(filename) {
   if (fs.existsSync(filename)) {
