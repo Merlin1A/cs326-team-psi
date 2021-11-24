@@ -129,6 +129,7 @@ function getCourseCriteria(criteriaArr) {
   return ans;
 }
 
+
 function populateCourses(courses) {
     const ranking = document.getElementById('ranking');
     ranking.innerHTML = '';
@@ -140,14 +141,14 @@ function populateCourses(courses) {
                 <div class="card-body">
                   <div class="row">
                   <div class="col-4 card-main">
-                  <h5 class="card-title">${course['course_name']} ${getCourseCriteria(course['course_criteria'])}</h5>
+                  <h5 class="card-title course" id="course${course_id}">${course['course_name']} ${getCourseCriteria(course['course_criteria'])}</h5>
                   <p class="card-text">Taught by: ${formatProfessors(course['professors'])}</p>
                   <div class = "btn-toolbar card-main">
                     <div class = "badge">
                       <a onclick="getReviews(this.id.substring(0, 5))" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
                         Click to see more
                       </a>
-                      <a class="btn btn-warning" href="ratings.html">
+                      <a class="btn btn-warning" id="rate${course_id}" href="ratings.html">
                         Rate or review this class 
                       </a>
                     </div>
@@ -260,6 +261,10 @@ function populateCourses(courses) {
               </div>
             </div>
         </div>`;
+      document.getElementById("rate"+course_id).addEventListener('click',() =>{
+        const course_name = course['course_name'];
+        window.localStorage.setItem('course', JSON.stringify(course_name));
+      });
       course_id += 1;
     });
   $(function () {
@@ -290,8 +295,8 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-// const websiteName = 'http://localhost:3000/';
+// const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
