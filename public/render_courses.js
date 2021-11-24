@@ -194,23 +194,6 @@ function populateCourses(courses) {
                       </div>
                     </div>
                     <p class="rating-cat">Overall Rating</p>
-                  </div>
-                    <div class = "btn-toolbar justify-content-between">
-                      <div class = "badge">
-                        <button type="button" class="btn btn-info">
-                          Ratings <span class="badge badge-light">${course['number_ratings']}</span>
-                          <span class="sr-only">unread messages</span>
-                        </button>
-                        <button type="button" class="btn btn-info">
-                          Reviews <span class="badge badge-light">${course['number_reviews']}</span>
-                          <span class="sr-only">unread messages</span>
-                        </button>
-                        <a onclick="getReviews(this.id)" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
-                          Click to see more
-                        </a>
-                        <a class="btn btn-warning" href="ratings.html">
-                          Rate or review this class 
-                        </a>
                 </div>
                 <div class="col-2">
                   <div class="progress-circle">
@@ -228,7 +211,24 @@ function populateCourses(courses) {
                     <p class="rating-cat">Overall Difficulty</p>
                   </div>
                 </div>
+                <div class = "btn-toolbar justify-content-between">
+                  <div class = "badge">
+                    <button type="button" class="btn btn-info">
+                      Ratings <span class="badge badge-light">${course['number_ratings']}</span>
+                      <span class="sr-only">unread messages</span>
+                    </button>
+                    <button type="button" class="btn btn-info">
+                      Reviews <span class="badge badge-light">${course['number_reviews']}</span>
+                      <span class="sr-only">unread messages</span>
+                    </button>
+                    <a onclick="getReviews(this.id)" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
+                      Click to see more
+                    </a>
+                    <a class="btn btn-warning" href="ratings.html">
+                      Rate or review this class 
+                    </a>
                   </div>
+                </div>
                     <div id="${"collapse" + String(course_id)}" class="collapse">
                       <div class="card-body">
                         <div class="card-header">Course Description</div>
