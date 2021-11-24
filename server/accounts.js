@@ -130,16 +130,16 @@ export async function changePass(username, newPass) {
 }
 
 
-// Routing middleware functions
+// Middleware functions
 
+// Checks if an user is logged in, redirecting them to the login page if not
 export function checkLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        // If we are authenticated, run the next route.
-        next();
-    } else {
-        // Otherwise, redirect to the login page.
-        res.redirect('/login');
-    }
+   req.isAuthenticated() ? next() : res.redirect('/login');
+}
+
+// Checks if the email used to register is a umass email address, redirecting them to the register page if not
+export function checkEmail(req, res, next){
+    req.body.username.endsWith('umass.edu') ? next() : res.redirect('/register');
 }
 
 

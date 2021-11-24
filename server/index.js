@@ -9,7 +9,7 @@ import expressSession from 'express-session';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { MongoClient } from 'mongodb';
 
-import { authStrat, validatePassword, findUser, addUser, changePass, checkLoggedIn } from './accounts.js';
+import { authStrat, validatePassword, findUser, addUser, changePass, checkLoggedIn, checkEmail } from './accounts.js';
 import { fetchCourses } from './courses.js';
 import { fetchReviews, insertReview } from './reviews.js';
 
@@ -98,7 +98,7 @@ app.route('/register')
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/createacc.html');
   })
-  .post((req, res) => {
+  .post(checkEmail, (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
   
