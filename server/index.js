@@ -11,7 +11,7 @@ import { MongoClient } from 'mongodb';
 
 import { authStrat, validatePassword, findUser } from './accounts.js';
 import { fetchCourses } from './courses.js';
-import { fetchReviews insertReview } from './reviews.js';
+import { fetchReviews, insertReview } from './reviews.js';
 
 
 const JSONfile = './persistent.json';
@@ -88,10 +88,13 @@ app.route('/logout')
   });
 // -------------------------------
 
-app.get('/account', (req, res) => {
-  // TODO
-  res.send();
-});
+app.route('/account')
+  .get(checkLoggedIn, (req, res) => {
+    res.sendFile(process.cwd() + '/public/settings.html');
+  })
+  .post((req, res) => {
+    res.send();
+  });
 
 app.post('/account/update', (req, res) => {
   // TODO
