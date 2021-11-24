@@ -1,5 +1,6 @@
 import os
 import json
+import random
 
 def getTitle(courseTitle):
     ans = ""
@@ -54,11 +55,12 @@ for course in coursesInfoList:
     courseDict["course_description"], courseDict["credits"] = getDescription(course[2])
     courseDict["course_homepage"] = getHomepage(course[0])
     courseDict["professors"] = getInstructors(course[1])
-    courseDict["number_reviews"] = 0
-    courseDict["number_ratings"] = 0
-    courseDict["overall_difficulty"] = 0
-    courseDict["overall_rating"] = 0
+    courseDict["number_reviews"] = random.randint(50, 100)
+    courseDict["number_ratings"] = random.randint(50, 100)
+    courseDict["overall_difficulty"] = random.randint(50, 100)
+    courseDict["overall_rating"] = random.randint(50, 100)
     courseDict["course_criteria"] = getCourseCriteria(courseDict["course_name"])
+    courseDict["enjoyed_course"] = random.randint(50, 100)
     finalCourseList.append(courseDict)
     print(courseDict["course_description"])
 

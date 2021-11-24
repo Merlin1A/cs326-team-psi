@@ -7,11 +7,12 @@
         "professors": [
             "William Verts"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
-        "course_criteria": []
+        "number_reviews": 84,
+        "number_ratings": 50,
+        "overall_difficulty": 50,
+        "overall_rating": 95,
+        "course_criteria": [],
+        "enjoyed_course": 65
     },
     {
         "course_name": "COMPSCI 121: Introduction to Problem Solving with Computers",
@@ -29,11 +30,12 @@
             "Ghazaleh Parvini",
             "Cheryl Swanier"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
-        "course_criteria": []
+        "number_reviews": 64,
+        "number_ratings": 71,
+        "overall_difficulty": 53,
+        "overall_rating": 74,
+        "course_criteria": [],
+        "enjoyed_course": 94
     },
     {
         "course_name": "COMPSCI 186: Using Data Structures",
@@ -43,11 +45,12 @@
         "professors": [
             "Peter Klemperer"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
-        "course_criteria": []
+        "number_reviews": 86,
+        "number_ratings": 88,
+        "overall_difficulty": 59,
+        "overall_rating": 99,
+        "course_criteria": [],
+        "enjoyed_course": 83
     },
     {
         "course_name": "COMPSCI 187: Programming with Data Structures",
@@ -58,11 +61,12 @@
             "Gordon Anderson",
             "Neena Thota"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
-        "course_criteria": []
+        "number_reviews": 90,
+        "number_ratings": 60,
+        "overall_difficulty": 99,
+        "overall_rating": 97,
+        "course_criteria": [],
+        "enjoyed_course": 91
     },
     {
         "course_name": "COMPSCI 190F: Foundations of Data Science",
@@ -72,11 +76,12 @@
         "professors": [
             "Thomas Bernardin"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
-        "course_criteria": []
+        "number_reviews": 75,
+        "number_ratings": 51,
+        "overall_difficulty": 94,
+        "overall_rating": 100,
+        "course_criteria": [],
+        "enjoyed_course": 54
     },
     {
         "course_name": "COMPSCI 198C: Practicum - Introduction to the C Programming Language",
@@ -88,11 +93,12 @@
             "J Moss",
             "Timothy Richards"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
-        "course_criteria": []
+        "number_reviews": 73,
+        "number_ratings": 97,
+        "overall_difficulty": 82,
+        "overall_rating": 94,
+        "course_criteria": [],
+        "enjoyed_course": 74
     },
     {
         "course_name": "COMPSCI 220: Programming Methodology",
@@ -103,13 +109,14 @@
             "Marius Minea",
             "Emily Pruc"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 96,
+        "number_ratings": 79,
+        "overall_difficulty": 59,
+        "overall_rating": 64,
         "course_criteria": [
             "200+"
-        ]
+        ],
+        "enjoyed_course": 100
     },
     {
         "course_name": "COMPSCI 230: Computer Systems Principles",
@@ -119,13 +126,14 @@
         "professors": [
             "Meng-Chieh Chiu"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 64,
+        "number_ratings": 68,
+        "overall_difficulty": 77,
+        "overall_rating": 58,
         "course_criteria": [
             "200+"
-        ]
+        ],
+        "enjoyed_course": 62
     },
     {
         "course_name": "COMPSCI 240: Reasoning Under Uncertainty",
@@ -136,13 +144,14 @@
             "Peter Haas",
             "Jie Xiong"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 93,
+        "number_ratings": 79,
+        "overall_difficulty": 57,
+        "overall_rating": 57,
         "course_criteria": [
             "200+"
-        ]
+        ],
+        "enjoyed_course": 56
     },
     {
         "course_name": "COMPSCI 250: Introduction to Computation",
@@ -153,13 +162,14 @@
             "David Barrington",
             "Ghazaleh Parvini"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 64,
+        "number_ratings": 58,
+        "overall_difficulty": 71,
+        "overall_rating": 72,
         "course_criteria": [
             "200+"
-        ]
+        ],
+        "enjoyed_course": 69
     },
     {
         "course_name": "COMPSCI 311: Introduction to Algorithms",
@@ -171,13 +181,14 @@
             "Daniel Sheldon",
             "Ramesh Sitaraman"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 52,
+        "number_ratings": 69,
+        "overall_difficulty": 59,
+        "overall_rating": 99,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 84
     },
     {
         "course_name": "COMPSCI 320: Introduction to Software Engineering",
@@ -188,13 +199,14 @@
             "Gordon Anderson",
             "David Fisher"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 51,
+        "number_ratings": 63,
+        "overall_difficulty": 99,
+        "overall_rating": 54,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 83
     },
     {
         "course_name": "COMPSCI 325: Introduction to Human Computer Interaction",
@@ -204,13 +216,14 @@
         "professors": [
             "Mahmood Jasim"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 90,
+        "number_ratings": 80,
+        "overall_difficulty": 53,
+        "overall_rating": 82,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 72
     },
     {
         "course_name": "COMPSCI 326: Web Programming",
@@ -220,13 +233,14 @@
         "professors": [
             "Emery Berger"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 86,
+        "number_ratings": 85,
+        "overall_difficulty": 55,
+        "overall_rating": 61,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 91
     },
     {
         "course_name": "COMPSCI 328: Mobile Health Sensing and Analytics",
@@ -236,13 +250,14 @@
         "professors": [
             "Deepak Ganesan"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 77,
+        "number_ratings": 73,
+        "overall_difficulty": 75,
+        "overall_rating": 95,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 58
     },
     {
         "course_name": "COMPSCI 345: Practice and Applications of Data Management",
@@ -253,13 +268,14 @@
             "Jaime Davila",
             "Marco Serafini"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 98,
+        "number_ratings": 66,
+        "overall_difficulty": 50,
+        "overall_rating": 61,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 87
     },
     {
         "course_name": "COMPSCI 377: Operating Systems",
@@ -269,13 +285,14 @@
         "professors": [
             "Mark Corner"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 98,
+        "number_ratings": 50,
+        "overall_difficulty": 60,
+        "overall_rating": 86,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 81
     },
     {
         "course_name": "COMPSCI 383: Artificial Intelligence",
@@ -285,13 +302,14 @@
         "professors": [
             "Matthew Rattigan"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 99,
+        "number_ratings": 82,
+        "overall_difficulty": 85,
+        "overall_rating": 98,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 94
     },
     {
         "course_name": "COMPSCI 391L: Seminar - Computer Crime Law and the Technologies of Investigation and Privacy",
@@ -301,13 +319,14 @@
         "professors": [
             "Marvin Cable"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 80,
+        "number_ratings": 86,
+        "overall_difficulty": 95,
+        "overall_rating": 53,
         "course_criteria": [
             "300+"
-        ]
+        ],
+        "enjoyed_course": 81
     },
     {
         "course_name": "COMPSCI 403: Introduction to Robotics:  Perception, Mechanics, Dynamics, and Control",
@@ -317,13 +336,14 @@
         "professors": [
             "Donghyun Kim"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 52,
+        "number_ratings": 89,
+        "overall_difficulty": 58,
+        "overall_rating": 65,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 56
     },
     {
         "course_name": "COMPSCI 446: Search Engines",
@@ -333,13 +353,14 @@
         "professors": [
             "David Fisher"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 91,
+        "number_ratings": 62,
+        "overall_difficulty": 99,
+        "overall_rating": 84,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 91
     },
     {
         "course_name": "COMPSCI 453: Computer Networks",
@@ -349,13 +370,14 @@
         "professors": [
             "Parviz Kermani"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 58,
+        "number_ratings": 79,
+        "overall_difficulty": 52,
+        "overall_rating": 92,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 89
     },
     {
         "course_name": "COMPSCI 460: Introduction to Computer and Network Security",
@@ -365,13 +387,14 @@
         "professors": [
             "Christopher Misra"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 99,
+        "number_ratings": 78,
+        "overall_difficulty": 86,
+        "overall_rating": 82,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 69
     },
     {
         "course_name": "COMPSCI 461: Secure Distributed Systems",
@@ -381,13 +404,14 @@
         "professors": [
             "Gregory Stone"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 92,
+        "number_ratings": 60,
+        "overall_difficulty": 77,
+        "overall_rating": 52,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 75
     },
     {
         "course_name": "COMPSCI 490A: Applications of Natural Language Processing",
@@ -398,13 +422,14 @@
             "Brendan O'Connor",
             "Laure Thompson"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 53,
+        "number_ratings": 72,
+        "overall_difficulty": 85,
+        "overall_rating": 62,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 77
     },
     {
         "course_name": "COMPSCI 497S: Special Topics - Scalable Web Systems",
@@ -414,13 +439,14 @@
         "professors": [
             "Timothy Richards"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 71,
+        "number_ratings": 76,
+        "overall_difficulty": 56,
+        "overall_rating": 71,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 79
     },
     {
         "course_name": "COMPSCI 513: Logic in Computer Science",
@@ -430,13 +456,14 @@
         "professors": [
             "Neil Immerman"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 73,
+        "number_ratings": 70,
+        "overall_difficulty": 96,
+        "overall_rating": 90,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 97
     },
     {
         "course_name": "COMPSCI 514: Algorithms for Data Science",
@@ -447,13 +474,14 @@
             "Andrew McGregor",
             "Cameron Musco"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 98,
+        "number_ratings": 94,
+        "overall_difficulty": 95,
+        "overall_rating": 79,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 58
     },
     {
         "course_name": "COMPSCI 520: Theory and Practice of Software Engineering",
@@ -463,13 +491,14 @@
         "professors": [
             "Heather Conboy"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 77,
+        "number_ratings": 89,
+        "overall_difficulty": 98,
+        "overall_rating": 97,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 75
     },
     {
         "course_name": "COMPSCI 529: Software Engineering Project Management",
@@ -480,13 +509,14 @@
             "Gordon Anderson",
             "David Fisher"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 81,
+        "number_ratings": 65,
+        "overall_difficulty": 52,
+        "overall_rating": 90,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 68
     },
     {
         "course_name": "COMPSCI 532: Systems for Data Science",
@@ -496,13 +526,14 @@
         "professors": [
             "Hui Guan"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 66,
+        "number_ratings": 96,
+        "overall_difficulty": 100,
+        "overall_rating": 74,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 82
     },
     {
         "course_name": "COMPSCI 563: Internet Law and Policy",
@@ -512,13 +543,14 @@
         "professors": [
             "Marvin Cable"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 54,
+        "number_ratings": 61,
+        "overall_difficulty": 62,
+        "overall_rating": 99,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 64
     },
     {
         "course_name": "COMPSCI 576: Game Programming",
@@ -528,13 +560,14 @@
         "professors": [
             "Evangelos Kalogerakis"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 75,
+        "number_ratings": 58,
+        "overall_difficulty": 86,
+        "overall_rating": 80,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 55
     },
     {
         "course_name": "COMPSCI 589: Machine Learning",
@@ -545,13 +578,14 @@
             "Justin Domke",
             "Madalina Fiterau Brostean"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 83,
+        "number_ratings": 84,
+        "overall_difficulty": 56,
+        "overall_rating": 55,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 55
     },
     {
         "course_name": "COMPSCI 590CC: Cloud Computing",
@@ -561,13 +595,14 @@
         "professors": [
             "Arun Venkataramani"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 66,
+        "number_ratings": 98,
+        "overall_difficulty": 57,
+        "overall_rating": 77,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 95
     },
     {
         "course_name": "COMPSCI 590ED: Educational Data Mining and Learner Analytics",
@@ -578,13 +613,14 @@
             "Ivon Arroyo",
             "Shiting Lan"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 50,
+        "number_ratings": 93,
+        "overall_difficulty": 89,
+        "overall_rating": 73,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 72
     },
     {
         "course_name": "COMPSCI 590T: Algorithmic Fairness and Strategic Behavior",
@@ -594,13 +630,14 @@
         "professors": [
             "Yair Zick"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 64,
+        "number_ratings": 88,
+        "overall_difficulty": 77,
+        "overall_rating": 67,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 83
     },
     {
         "course_name": "COMPSCI 597N: Special Topics - Introduction to Computer and Network Security",
@@ -610,13 +647,14 @@
         "professors": [
             "Parviz Kermani"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 51,
+        "number_ratings": 96,
+        "overall_difficulty": 86,
+        "overall_rating": 78,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 84
     },
     {
         "course_name": "COMPSCI 611: Advanced Algorithms",
@@ -626,13 +664,14 @@
         "professors": [
             "Hung Le"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 64,
+        "number_ratings": 64,
+        "overall_difficulty": 69,
+        "overall_rating": 56,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 57
     },
     {
         "course_name": "COMPSCI 613: Advanced Logic in Computer Science",
@@ -642,13 +681,14 @@
         "professors": [
             "Neil Immerman"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 79,
+        "number_ratings": 87,
+        "overall_difficulty": 54,
+        "overall_rating": 57,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 52
     },
     {
         "course_name": "COMPSCI 646: Information Retrieval",
@@ -658,13 +698,14 @@
         "professors": [
             "Hamed Zamani"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 53,
+        "number_ratings": 99,
+        "overall_difficulty": 91,
+        "overall_rating": 69,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 100
     },
     {
         "course_name": "COMPSCI 661: Secure Distributed Systems",
@@ -674,13 +715,14 @@
         "professors": [
             "Gregory Stone"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 83,
+        "number_ratings": 84,
+        "overall_difficulty": 98,
+        "overall_rating": 60,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 51
     },
     {
         "course_name": "COMPSCI 682: Neural Networks: A Modern Introduction",
@@ -690,13 +732,14 @@
         "professors": [
             "Erik Learned-Miller"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 58,
+        "number_ratings": 68,
+        "overall_difficulty": 79,
+        "overall_rating": 99,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 79
     },
     {
         "course_name": "COMPSCI 685: Advanced Natural Language Processing",
@@ -706,13 +749,14 @@
         "professors": [
             "Mohit Iyyer"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 70,
+        "number_ratings": 54,
+        "overall_difficulty": 74,
+        "overall_rating": 81,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 89
     },
     {
         "course_name": "COMPSCI 687: Reinforcement Learning",
@@ -722,13 +766,14 @@
         "professors": [
             "Bruno Castro da Silva"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 64,
+        "number_ratings": 90,
+        "overall_difficulty": 85,
+        "overall_rating": 53,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 51
     },
     {
         "course_name": "COMPSCI 689: Machine Learning",
@@ -738,13 +783,14 @@
         "professors": [
             "Benjamin Marlin"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 79,
+        "number_ratings": 77,
+        "overall_difficulty": 80,
+        "overall_rating": 92,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 57
     },
     {
         "course_name": "COMPSCI 690Q: Quantum Information Systems",
@@ -754,13 +800,14 @@
         "professors": [
             "Donald Towsley"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 73,
+        "number_ratings": 81,
+        "overall_difficulty": 95,
+        "overall_rating": 63,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 90
     },
     {
         "course_name": "COMPSCI 691DD: Seminar - Research Methods in Empirical Computer Science",
@@ -770,13 +817,14 @@
         "professors": [
             "David Jensen"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 94,
+        "number_ratings": 62,
+        "overall_difficulty": 86,
+        "overall_rating": 59,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 83
     },
     {
         "course_name": "COMPSCI 692C: Seminar - Equitable and Explainable Artificial Intelligence",
@@ -786,13 +834,14 @@
         "professors": [
             "Przemyslaw Adam Grabowicz"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 52,
+        "number_ratings": 84,
+        "overall_difficulty": 95,
+        "overall_rating": 56,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 61
     },
     {
         "course_name": "COMPSCI 692N: Seminar - Novel Computational Hardware and Machine Learning",
@@ -802,13 +851,14 @@
         "professors": [
             "Edward Rietman"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 53,
+        "number_ratings": 75,
+        "overall_difficulty": 93,
+        "overall_rating": 60,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 61
     },
     {
         "course_name": "COMPSCI 698W: Practicum - CS Research Writing Practicum",
@@ -818,13 +868,14 @@
         "professors": [
             "Justin Obara"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 66,
+        "number_ratings": 85,
+        "overall_difficulty": 93,
+        "overall_rating": 80,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 78
     },
     {
         "course_name": "COMPSCI 741: Complexity Theory",
@@ -834,13 +885,14 @@
         "professors": [
             "David Barrington"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 76,
+        "number_ratings": 88,
+        "overall_difficulty": 74,
+        "overall_rating": 79,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 50
     },
     {
         "course_name": "COMPSCI 879: Teaching Assistants as Tomorrow's Faculty",
@@ -850,13 +902,14 @@
         "professors": [
             "Neena Thota"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 64,
+        "number_ratings": 91,
+        "overall_difficulty": 60,
+        "overall_rating": 68,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 64
     },
     {
         "course_name": "COMPSCI 891M: Seminar - Theory of Computation",
@@ -866,12 +919,13 @@
         "professors": [
             "Cameron Musco"
         ],
-        "number_reviews": 0,
-        "number_ratings": 0,
-        "overall_difficulty": 0,
-        "overall_rating": 0,
+        "number_reviews": 94,
+        "number_ratings": 55,
+        "overall_difficulty": 52,
+        "overall_rating": 93,
         "course_criteria": [
             "400+"
-        ]
+        ],
+        "enjoyed_course": 74
     }
 ]
