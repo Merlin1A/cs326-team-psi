@@ -194,6 +194,7 @@ function populateCourses(courses) {
                       </div>
                     </div>
                     <p class="rating-cat">Overall Rating</p>
+                  </div>
                 </div>
                 <div class = "btn-toolbar justify-content-between">
                   <div class = "badge">
