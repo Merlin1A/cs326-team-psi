@@ -153,7 +153,7 @@ function populateCourses(courses) {
                     </div>
                   </div>
                 </div>
-                <div class="col-2 justify-content-end">
+                <div class="col-2">
                   <div class="badges-bar"> 
                     <h6>
                     Metrics based on <h4><span class="badge badge-warning">${course['number_ratings']} ratings</span></h4>
@@ -164,7 +164,7 @@ function populateCourses(courses) {
                     </h6>
                   </div>
                 </div>
-                <div class="col-2 justify-content-end">
+                <div class="col-2">
                   <div class="progress-circle">
                     <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
                       <span class="progress-left">
@@ -180,7 +180,7 @@ function populateCourses(courses) {
                     <p class="rating-cat">Enjoyed material</p>
                   </div>
                 </div>
-                <div class="col-2 justify-content-end">
+                <div class="col-2">
                   <div class="progress-circle">
                     <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
                       <span class="progress-left">
@@ -212,7 +212,7 @@ function populateCourses(courses) {
                           Rate or review this class 
                         </a>
                 </div>
-                <div class="col-2 justify-content-end">
+                <div class="col-2">
                   <div class="progress-circle">
                     <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
                       <span class="progress-left">
