@@ -166,18 +166,34 @@ function populateCourses(courses) {
                 </div>
                 <div class="col-2">
                   <div class="progress-circle">
-                    <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
+                    <div class="progress mx-auto justify-content-end" data-value='${course['enjoyed_course']}'>
                       <span class="progress-left">
-                        <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
+                        <span class="progress-bar ${getProgressColor(course['enjoyed_course'])}"></span>
                       </span>
                       <span class="progress-right">
-                        <span class="progress-bar ${getProgressColor(course['overall_rating'])}"></span>
+                        <span class="progress-bar ${getProgressColor(course['enjoyed_course'])}"></span>
                       </span>
                       <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                        <div class="h3 font-weight-bold">${course['overall_rating']}%</div>
+                        <div class="h3 font-weight-bold">${course['enjoyed_course']}%</div>
                       </div>
                     </div>
-                    <p class="rating-cat">Enjoyed material</p>
+                    <p class="rating-cat">Enjoyed course</p>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="progress-circle">
+                    <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
+                      <span class="progress-left">
+                        <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
+                      </span>
+                      <span class="progress-right">
+                        <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
+                      </span>
+                      <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="h3 font-weight-bold">${course['overall_difficulty']}%</div>
+                      </div>
+                    </div>
+                    <p class="rating-cat">Overall Difficulty</p>
                   </div>
                 </div>
                 <div class="col-2">
@@ -196,7 +212,7 @@ function populateCourses(courses) {
                     <p class="rating-cat">Overall Rating</p>
                   </div>
                 </div>
-                
+
                     <div id="${"collapse" + String(course_id)}" class="collapse">
                       <div class="card-body">
                         <div class="card-header">Course Description</div>
