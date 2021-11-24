@@ -195,22 +195,6 @@ function populateCourses(courses) {
                     </div>
                     <p class="rating-cat">Overall Rating</p>
                 </div>
-                <div class="col-2">
-                  <div class="progress-circle">
-                    <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
-                      <span class="progress-left">
-                        <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
-                      </span>
-                      <span class="progress-right">
-                        <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
-                      </span>
-                      <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-                        <div class="h3 font-weight-bold">${course['overall_difficulty']}%</div>
-                      </div>
-                    </div>
-                    <p class="rating-cat">Overall Difficulty</p>
-                  </div>
-                </div>
                 <div class = "btn-toolbar justify-content-between">
                   <div class = "badge">
                     <button type="button" class="btn btn-info">
