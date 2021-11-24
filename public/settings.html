@@ -38,28 +38,19 @@
         <div class="card border-dark card rounded-lg w-50 shadow text-center">
             <div class="card-body">
             <h5 class="card-title">Account settings</h5> <br>
+            <h7>Email Address:</h7> 
+            <h7 id="user_email"></h7>
+            <form action="/account/password" method="post">
+                <br>
+                <div class="form-group">
+                  <label>Update your password</label>
+                  <input class="form-control" name="password" aria-describedby="new-password" placeholder="New password"><br>
+                </div>
+                <button type="submit" class="btn btn-primary">change password</button>
+            </form>
             <form>
-                <div class="form-group">
-                <label>Update your email</label>
-                <input class="form-control" id="new-email"
-                aria-describedby="new-email" placeholder="New email"><br>
-                <input class="form-control" id="confirm-email"
-                aria-describedby="confirm-email" placeholder="Confirm email">
-                </div>
-                <button type="submit" class="btn btn-secondary">change email</button> 
-                <br><br><br>
-                <div class="form-group">
-                    <label>Update your password</label>
-                <input class="form-control" id="new-password"
-                aria-describedby="new-password" placeholder="New password"><br>
-                <input class="form-control" id="confirm-password"
-                aria-describedby="confirm-password" placeholder="Confirm password">
-                </div>
-                <button type="submit" class="btn btn-secondary">change password</button>
-                <br><br>
-                <hr>
-                <button type="submit" class="btn btn-primary">confirm changes</button>
-                <button type="submit" class="btn btn-danger">delete account</button>
+              <hr>
+              <button type="submit" class="btn btn-danger">delete account</button>
             </form>
             </div>
         </div>
@@ -68,8 +59,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="render_account.js"></script>
   </body>
 </html>
