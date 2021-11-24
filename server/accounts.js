@@ -82,7 +82,7 @@ export async function findUser(username) {
  * @param {string} password
  * @returns Nothing currently
  */
-export async function addUser(useername, password) {
+export async function addUser(username, password) {
     const client = new MongoClient(uri);
 
     try {
@@ -90,6 +90,12 @@ export async function addUser(useername, password) {
 
         const database = client.db("accounts");
         const users = database.collection("info");
+
+        const isDuplicate = await findUser(username);
+        if(isDuplicate){
+            return;
+            // IMPLEMENT ^
+        }
 
         const user = { username: username, password: password };
         await users.insertOne(user);
