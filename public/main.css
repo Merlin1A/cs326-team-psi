@@ -133,3 +133,15 @@
 .filters_nav{
   margin-left: 25vw;
 }
+
+.badges-bar h5,
+.badge.btn{
+  display:inline-block;
+}
+
+.progress-circle{
+  float:right;
+  text-align:center;
+  margin: auto;
+}
+
