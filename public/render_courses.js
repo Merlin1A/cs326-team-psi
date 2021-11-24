@@ -86,12 +86,12 @@ function downVote(id) {
 
 
 function populateReviews(data) {
-  if (data.hasOwnProperty('reviews') && data.hasOwnProperty('course_code')) {
-    const reviews_id = document.getElementById(data['course_code']);
-    reviews_id.innerHTML = ''; const reviews = data['reviews'];
+  if (data.length > 0) {
+    const reviews_id = document.getElementById(data[0]['course_code']);
+    reviews_id.innerHTML = ''; 
     const courseCode = data['course_code'];
 
-    reviews.forEach(function (review) {
+    data.forEach(function (review) {
       let rid = review['uid'];
       reviews_id.innerHTML += `<div class="card">
       <div class="card-header"></div>
@@ -296,8 +296,8 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-//const websiteName = 'http://localhost:3000/';
+//const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
