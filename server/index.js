@@ -149,14 +149,14 @@ app.post('/course/review/new', (req, res) => {
     let hash = createHash('sha256');
     const rev = {};
     hash.update(req.user);
-    rev["course_code"] = req.body.coursecode;
+    rev["course_code"] = req.query.coursecode;
     const user_id = hash.digest('hex');
     rev["user_id"] = user_id;
     hash = createHash('sha256');
     const random_data = genHexString(32);
     hash.update(random_data);
     rev["uid"] = hash.digest('hex');
-    rev["comment"] = req.body.comment;
+    rev["comment"] = req.query.comment;
     rev["upvotes"] = 0;
     rev["downvotes"] = 0;
     const voted_obj = {};

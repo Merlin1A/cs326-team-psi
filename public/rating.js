@@ -1,3 +1,21 @@
+const websiteName = 'https://courseoverflow.herokuapp.com/';
+//const websiteName = 'http://localhost:3000/';
+
+function postReview(coursecode, comment) {
+  $.post(websiteName + "course/review/new?comment=" + String(comment) + "&coursecode=" + String(coursecode));
+}
+
+window.onload = () => {
+let course_name = window.localStorage.getItem('course');
+document.getElementById("name").innerText = course_name.substring(1,course_name.length-1);
+document.getElementById("name2").innerText = "Write a review for " + course_name.substring(1,course_name.length-1);
+};
+document.getElementById("review-submit").addEventListener('click', () => {
+    const review = document.getElementById('enter-review').value;
+    const coursecode = window.localStorage.getItem('coursecode');
+    postReview(coursecode.substring(1,coursecode.length-1), review);
+});
+
 function validateRating(){
     let firstYes = document.getElementById("yes-ans");
     let secYes = document.getElementById("yes-ans-1");

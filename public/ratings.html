@@ -35,10 +35,9 @@
     </div>
     <div id="ratings">
       <div class="container">
-        <h3>Rate</h3> <br>
+          <h3 id="name">Rate</h3> <br>
         <form>
             <div class="form-group">
-                <h5 id ="name"></h5>
                 <h5>Would you take this course again?</h5>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="question-one" id="yes-ans" value="yes-ans">
@@ -103,7 +102,7 @@
           <button type="submit" class="btn btn-primary mb-3" id="rating-submit">Submit rating</button>
         </div>
         <br> <hr> <br>
-        <h3>Write a review for *insert course name*</h3> <br>
+        <h3 id="name2"></h3> <br>
         <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a review here" id="enter-review"></textarea>
         </div>
@@ -115,13 +114,9 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="rating.js"></script>
-    <script>
-        let course_name = localStorage.getItem('course');
-        document.getElementById("name").value = course_name;
-    </script>
   </body>
 </html>

@@ -47,6 +47,12 @@ function getCourseCodeReviews(course) {
   return course.substring(0, underscore_index);
 }
 
+function setStorage(courseName) {
+    console.log("here");
+    window.localStorage.setItem('course', JSON.stringify(courseName));
+    window.localStorage.setItem('coursecode', JSON.stringify(getCourseCode(courseName)));
+}
+
 function upVote(id) {
   const params = id.split('_');
   postVote(params[0], params[1], params[2]);
@@ -82,8 +88,7 @@ function downVote(id) {
 function populateReviews(data) {
   if (data.hasOwnProperty('reviews') && data.hasOwnProperty('course_code')) {
     const reviews_id = document.getElementById(data['course_code']);
-    reviews_id.innerHTML = '';
-    const reviews = data['reviews'];
+    reviews_id.innerHTML = ''; const reviews = data['reviews'];
     const courseCode = data['course_code'];
 
     reviews.forEach(function (review) {
@@ -145,10 +150,10 @@ function populateCourses(courses) {
                   <p class="card-text">Taught by: ${formatProfessors(course['professors'])}</p>
                   <div class = "btn-toolbar card-main">
                     <div class = "badge">
-                      <a onclick="getReviews(this.id.substring(0, 5))" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
+                      <a onclick="getReviews(this.id.substring(0, 5))" class="btn btn-primary" id="${getCourseCode(course.course_name) + "_details"}" data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
                         Click to see more
                       </a>
-                      <a class="btn btn-warning" id="rate${course_id}" href="ratings.html">
+                      <a onclick="setStorage('${course.course_name}')" class="btn btn-warning" id="rate${String(course_id)}" href="ratings.html">
                         Rate or review this class 
                       </a>
                     </div>
@@ -261,10 +266,6 @@ function populateCourses(courses) {
               </div>
             </div>
         </div>`;
-      document.getElementById("rate"+course_id).addEventListener('click',() =>{
-        const course_name = course['course_name'];
-        window.localStorage.setItem('course', JSON.stringify(course_name));
-      });
       course_id += 1;
     });
   $(function () {
@@ -295,8 +296,8 @@ function populateCourses(courses) {
   });
 }
 
-// const websiteName = 'https://courseoverflow.herokuapp.com/';
-const websiteName = 'http://localhost:3000/';
+const websiteName = 'https://courseoverflow.herokuapp.com/';
+//const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
