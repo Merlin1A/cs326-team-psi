@@ -100,7 +100,7 @@ app.get('/account/user', (req, res) => {
   res.send(JSON.stringify(req.user));
 });
 
-app.post('account/password', checkLoggedIn, (req, res) => {
+app.post('/account/password', checkLoggedIn, (req, res) => {
   const newPass = req.body.password;
   const user = req.user;
   
