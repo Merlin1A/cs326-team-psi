@@ -7,7 +7,7 @@ function formatProfessors(profarr) {
       ++count;
     }
   });
-  return ans.slice(0,ans.length-2);
+  return ans.slice(0, ans.length - 2);
 }
 
 function getProgressColor(progress) {
@@ -25,53 +25,53 @@ function getProgressColor(progress) {
   }
 }
 
-function getCourseCode(course){
+function getCourseCode(course) {
   if (!course.includes(' ')) {
     return course;
   }
-  return course.substring(0, 6).replace(/\s/g,'').toLowerCase();
+  return course.substring(0, 6).replace(/\s/g, '').toLowerCase();
 }
 
-function upVote(id){
+function upVote(id) {
   const params = id.split('_');
   postVote(params[0], params[1], params[2]);
   const button = document.getElementById(id);
 
-  if(button.children[0].classList.contains('thumbs-up')){
+  if (button.children[0].classList.contains('thumbs-up')) {
     button.children[0].classList.remove('thumbs-up');
     button.children[0].classList.add('thumbs-up-clicked');
   }
-  else{
+  else {
     button.children[0].classList.remove('thumbs-up-clicked');
     button.children[0].classList.add('thumbs-up');
   }
 }
 
-function downVote(id){
+function downVote(id) {
   const params = id.split('_');
   postVote(params[0], params[1], params[2]);
 
   const button = document.getElementById(id);
 
-  if(button.children[0].classList.contains('thumbs-down')){
+  if (button.children[0].classList.contains('thumbs-down')) {
     button.children[0].classList.remove('thumbs-down');
     button.children[0].classList.add('thumbs-down-clicked');
   }
-  else{
+  else {
     button.children[0].classList.remove('thumbs-down-clicked');
     button.children[0].classList.add('thumbs-down');
   }
 }
 
 
-function populateReviews(data){
-  if (data.hasOwnProperty('reviews') && data.hasOwnProperty('course_code')){
+function populateReviews(data) {
+  if (data.hasOwnProperty('reviews') && data.hasOwnProperty('course_code')) {
     const reviews_id = document.getElementById(data['course_code']);
     reviews_id.innerHTML = '';
     const reviews = data['reviews'];
     const courseCode = data['course_code'];
 
-    reviews.forEach(function(review){
+    reviews.forEach(function (review) {
       let rid = review['uid'];
       reviews_id.innerHTML += `<div class="card">
       <div class="card-header"></div>
@@ -97,7 +97,7 @@ function populateReviews(data){
 
 function getCourseCriteria(criteriaArr) {
   let ans = ''
-  criteriaArr.forEach(function(criteria) {
+  criteriaArr.forEach(function (criteria) {
     if (criteria === "IE") {
       ans += '<span class="badge badge-warning">IE</span> ';
     }
@@ -115,13 +115,13 @@ function getCourseCriteria(criteriaArr) {
 }
 
 function populateCourses(data) {
-    if (data.hasOwnProperty('course_array')) {
-        const ranking = document.getElementById('ranking');
-        ranking.innerHTML = '';
-        const courses = data['course_array'];
-        let course_id = 1;
-        courses.forEach(function(course) {
-            ranking.innerHTML += `<div class="ranking">
+  if (data.hasOwnProperty('course_array')) {
+    const ranking = document.getElementById('ranking');
+    ranking.innerHTML = '';
+    const courses = data['course_array'];
+    let course_id = 1;
+    courses.forEach(function (course) {
+      ranking.innerHTML += `<div class="ranking">
             <div class="col d-flex justify-content-center mb-2">
               <div class="card rounded-lg w-100 shadow">
                 <div class="card-body">
@@ -248,50 +248,50 @@ function populateCourses(data) {
               </div>
             </div>
         </div>`;
-        course_id += 1;
-        });
-    }
-    $(function() {                                                                                       
+      course_id += 1;
+    });
+  }
+  $(function () {
 
-      $(".progress").each(function() {
-    
-        let value = $(this).attr('data-value');
-        let left = $(this).find('.progress-left .progress-bar');
-        let right = $(this).find('.progress-right .progress-bar');
-    
-        if (value > 0) {
-          if (value <= 50) {
-            right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-          } else {
-            right.css('transform', 'rotate(180deg)')
-            left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-          }   
-        }   
-    
-      })  
-    
-      function percentageToDegrees(percentage) {
-    
-        return percentage / 100 * 360 
-    
+    $(".progress").each(function () {
+
+      let value = $(this).attr('data-value');
+      let left = $(this).find('.progress-left .progress-bar');
+      let right = $(this).find('.progress-right .progress-bar');
+
+      if (value > 0) {
+        if (value <= 50) {
+          right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+        } else {
+          right.css('transform', 'rotate(180deg)')
+          left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+        }
       }
-    
-    });    
+
+    })
+
+    function percentageToDegrees(percentage) {
+
+      return percentage / 100 * 360
+
+    }
+
+  });
 }
 
 // const websiteName = 'https://courseoverflow.herokuapp.com/';
 const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
-  $.getJSON(websiteName + "courses", function(data) {populateCourses(data);});
+  $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
 }
 
-function getReviews(id){
-  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCode(id), function(data) {populateReviews(data);});
+function getReviews(id) {
+  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCode(id), function (data) { populateReviews(data); });
 }
 
 function postVote(courseName, rid, vote) {
-  $.post(websiteName + "course/review/vote?vote=" + vote + "&rid=" + String(rid) + "&coursecode=" + getCourseCode(courseName), function( data ) {
+  $.post(websiteName + "course/review/vote?vote=" + vote + "&rid=" + String(rid) + "&coursecode=" + getCourseCode(courseName), function (data) {
     getReviews(courseName);
   });
 }

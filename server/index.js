@@ -1,7 +1,15 @@
 'use strict';
+
 import * as http from 'http';
 import * as fs from 'fs';
 import express from 'express';
+import passport from 'passport';
+import expressSession from 'express-session';
+import { Strategy as LocalStrategy } from 'passport-local';
+import { MongoClient } from 'mongodb';
+
+import { authStrat, validatePassword, findUser } from './accounts.js';
+
 
 const JSONfile = './persistent.json';
 const jsonCourses = './server/courses.json';
@@ -9,28 +17,6 @@ const PORT = process.env.PORT || 3000;
 const headerText = { 'Content-Type': 'application/json;charset=utf-8' };
 const app = express();
 let memory = {};
-
-// Test MongoDB
-// import { MongoClient } from "mongodb";
-// const uri = process.env.MONGODB_URI;
-// const client = new MongoClient(uri);
-
-// async function run() {
-//   try {
-//     await client.connect();
-//     const database = client.db("sample_mflix");
-//     const movies = database.collection("movies");
-//     const query = { title: "Blacksmith Scene" };
-
-//     const movie = await movies.findOne(query);
-//     // since this method returns the matched document, not a cursor, print it directly
-//     console.log(movie);
-//   } finally {
-//     await client.close();
-//   }
-// }
-// run().catch(console.dir);
-// // Test MongoDB
 
 function reload(filename) {
   if (fs.existsSync(filename)) {
@@ -43,32 +29,68 @@ function reload(filename) {
 
 reload(JSONfile);
 app.use(express.json()); // lets you handle JSON input
+app.use(express.urlencoded({ 'extended': true })); // allow URLencoded data
 
 app.use('/', express.static('./public/'));
 
-app.get('/account', (req, res) => {
-  // TODO
-  res.send()
+// PASSPORT CODE
+// --------------------------
+const session = {
+  secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
+  resave: false,
+  saveUninitialized: false
+};
+
+app.use(expressSession(session));
+passport.use(authStrat);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Convert user object to a unique identifier.
+passport.serializeUser((user, done) => {
+  done(null, user);
 });
 
-app.get('/account/login', (req, res) => {
+// Convert a unique identifier to a user object.
+passport.deserializeUser((uid, done) => {
+  done(null, uid);
+});
+
+app.route('/login')
+  .post(passport.authenticate('local', { failureRedirect: '/login' }),
+    function (req, res) {
+      res.redirect('/');
+    }
+  )
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/login.html');
+  });
+
+app.route('/logout')
+  .get((req, res) => {
+    req.logout();
+    res.redirect('/login');
+  });
+// -------------------------------
+
+app.get('/account', (req, res) => {
   // TODO
-  res.send()
+  res.send();
 });
 
 app.post('/account/update', (req, res) => {
   // TODO
-  res.send()
+  res.send();
 });
 
 app.post('/account/delete', (req, res) => {
   // TODO
-  res.send()
+  res.send();
 });
 
 app.post('/account/create', (req, res) => {
   // TODO
-  res.send()
+  res.send();
 });
 
 app.get('/courses', (req, res) => {
