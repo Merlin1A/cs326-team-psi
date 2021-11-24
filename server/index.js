@@ -30,7 +30,7 @@ function reload(filename) {
 }
 
 const asyncMiddleware = fn => (req, res, next) => {
-    Promise.resolve(fn(req, res, next)).catch(next);
+  Promise.resolve(fn(req, res, next)).catch(next);
 }
 
 reload(JSONfile);
@@ -63,11 +63,10 @@ passport.deserializeUser((uid, done) => {
 });
 
 app.route('/login')
-  .post(passport.authenticate('local', { failureRedirect: '/login' }),
-    function (req, res) {
-      res.redirect('/');
-    }
-  )
+  .post(passport.authenticate('local', {
+    'successRedirect': '/',
+    'failureRedirect': '/login'
+  }))
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/login.html');
   });
@@ -100,12 +99,12 @@ app.post('/account/create', (req, res) => {
 });
 
 app.get('/courses', asyncMiddleware(async (req, res, next) => {
-    /*
-      if there is an error thrown in getUserFromDb, asyncMiddleware
-      will pass it to next() and express will handle the error;
-    */
-    const courses = await fetchCourses(); 
-    res.send(JSON.stringify(courses));
+  /*
+    if there is an error thrown in getUserFromDb, asyncMiddleware
+    will pass it to next() and express will handle the error;
+  */
+  const courses = await fetchCourses();
+  res.send(JSON.stringify(courses));
 }));
 
 app.get('/course/reviews', asyncMiddleware(async (req, res, next) => {
