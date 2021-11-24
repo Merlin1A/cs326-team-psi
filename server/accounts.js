@@ -13,7 +13,7 @@ export const authStrat = new LocalStrategy(
             await new Promise((r) => setTimeout(r, 2000)); // two second delay
             return done(null, false, { 'message': 'Wrong password or Username' });
         }
-    
+
         // should create a user object here, associated with a unique identifier
         return done(null, username);
     });
@@ -95,6 +95,19 @@ export async function addUser(name, password) {
         await users.insertOne(user);
     } finally {
         await client.close();
+    }
+}
+
+
+// Routing middleware functions
+
+export function checkLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        // If we are authenticated, run the next route.
+        next();
+    } else {
+        // Otherwise, redirect to the login page.
+        res.redirect('/login');
     }
 }
 
