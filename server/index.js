@@ -9,7 +9,7 @@ import expressSession from 'express-session';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { MongoClient } from 'mongodb';
 
-import { authStrat, validatePassword, findUser, changePass, checkLoggedIn } from './accounts.js';
+import { authStrat, validatePassword, findUser, addUser, changePass, checkLoggedIn, checkEmail } from './accounts.js';
 import { fetchCourses } from './courses.js';
 import { fetchReviews, insertReview } from './reviews.js';
 
@@ -49,8 +49,7 @@ app.use(express.urlencoded({ 'extended': true })); // allow URLencoded data
 
 app.use('/', express.static('./public/'));
 
-// PASSPORT CODE
-// --------------------------
+
 const session = {
   secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
   resave: false,
@@ -86,7 +85,6 @@ app.route('/logout')
     req.logout();
     res.redirect('/login');
   });
-// -------------------------------
 
 app.route('/account')
   .get(checkLoggedIn, (req, res) => {
@@ -94,6 +92,19 @@ app.route('/account')
   })
   .post((req, res) => {
     res.send();
+  });
+
+app.route('/register')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/createacc.html');
+  })
+  .post(checkEmail, (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
+  
+    addUser(username, password);
+  
+    res.redirect('/login');
   });
 
 app.get('/account/user', (req, res) => {

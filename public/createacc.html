@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
           <li class="nav-item active">
-          <a class="nav-link" href="index.html">Course Overflow <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/">Course Overflow <span class="sr-only">(current)</span></a>
           </li>
       </ul>
       </div>
@@ -30,27 +30,19 @@
             <div class="card border-dark card rounded-lg w-50 shadow text-center">
               <div class="card-body">
                 <h5 class="card-title">Create your account</h5> <br>
-                <form>
+                <form action="/register" method="post">>
                   <div class="form-group">
                     <label for="email">Enter your email (must be a valid umass email)</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <input type="email" name='username' class="form-control" id="email" aria-describedby="emailHelp">
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                   <div class="form-group">
                     <label for="name">Enter your name (first and last)</label>
-                    <input type="name" class="form-control" id="name">
-                  </div>
-                  <div class="form-group">
-                    <label for="username">Create an username</label>
-                    <input type="username" class="form-control" id="username">
+                    <input type="name" name="name" class="form-control" id="name">
                   </div>
                   <div class="form-group">
                     <label for="password">Create a password</label>
-                    <input type="password" class="form-control" id="password">
-                  </div>
-                  <div class="form-group">
-                    <label for="retype-password">Confirm your password</label>
-                    <input type="retype-password" class="form-control" id="retype-password">
+                    <input type="password" name="password" class="form-control" id="password">
                   </div>
                   <button type="submit" class="btn btn-primary" id="sign-up">Sign up</button>
                 </form>
