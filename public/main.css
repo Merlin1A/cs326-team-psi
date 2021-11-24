@@ -145,3 +145,12 @@
   margin: auto;
 }
 
+
+.col-4.card-main{
+  position: relative;
+}
+
+.btn-toolbar.card-main{
+  position:absolute;
+  bottom: 0;
+}

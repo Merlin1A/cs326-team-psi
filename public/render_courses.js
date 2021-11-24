@@ -139,10 +139,10 @@ function populateCourses(courses) {
               <div class="card rounded-lg w-100 shadow">
                 <div class="card-body">
                   <div class="row">
-                  <div class="col-4">
+                  <div class="col-4 card-main">
                   <h5 class="card-title">${course['course_name']} ${getCourseCriteria(course['course_criteria'])}</h5>
                   <p class="card-text">Taught by: ${formatProfessors(course['professors'])}</p>
-                  <div class = "btn-toolbar">
+                  <div class = "btn-toolbar card-main">
                     <div class = "badge">
                       <a onclick="getReviews(this.id.substring(0, 5))" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
                         Click to see more
@@ -292,7 +292,7 @@ function populateCourses(courses) {
 }
 
 const websiteName = 'https://courseoverflow.herokuapp.com/';
-//const websiteName = 'http://localhost:3000/';
+// const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
