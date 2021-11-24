@@ -7,14 +7,13 @@ const uri = process.env.MONGODB_URI + 'accounts?retryWrites=true&w=majority';
 // Passport configuration
 export const authStrat = new LocalStrategy(
     async (username, password, done) => {
-        if (!findUser(username)) {
-            return done(null, false, { 'message': 'Wrong username' });
-        }
-        if (!validatePassword(username, password)) {
+        const validation = await validatePassword(username, password);
+
+        if (!validation) {
             await new Promise((r) => setTimeout(r, 2000)); // two second delay
-            return done(null, false, { 'message': 'Wrong password' });
+            return done(null, false, { 'message': 'Wrong password or Username' });
         }
-        // success!
+    
         // should create a user object here, associated with a unique identifier
         return done(null, username);
     });
@@ -98,6 +97,5 @@ export async function addUser(name, password) {
         await client.close();
     }
 }
-
 
 
