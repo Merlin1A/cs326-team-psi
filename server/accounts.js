@@ -82,7 +82,7 @@ export async function findUser(username) {
  * @param {string} password
  * @returns Nothing currently
  */
-export async function addUser(name, password) {
+export async function addUser(useername, password) {
     const client = new MongoClient(uri);
 
     try {
@@ -91,8 +91,33 @@ export async function addUser(name, password) {
         const database = client.db("accounts");
         const users = database.collection("info");
 
-        const user = { username: name, password: password };
+        const user = { username: username, password: password };
         await users.insertOne(user);
+    } finally {
+        await client.close();
+    }
+}
+
+
+/**
+ * This function attempts to change a user's password 
+ * @param {string} username 
+ * @param {string} newPass
+ * @returns Nothing currently
+ */
+export async function changePass(username, newPass) {
+    const client = new MongoClient(uri);
+    let user_account = null;
+
+    try {
+        await client.connect();
+
+        const database = client.db("accounts");
+        const users = database.collection("info");
+        const query = { 'username': username };
+        const updateArg = { $set: { 'password': newPass } };
+
+        user_account = await users.updateOne(query, updateArg);
     } finally {
         await client.close();
     }
