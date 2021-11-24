@@ -158,9 +158,8 @@ function populateCourses(courses) {
                     <h6>
                     Metrics based on <h4><span class="badge badge-warning">${course['number_ratings']} ratings</span></h4>
                     </h6>
-                    <br>
                     <h6>
-                    This course has <h4><span class="badge badge-warning">${course['number_reviews']} reviews</span></h4>
+                    as well as <h4><span class="badge badge-warning">${course['number_reviews']} reviews</span></h4>
                     </h6>
                   </div>
                 </div>

@@ -139,6 +139,10 @@
   display:inline-block;
 }
 
+.badges-bar{
+  text-align: center; 
+}
+
 .progress-circle{
   text-align:center;
   margin: auto;
