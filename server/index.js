@@ -10,6 +10,7 @@ import { MongoClient } from 'mongodb';
 
 import { authStrat, validatePassword, findUser } from './accounts.js';
 import { fetchCourses } from './courses.js';
+import { fetchReviews } from './reviews.js';
 
 
 const JSONfile = './persistent.json';
@@ -107,11 +108,16 @@ app.get('/courses', asyncMiddleware(async (req, res, next) => {
     res.send(JSON.stringify(courses));
 }));
 
-app.get('/course/reviews', (req, res) => {
-  const reviews = JSON.parse(fs.readFileSync('./server/reviews/' + req.query.coursecode + '.json'));
-  console.log(reviews);
-  res.send(JSON.stringify(reviews));
-});
+app.get('/course/reviews', asyncMiddleware(async (req, res, next) => {
+    /*
+      if there is an error thrown in getUserFromDb, asyncMiddleware
+      will pass it to next() and express will handle the error;
+    */
+    if (req.isAuthenticated()) {
+        const reviews = await fetchReviews(req.query.coursecode); 
+        res.send(JSON.stringify(reviews));
+    }
+}));
 
 app.post('/course/review/new', (req, res) => {
   // TODO
