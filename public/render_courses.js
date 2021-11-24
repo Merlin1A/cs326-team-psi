@@ -195,7 +195,6 @@ function populateCourses(courses) {
                     </div>
                     <p class="rating-cat">Overall Rating</p>
                   </div>
-<<<<<<< HEAD
                     <div class = "btn-toolbar justify-content-between">
                       <div class = "badge">
                         <button type="button" class="btn btn-info">
@@ -212,7 +211,6 @@ function populateCourses(courses) {
                         <a class="btn btn-warning" href="ratings.html">
                           Rate or review this class 
                         </a>
-=======
                 </div>
                 <div class="col-2 justify-content-end">
                   <div class="progress-circle">
@@ -225,7 +223,6 @@ function populateCourses(courses) {
                       </span>
                       <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
                         <div class="h3 font-weight-bold">${course['overall_difficulty']}%</div>
->>>>>>> da9bef56ca7e33bce9885b7bd90ce258ec4758d6
                       </div>
                     </div>
                     <p class="rating-cat">Overall Difficulty</p>
