@@ -2,6 +2,7 @@
 
 import * as http from 'http';
 import * as fs from 'fs';
+import { createHash } from 'crypto';
 import express from 'express';
 import passport from 'passport';
 import expressSession from 'express-session';
@@ -10,7 +11,7 @@ import { MongoClient } from 'mongodb';
 
 import { authStrat, validatePassword, findUser } from './accounts.js';
 import { fetchCourses } from './courses.js';
-import { fetchReviews } from './reviews.js';
+import { fetchReviews insertReview } from './reviews.js';
 
 
 const JSONfile = './persistent.json';
@@ -27,6 +28,15 @@ function reload(filename) {
   else {
     memory = {};
   }
+}
+
+function genHexString(len) {
+    const hex = '0123456789ABCDEF';
+    let output = '';
+    for (let i = 0; i < len; ++i) {
+        output += hex.charAt(Math.floor(Math.random() * hex.length));
+    }
+    return output;
 }
 
 const asyncMiddleware = fn => (req, res, next) => {
@@ -119,8 +129,25 @@ app.get('/course/reviews', asyncMiddleware(async (req, res, next) => {
 }));
 
 app.post('/course/review/new', (req, res) => {
-  // TODO
-  res.send()
+    if (req.isAuthenticated()) {
+        let hash = createHash('sha256');
+        const rev = {};
+        hash.update(req.user);
+        rev["course_code"] = req.body.coursecode;
+        const user_id = hash.digest('hex');
+        rev["user_id"] = user_id; 
+        hash = createHash('sha256');
+        const random_data = genHexString(32);
+        hash.update(random_data);
+        rev["uid"] = hash.digest('hex');
+        rev["comment"] = req.body.comment;
+        rev["upvotes"] = 0;
+        rev["downvotes"] = 0;
+        const voted_obj = {};
+        voted_obj[user_id] = null;
+        rev["voted"] = voted_obj;
+        insertReview(rev);
+    }
 });
 
 app.post('/course/review/vote', (req, res) => {
