@@ -9,6 +9,7 @@ import { Strategy as LocalStrategy } from 'passport-local';
 import { MongoClient } from 'mongodb';
 
 import { authStrat, validatePassword, findUser } from './accounts.js';
+import { fetchCourses } from './courses.js';
 
 
 const JSONfile = './persistent.json';
@@ -25,6 +26,10 @@ function reload(filename) {
   else {
     memory = {};
   }
+}
+
+const asyncMiddleware = fn => (req, res, next) => {
+    Promise.resolve(fn(req, res, next)).catch(next);
 }
 
 reload(JSONfile);
@@ -93,13 +98,18 @@ app.post('/account/create', (req, res) => {
   res.send();
 });
 
-app.get('/courses', (req, res) => {
-  const courses = JSON.parse(fs.readFileSync(jsonCourses));
-  res.send(JSON.stringify(courses));
-});
+app.get('/courses', asyncMiddleware(async (req, res, next) => {
+    /*
+      if there is an error thrown in getUserFromDb, asyncMiddleware
+      will pass it to next() and express will handle the error;
+    */
+    const courses = await fetchCourses(); 
+    res.send(JSON.stringify(courses));
+}));
 
 app.get('/course/reviews', (req, res) => {
   const reviews = JSON.parse(fs.readFileSync('./server/reviews/' + req.query.coursecode + '.json'));
+  console.log(reviews);
   res.send(JSON.stringify(reviews));
 });
 

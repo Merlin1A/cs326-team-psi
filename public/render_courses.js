@@ -26,10 +26,25 @@ function getProgressColor(progress) {
 }
 
 function getCourseCode(course) {
-  if (!course.includes(' ')) {
-    return course;
+  let colon_index = 0
+  for (let i = 8; i < course.length; ++i) {
+      if (course[i] === ':') {
+          colon_index = i;
+          break;
+      }
   }
-  return course.substring(0, 6).replace(/\s/g, '').toLowerCase();
+  return course.substring(8, colon_index);
+}
+
+function getCourseCodeReviews(course) {
+  let underscore_index = 0
+  for (let i = 0; i < course.length; ++i) {
+      if (course[i] === '_') {
+          underscore_index = i;
+          break;
+      }
+  }
+  return course.substring(0, underscore_index);
 }
 
 function upVote(id) {
@@ -114,11 +129,9 @@ function getCourseCriteria(criteriaArr) {
   return ans;
 }
 
-function populateCourses(data) {
-  if (data.hasOwnProperty('course_array')) {
+function populateCourses(courses) {
     const ranking = document.getElementById('ranking');
     ranking.innerHTML = '';
-    const courses = data['course_array'];
     let course_id = 1;
     courses.forEach(function (course) {
       ranking.innerHTML += `<div class="ranking">
@@ -154,7 +167,7 @@ function populateCourses(data) {
                           Reviews <span class="badge badge-light">${course['number_reviews']}</span>
                           <span class="sr-only">unread messages</span>
                         </button>
-                        <a onclick="getReviews(this.id.substring(0, 5))" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
+                        <a onclick="getReviews(this.id)" class="btn btn-primary" id=${getCourseCode(course.course_name) + "_details"} data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
                           Click to see more
                         </a>
                         <a class="btn btn-warning" href="ratings.html">
@@ -212,7 +225,6 @@ function populateCourses(data) {
         </div>`;
       course_id += 1;
     });
-  }
   $(function () {
 
     $(".progress").each(function () {
@@ -242,14 +254,14 @@ function populateCourses(data) {
 }
 
 const websiteName = 'https://courseoverflow.herokuapp.com/';
-// const websiteName = 'http://localhost:3000/';
+//const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
 }
 
 function getReviews(id) {
-  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCode(id), function (data) { populateReviews(data); });
+  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCodeReviews(id), function (data) { populateReviews(data); });
 }
 
 function postVote(courseName, rid, vote) {
