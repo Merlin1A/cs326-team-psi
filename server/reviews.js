@@ -1,6 +1,14 @@
 import { MongoClient } from 'mongodb';
 
-const uri = 'mongodb+srv://test:2Ee0imteS0qY2jJX@courseoverflow.gx0fa.mongodb.net/accounts?retryWrites=true&w=majority';
+let uri;
+let secrets;
+if (!process.env.MONGODB_URI) {
+    secrets = require('secrets.json');
+    uri = secrets.uri + 'accounts?retryWrites=true&w=majority';
+}
+else {
+    uri = process.env.MONDODB_URI + 'accounts?retryWrites=true&w=majority';
+}
 
 export async function fetchReviews(coursecode) {
     const client = new MongoClient(uri);
