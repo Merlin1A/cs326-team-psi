@@ -19,21 +19,28 @@ insert labor
 
 ## Part 1: Database Implementation
 
-##### Collections: info
+### Database: account
+The account database has the collection info which stores user information such as the user's username(verified umass email) and password. 
+
+##### Collection: info
 * info document <br />
 { <br />
-  "_id": \<ObjectId1>\,<br />
-  "username": String, //username for user<br />
+  "_id": \<ObjectId1>\, <br />
+  "username": String, //email for user <br />
   "password": String, //password for user <br />
 }
 
-##### Collections: courses
+
+### Database: course
+The course database has two collections: courses and reviews. The courses collection contains information on the course as well as metrics for the course. The reviews collection holds information on each review for each course. 
+
+##### Collection: courses
 *  courses document <br />
 { <br />
   "_id": \<ObjectId1>\,<br />
-  "course_name": String, //the name of course<br />
+  "course_name": String, //the name of course <br />
   "course_description": String, //description for course <br />
-  "credits": Number, //the number of credits for course<br />
+  "credits": Number, //the number of credits for course <br />
   "course_homepage": String, //url of course homepage <br />
   "professors": String[], //professors for course <br />
   "number_reviews": Integer, //number of reviews for course <br />
@@ -44,16 +51,17 @@ insert labor
   "enjoyed_course": Integer, //percentage of enjoyment for course <br />
 }
 
+##### Collection: reviews
 * reviews document <br />
 { <br />
   "_id": \<ObjectId1>\,<br />
   "course_code": Integer, //the number associated with course<br />
   "user_id": String, //unique hash for each user <br />
   "uid": String, //unique hash for each review <br />
-  "comment": String, //review written by user<br />
-  "upvotes": Integer, //number of upvotes<br />
+  "comment": String, //review written by user <br />
+  "upvotes": Integer, //number of upvotes <br />
   "downvotes": Integer, //number of downvotes <br />
-  "voted": \<ObjectVote>\, //hash for declaring whether review has been voted on <br />
+  "voted": \<ObjectVote>\, //keep track of which users have voted <br />
 }
 
 
