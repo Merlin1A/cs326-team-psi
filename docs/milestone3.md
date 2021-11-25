@@ -13,7 +13,7 @@ Appication Name: *Course Overflow*
 * [Jesse Brookins](https://github.com/Merlin1A)
 Configured MongoDB. Wrote a large portion of the authentication code including the passport configuration, log in functionality, creating accounts, and deleting accounts as well as a couple middleware functions. Created authenticated routing to the user's account page and implemented a few api endpoints.
 * [Johno Pomerat](https://github.com/sperek27)
-insert labor
+Designed new data schema for mongo, wrote a script to scrape course data from UMass website to populate mongo, connected the frontend to the backend by writing both client-side and server-side code to handle the interactions. Implemented all of the course-related interactions between client and server. Redesigned a couple pages in the frontend to work better with the data in the backend. 
 * [Lynn Li](https://github.com/lynnli0)
 Refined the front-end code and adjusted layouts, such as course cards and additional metrics for each course. Implemented API endpoint to allow users to update their password as well as implementing password alteration functionality between the database and website.  
 
