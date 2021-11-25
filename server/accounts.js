@@ -11,7 +11,7 @@ if (!process.env.MONGODB_URI) {
     uri = secrets.uri + 'accounts?retryWrites=true&w=majority';
 }
 else {
-    uri = process.env.MONDODB_URI + 'accounts?retryWrites=true&w=majority';
+    uri = process.env.MONGODB_URI + 'accounts?retryWrites=true&w=majority';
 }
 
 // Passport configuration
