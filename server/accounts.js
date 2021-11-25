@@ -1,11 +1,14 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local'
 import { MongoClient } from 'mongodb';
-
+import { createRequire } from 'module';
+ 
+const require = createRequire(import.meta.url);
 let uri;
 let secrets;
+secrets = require('./secrets.json');
 if (!process.env.MONGODB_URI) {
-    secrets = require('secrets.json');
+    secrets = require('./secrets.json');
     uri = secrets.uri + 'accounts?retryWrites=true&w=majority';
 }
 else {
