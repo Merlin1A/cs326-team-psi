@@ -5,6 +5,10 @@ function postReview(coursecode, comment) {
   $.post(websiteName + "course/review/new?comment=" + String(comment) + "&coursecode=" + String(coursecode));
 }
 
+function postRating(coursecode, takeagain, enjoyment, resources, weeklyhours) {
+  $.post(websiteName + "course/survey/new?takeagain=" + String(takeagain) + "&enjoyment=" + String(enjoyment) + "&resources=" + String(resources) + "&weeklyhours=" + String(weeklyhours) + "&coursecode=" + String(coursecode));
+}
+
 window.onload = () => {
 let course_name = window.localStorage.getItem('course');
 document.getElementById("name").innerText = course_name.substring(1,course_name.length-1);
@@ -14,6 +18,15 @@ document.getElementById("review-submit").addEventListener('click', () => {
     const review = document.getElementById('enter-review').value;
     const coursecode = window.localStorage.getItem('coursecode');
     postReview(coursecode.substring(1,coursecode.length-1), review);
+});
+document.getElementById("rating-submit").addEventListener('click', () => {
+    const wouldTakeAgain = document.getElementById("takeagain").value;
+    const enjoyedMaterial = document.getElementById("enjoyment").value;
+    const resourcesUseful = document.getElementById("resources").value;
+    const hoursSpent = document.getElementById("weekly-hours").value;
+    const coursecode = window.localStorage.getItem('coursecode');
+    postRating(coursecode, wouldTakeAgain, enjoyedMaterial, resourcesUseful, hoursSpent);
+
 });
 
 function validateRating(){

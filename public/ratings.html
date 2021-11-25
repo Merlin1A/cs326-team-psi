@@ -39,63 +39,30 @@
         <form>
             <div class="form-group">
                 <h5>Would you take this course again?</h5>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question-one" id="yes-ans" value="yes-ans">
-                    <label class="form-check-label" for="yes-ans">Yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question-one" id="maybe-ans" value="maybe-ans">
-                    <label class="form-check-label" for="maybe-ans">Maybe</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="question-one" id="no-ans" value="no-ans">
-                    <label class="form-check-label" for="no-ans">No</label>
-                </div>
+                <label for="takeagain">(between 0 and 10):</label>
+                    <input type="range" id="takeagain" name="takeagain"
+                    min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+                    <output>5</output>
             </div>
             <div class="form-group">
                 <h5>Did you enjoy the material for this course?</h5>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                    name="question-two" id="yes-ans-1" value="yes-ans-1">
-                    <label class="form-check-label" for="yes-ans-1">Yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                    name="question-two" id="maybe-ans-1" value="maybe-ans-1">
-                    <label class="form-check-label" for="maybe-ans-1">Moderately</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                                                    name="question-two"
-                                                    id="no-ans-1"
-                                                    value="no-ans-1">
-                    <label class="form-check-label" for="no-ans-1">No</label>
-                </div>
-            </div>
+                <label for="enjoyment">(between 0 and 10):</label>
+                    <input type="range" id="enjoyment" name="enjoyment"
+                    min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+                    <output>5</output>
             <div class="form-group">
                 <h5>Did you find the resources helpful?</h5>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                    name="question-three" id="yes-ans-2" value="yes-ans-2">
-                    <label class="form-check-label" for="yes-ans-2">Yes</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                    name="question-three" id="maybe-ans-2"
-                    value="maybe-ans-2">
-                    <label class="form-check-label" for="maybe-ans-2">Moderately</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio"
-                                                    name="question-three"
-                                                    id="no-ans-2"
-                                                    value="no-ans-2">
-                    <label class="form-check-label" for="no-ans-2">No</label>
-                </div>
+                <label for="resources">(between 0 and 10):</label>
+                    <input type="range" id="resources" name="resources"
+                    min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
+                    <output>5</output>
             </div>
             <div class="form-group">
                 <h5>How much time did you spend per week on the course?</h5>
-                <input type="number" name="weekly-hours" id="weekly-hours" min=0 placeholder="hours per week" />
+                <label for="weekly-hours">Hours (between 0 and 20):</label>
+                    <input type="range" id="weekly-hours" name="weekly-hours"
+                    min="0" max="20" step="1" oninput="this.nextElementSibling.value = this.value">
+                    <output>10</output>
             </div>
         </form>
         <div class="form-floating">
