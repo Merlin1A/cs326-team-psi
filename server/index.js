@@ -11,7 +11,7 @@ import { MongoClient } from 'mongodb';
 
 import { authStrat, validatePassword, findUser, addUser, changePass, checkLoggedIn, checkEmail } from './accounts.js';
 import { fetchCourses } from './courses.js';
-import { fetchReviews, insertReview } from './reviews.js';
+import { fetchReviews, fetchReview, insertReview, updateReview, deleteReview} from './reviews.js';
 
 
 const JSONfile = './persistent.json';
@@ -177,10 +177,21 @@ app.post('/course/review/new', (req, res) => {
   }
 });
 
-app.post('/course/review/vote', (req, res) => {
-  // TODO
-  res.send()
-});
+app.post('/course/review/vote', asyncMiddleware(async (req, res, next) => {
+  /*
+    if there is an error thrown in getUserFromDb, asyncMiddleware
+    will pass it to next() and express will handle the error;
+  */
+  if (req.isAuthenticated()) {
+    const review = await fetchReview(req.query.rid);
+    if (review.downvotes > 10) {
+        deleteReview(req.qurey.rid);
+    }
+    else {
+        updateReview(req.query.rid, req.query.vote); 
+    }
+  }
+}));
 
 app.post('/course/survey/new', (req, res) => {
   // TODO

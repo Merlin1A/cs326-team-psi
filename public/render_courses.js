@@ -48,7 +48,6 @@ function getCourseCodeReviews(course) {
 }
 
 function setStorage(courseName) {
-    console.log("here");
     window.localStorage.setItem('course', JSON.stringify(courseName));
     window.localStorage.setItem('coursecode', JSON.stringify(getCourseCode(courseName)));
 }
@@ -89,7 +88,7 @@ function populateReviews(data) {
   if (data.length > 0) {
     const reviews_id = document.getElementById(data[0]['course_code']);
     reviews_id.innerHTML = ''; 
-    const courseCode = data['course_code'];
+    const courseCode = data[0]['course_code'];
 
     data.forEach(function (review) {
       let rid = review['uid'];
@@ -99,11 +98,11 @@ function populateReviews(data) {
         <hr>
         <div class="row">
           <div class="col">
-            <button onclick = "upVote(this.id)" type="button" class="icon" id=${courseCode + '_' + String(rid) + '_up'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-up-sharp" class="thumbs-up"></ion-icon></button>
+            <button onclick = "upVote(this.id)" type="button" class="icon" id=${String(courseCode) + '_' + String(rid) + '_up'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-up-sharp" class="thumbs-up"></ion-icon></button>
             <div class="numberreviews pl-2"><p>${review['upvotes']} people liked this review</p></div>
           </div>
           <div class="col">
-            <button onclick = "downVote(this.id)" type="button" class="icon" id=${courseCode + '_' + String(rid) + '_down'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-down-sharp" class="thumbs-down"></ion-icon></button>
+            <button onclick = "downVote(this.id)" type="button" class="icon" id=${String(courseCode) + '_' + String(rid) + '_down'} style="border:none; background:transparent; outline:none"><ion-icon name="thumbs-down-sharp" class="thumbs-down"></ion-icon></button>
             <div class="numberreviews pl-2"><p>${review['downvotes']} people disliked this review</p></div>
           </div>
         </div>
@@ -133,7 +132,6 @@ function getCourseCriteria(criteriaArr) {
   });
   return ans;
 }
-
 
 function populateCourses(courses) {
     const ranking = document.getElementById('ranking');
@@ -296,8 +294,8 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-//const websiteName = 'http://localhost:3000/';
+//const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
@@ -307,9 +305,9 @@ function getReviews(id) {
   $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCodeReviews(id), function (data) { populateReviews(data); });
 }
 
-function postVote(courseName, rid, vote) {
-  $.post(websiteName + "course/review/vote?vote=" + vote + "&rid=" + String(rid) + "&coursecode=" + getCourseCode(courseName), function (data) {
-    getReviews(courseName);
+function postVote(course_code, rid, vote) {
+  $.post(websiteName + "course/review/vote?vote=" + vote + "&rid=" + String(rid) + "&coursecode=" + course_code, function (data) {
+    getReviews(course_code);
   });
 }
 
