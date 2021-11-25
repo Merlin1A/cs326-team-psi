@@ -38,7 +38,6 @@ function genHexString(len) {
   }
   return output;
 }
-
 const asyncMiddleware = fn => (req, res, next) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 }
@@ -174,6 +173,7 @@ app.post('/course/review/new', (req, res) => {
     voted_obj[user_id] = null;
     rev["voted"] = voted_obj;
     insertReview(rev);
+    res.send("posted review")
   }
 });
 
@@ -185,11 +185,12 @@ app.post('/course/review/vote', asyncMiddleware(async (req, res, next) => {
   if (req.isAuthenticated()) {
     const review = await fetchReview(req.query.rid);
     if (review.downvotes > 10) {
-        deleteReview(req.qurey.rid);
+        deleteReview(req.query.rid);
     }
     else {
         updateReview(req.query.rid, req.query.vote); 
     }
+    res.send("voted");
   }
 }));
 

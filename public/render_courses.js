@@ -1,3 +1,12 @@
+function genHexString(len) {
+  const hex = '0123456789ABCDEF';
+  let output = '';
+  for (let i = 0; i < len; ++i) {
+    output += hex.charAt(Math.floor(Math.random() * hex.length));
+  }
+  return output;
+}
+
 function formatProfessors(profarr) {
   let ans = '';
   let count = 0;
@@ -54,10 +63,10 @@ function setStorage(courseName) {
 
 function upVote(id) {
   const params = id.split('_');
-  postVote(params[0], params[1], params[2]);
   const button = document.getElementById(id);
 
   if (button.children[0].classList.contains('thumbs-up')) {
+    postVote(params[0], params[1], params[2]);
     button.children[0].classList.remove('thumbs-up');
     button.children[0].classList.add('thumbs-up-clicked');
   }
@@ -69,11 +78,10 @@ function upVote(id) {
 
 function downVote(id) {
   const params = id.split('_');
-  postVote(params[0], params[1], params[2]);
-
   const button = document.getElementById(id);
 
   if (button.children[0].classList.contains('thumbs-down')) {
+    postVote(params[0], params[1], params[2]);
     button.children[0].classList.remove('thumbs-down');
     button.children[0].classList.add('thumbs-down-clicked');
   }
@@ -84,11 +92,10 @@ function downVote(id) {
 }
 
 
-function populateReviews(data) {
+function populateReviews(data, courseCode) {
+  const reviews_id = document.getElementById(courseCode);
+  reviews_id.innerHTML = '';
   if (data.length > 0) {
-    const reviews_id = document.getElementById(data[0]['course_code']);
-    reviews_id.innerHTML = ''; 
-    const courseCode = data[0]['course_code'];
 
     data.forEach(function (review) {
       let rid = review['uid'];
@@ -294,20 +301,20 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-//const websiteName = 'http://localhost:3000/';
+//const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
 }
 
 function getReviews(id) {
-  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCodeReviews(id), function (data) { populateReviews(data); });
+  $.getJSON(websiteName + 'course/reviews?coursecode=' + getCourseCodeReviews(id), function (data) { populateReviews(data, getCourseCodeReviews(id)); });
 }
 
 function postVote(course_code, rid, vote) {
-  $.post(websiteName + "course/review/vote?vote=" + vote + "&rid=" + String(rid) + "&coursecode=" + course_code, function (data) {
-    getReviews(course_code);
+  $.post(websiteName + "course/review/vote?vote=" + vote + "&rid=" + String(rid) + "&coursecode=" + course_code + "&randomdata=" + genHexString(8), function (data) {
+    getReviews(course_code + "_");
   });
 }
 
