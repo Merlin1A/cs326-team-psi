@@ -15,7 +15,7 @@ Wrote a large portion of the authentication code including the passport configur
 * [Johno Pomerat](https://github.com/sperek27)
 insert labor
 * [Lynn Li](https://github.com/lynnli0)
-insert labor
+Refined the front-end code and adjusted layouts, such as course cards and additional metrics for each course. Implemented API endpoint to allow users to update their password as well as implementing password alteration functionality between the database and website.  
 
 ## Part 1: Database Implementation
 
