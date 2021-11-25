@@ -192,7 +192,7 @@ function populateCourses(courses) {
                 </div>
                 <div class="col-2 center-col">
                   <div class="progress-circle">
-                    <div class="progress mx-auto justify-content-end" data-value='${course['overall_rating']}'>
+                    <div class="progress mx-auto justify-content-end" data-value='${course['overall_difficulty']}'>
                       <span class="progress-left">
                         <span class="progress-bar ${getProgressColor(course['overall_difficulty'])}"></span>
                       </span>
@@ -301,8 +301,8 @@ function populateCourses(courses) {
   });
 }
 
-//const websiteName = 'https://courseoverflow.herokuapp.com/';
-const websiteName = 'http://localhost:3000/';
+const websiteName = 'https://courseoverflow.herokuapp.com/';
+//const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });

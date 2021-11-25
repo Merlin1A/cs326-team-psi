@@ -165,4 +165,6 @@
   align-items: center;
 }
 
-/* .btn-group ml-25 px-5 */
+.btn-group.ml-25.px-5{
+  padding-top: 5vh;
+}
