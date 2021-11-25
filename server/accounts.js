@@ -92,7 +92,7 @@ export async function addUser(username, password) {
         const users = database.collection("info");
 
         const isDuplicate = await findUser(username);
-        if(isDuplicate){
+        if (isDuplicate) {
             return;
             // IMPLEMENT ^
         }
@@ -130,15 +130,38 @@ export async function changePass(username, newPass) {
 }
 
 
+/**
+ * This function attempts to delete a user in the database 
+ * @param {string} username 
+ * @returns 
+ */
+export async function deleteAccount(username) {
+    const client = new MongoClient(uri);
+    let user_account = null;
+
+    try {
+        await client.connect();
+
+        const database = client.db("accounts");
+        const users = database.collection("info");
+        const query = { "username": username };
+
+        user_account = await users.deleteOne(query);
+    } finally {
+        await client.close();
+    }
+}
+
+
 // Middleware functions
 
 // Checks if an user is logged in, redirecting them to the login page if not
 export function checkLoggedIn(req, res, next) {
-   req.isAuthenticated() ? next() : res.redirect('/login');
+    req.isAuthenticated() ? next() : res.redirect('/login');
 }
 
 // Checks if the email used to register is a umass email address, redirecting them to the register page if not
-export function checkEmail(req, res, next){
+export function checkEmail(req, res, next) {
     req.body.username.endsWith('umass.edu') ? next() : res.redirect('/register');
 }
 
