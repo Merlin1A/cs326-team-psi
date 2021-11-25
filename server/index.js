@@ -9,9 +9,9 @@ import expressSession from 'express-session';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { MongoClient } from 'mongodb';
 
-import { authStrat, validatePassword, findUser, addUser, changePass, checkLoggedIn, checkEmail } from './accounts.js';
+import { authStrat, validatePassword, findUser, addUser, changePass, deleteAccount, checkLoggedIn, checkEmail } from './accounts.js';
 import { fetchCourses } from './courses.js';
-import { fetchReviews, fetchReview, insertReview, updateReview, deleteReview} from './reviews.js';
+import { fetchReviews, fetchReview, insertReview, updateReview, deleteReview } from './reviews.js';
 
 
 const JSONfile = './persistent.json';
@@ -101,9 +101,9 @@ app.route('/register')
   .post(checkEmail, (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
-  
+
     addUser(username, password);
-  
+
     res.redirect('/login');
   });
 
@@ -114,20 +114,18 @@ app.get('/account/user', (req, res) => {
 app.post('/account/password', checkLoggedIn, (req, res) => {
   const newPass = req.body.password;
   const user = req.user;
-  
+
   changePass(user, newPass);
-  
+
   res.redirect('/account');
 });
 
-app.post('/account/update', (req, res) => {
-  // TODO
-  res.send();
-});
-
 app.post('/account/delete', (req, res) => {
-  // TODO
-  res.send();
+  const user = req.user;
+
+  deleteAccount(user);
+
+  res.redirect('/login');
 });
 
 app.post('/account/create', (req, res) => {
@@ -185,10 +183,10 @@ app.post('/course/review/vote', asyncMiddleware(async (req, res, next) => {
   if (req.isAuthenticated()) {
     const review = await fetchReview(req.query.rid);
     if (review.downvotes > 10) {
-        deleteReview(req.qurey.rid);
+      deleteReview(req.qurey.rid);
     }
     else {
-        updateReview(req.query.rid, req.query.vote); 
+      updateReview(req.query.rid, req.query.vote);
     }
   }
 }));
