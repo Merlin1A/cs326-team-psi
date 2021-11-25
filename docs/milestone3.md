@@ -11,7 +11,7 @@ Appication Name: *Course Overflow*
 
 ## Division of Labor
 * [Jesse Brookins](https://github.com/Merlin1A)
-Wrote a large portion of the authentication code including the passport configuration, log in functionality, creating accounts, and deleting accounts as well as a couple middleware functions. Created authenticated routing to the user's account page and implemented a few api endpoints.
+Configured MongoDB. Wrote a large portion of the authentication code including the passport configuration, log in functionality, creating accounts, and deleting accounts as well as a couple middleware functions. Created authenticated routing to the user's account page and implemented a few api endpoints.
 * [Johno Pomerat](https://github.com/sperek27)
 insert labor
 * [Lynn Li](https://github.com/lynnli0)
