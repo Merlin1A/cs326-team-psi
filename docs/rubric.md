@@ -19,51 +19,51 @@ Courseoverflow is designed to be an information repository on courses computer s
 ### Grading Breakdown
 
 #### General ___ / 25 pts
-* Authentication
-  * New users can create account through register page
-  * User can login with their credentials 
-  * Certain pages (courses page, account settings, ratings page, etc.) are only accessible if user is logged in. 
-* Page routing 
-* Linting/Code style
+* Authentication (15 pts)
+  * New users can create account through register page (5 pts)
+  * User can login with their credentials (5 pts)
+  * Certain pages (courses page, account settings, ratings page, etc.) are only accessible if user is logged in. (5 pts)
+* Page routing (5 pts)
+* Linting/Code style (5 pts)
 
 #### Courses Page ___ / 25 pts
-* Users can view courses (shown as cards), their metrics (overall rating, enjoyed course, and overall difficulty), and the number of reviews and ratings each course has.
-* Users can expand course card in order to read course description, reviews, etc.
-* Once course card is expanded, users can scroll to the course's reviews and either downvote or upvote the review
-* Users can click on "rate or review this class" which will take them to the course's rating page. 
+* Users can view courses (shown as cards), their metrics (overall rating, enjoyed course, and overall difficulty), and the number of reviews and ratings each course has. (10 pts)
+* Users can expand course card in order to read course description, reviews, etc. (5 pts)
+* Once course card is expanded, users can scroll to the course's reviews and either downvote or upvote the review (5 pts)
+* Users can click on "rate or review this class" which will take them to the course's rating page. (5 pts)
 
 #### Ratings Page ___ / 20 
-* Users can fill each field in the ratings page and submit it
-* Users can write a review and submit it. 
+* Users can fill each field in the ratings page and submit it (10 pts)
+* Users can write a review and submit it. (10 pts)
   * The review will then populate in the course card that it was written for (on courses page). 
 
 #### Account Settings (My Account page) ___ / 10
-* Users can update their password and save the changes. 
-* Users can delete their account 
+* Users can update their password and save the changes. (5 pts)
+* Users can delete their account (5 pts)
 
 #### CRUD ___ / 20 
 ##### CREATE ___ / 5
-* User
+* User (2.5 pts)
   * Username (email)
   * Password
-* Review 
+* Review (2.5 pts)
   * Contains review data for each course
   * Number of upvotes and downvotes that a specific review recieves 
 
 ##### READ ___ / 5
-* Courses 
+* Courses (2.5 pts)
   * Contains all course information such as description, name, professors, etc.
-* Review
+* Review (2.5 pts)
   * Review populates on the course card that it corresponds with relevant review information 
 
 ##### UPDATE ___ / 5
-* Account Password 
+* Account Password (2.5 pts)
   * User can update account password
-* Review Upvote and Downvote
+* Review Upvote and Downvote (2.5 pts)
   * User can upvote or downvote a review and it will appear on the interface
 
 ##### DELETE ___ / 5
-* Account 
+* Account (2.5 pts)
   * Users can delete their account 
-* Review
+* Review (2.5 pts)
   * A review is deleted if it recieves enough downvotes 
