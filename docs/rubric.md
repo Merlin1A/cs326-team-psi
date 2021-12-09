@@ -18,6 +18,8 @@ Courseoverflow is designed to be an information repository on courses computer s
 
 ### Grading Breakdown
 
+#### Video Demo ___ / 10
+
 #### General ___ / 25 pts
 * Authentication (15 pts)
   * New users can create account through register page (5 pts)
@@ -36,8 +38,6 @@ Courseoverflow is designed to be an information repository on courses computer s
 * Users can fill each field in the ratings page and submit it (5 pts)
 * Users can write a review and submit it. (5 pts)
   * The review will then populate in the course card that it was written for (on courses page). 
-
-#### Video Demo ___ / 10
 
 #### Account Settings (My Account page) ___ / 10
 * Users can update their password and save the changes. (5 pts)
