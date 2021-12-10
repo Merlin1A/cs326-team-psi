@@ -153,3 +153,32 @@ footer.footer {
 #particles-js {
   height: 100vh;
 }
+
+#main-img-1{
+  background-image: url('/landing-img/course.png'); 
+}
+
+#main-img-2{
+  background-image: url('/landing-img/reviews.png'); 
+}
+
+#main-img-3{
+  background-image: url('/landing-img/rating.png'); 
+}
+
+#main-img-1,
+#main-img-2,
+#main-img-3{
+  background-position: center;
+  box-shadow: 0 0 8px 8px white inset;
+  transition: all .2s ease-in-out;
+  filter:  grayscale(80%) opacity(70%) blur(8px) ; /* IE6-9 */
+  -webkit-filter: grayscale(80%) opacity(70%) blur(0.75px) ; /* Google Chrome, Safari 6+ & Opera 15+ */
+}
+
+#main-img-1:hover,
+#main-img-2:hover,
+#main-img-3:hover{
+  filter: none;
+  transform: scale(1.1);
+}
