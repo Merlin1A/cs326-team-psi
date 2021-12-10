@@ -20,7 +20,7 @@ h6 {
 }
 
 h1 {
-  color: #3C1874;
+  color: #ffc107;
 }
 
 h2 {
@@ -28,14 +28,14 @@ h2 {
 }
 
 a.btn {
-  color: #ffffff !important;
-  background-color: #3C1874 !important;
+  color: black !important;
+  background-color: #ffc107 !important;
 }
 
 header.masthead {
   height: 100vh;
   position: relative;
-  background-color: #ffffff;
+  background-color: #444444;
   background-size: cover;
   background-position: center;
 }
@@ -50,6 +50,20 @@ header.masthead .overlay {
 
 header.masthead h1 {
   font-size: 2rem;
+}
+
+#pt1-title{
+  font-size: 8rem;
+}
+
+#pt1-title span,
+#title-sub{
+  color: #ffffff;
+}
+
+.fas.fa-chevron-down.fa-2x{
+  color: #ffc107; 
+  margin-top: 30vh;
 }
 
 @media (min-width: 768px) {
@@ -128,7 +142,7 @@ header.masthead h1 {
 }
 
 .fab {
-  color: #932432;
+  color: #ffc107;
 }
 
 footer.footer {
