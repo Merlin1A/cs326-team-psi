@@ -14,21 +14,10 @@ import { fetchCourses } from './courses.js';
 import { fetchReviews, fetchReview, insertReview, updateReview, deleteReview } from './reviews.js';
 
 
-const JSONfile = './persistent.json';
-const jsonCourses = './server/courses.json';
 const PORT = process.env.PORT || 3000;
 const headerText = { 'Content-Type': 'application/json;charset=utf-8' };
 const app = express();
-let memory = {};
 
-function reload(filename) {
-  if (fs.existsSync(filename)) {
-    memory = JSON.parse(fs.readFileSync(JSONfile));
-  }
-  else {
-    memory = {};
-  }
-}
 
 function genHexString(len) {
   const hex = '0123456789ABCDEF';
@@ -42,7 +31,6 @@ const asyncMiddleware = fn => (req, res, next) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 }
 
-reload(JSONfile);
 app.use(express.json()); // lets you handle JSON input
 app.use(express.urlencoded({ 'extended': true })); // allow URLencoded data
 
