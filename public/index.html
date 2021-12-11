@@ -14,31 +14,27 @@
 </head>
 
 <body>
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light justify-content-between">
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
       aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="/">Course Overflow<span class="sr-only">(current)</span></a>
+        <li class="nav-item active" id="course-overflow">
+          <a class="nav-link" href="/"><span id="course-logo">course</span><span id="overflow-logo">overflow</span><span class="sr-only">(current)</span></a>
         </li>
       </ul>
-      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-        <li class="nav-item active">
-          <a class="nav-link" href="/account">My Account<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item active">
-          <a class="nav-link" href="/logout">Log Out<span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
+      <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+          <a class="btn btn-secondary mr-2" role="button" href="/account">My Account<span class="sr-only">(current)</span></a>
+          <a class="btn btn-outline-warning" role="button" href="/logout">Log Out<span class="sr-only">(current)</span></a>
+      </div>
     </div>
   </nav>
-  <nav class="navbar navbar-light bg-dark">
+  <nav class="navbar navbar-light bg-secondary">
     <div class="btn-group ml-25">
       <div class="dropdown">
-        <button type="button" id="filterCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+        <button type="button" id="filterCourses" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Filter
         </button>
@@ -50,7 +46,7 @@
         </div>
       </div>
       <div class="dropdown">
-        <button type="button" id="sortCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+        <button type="button" id="sortCourses" class="btn btn-dark dropdown-toggle" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
           Sort
         </button>
@@ -61,10 +57,10 @@
           <a class="dropdown-item" id="most-rating">Most Ratings</a>
         </div>
       </div>
-      <button type="button" class="btn btn-primary" id="default-reset" value="Reset">Reset to Default</button>
+      <button type="button" class="btn btn-warning" id="default-reset" value="Reset">Restore default</button>
       <div class="form-inline">
         <input class="mr-2 form-control" type="text" placeholder="Search for courses by name" aria-label="Search" id="search-bar-text">
-        <button class="btn btn-warning" id="search-bar-button">Search</button>
+        <button class="btn btn-outline-warning" id="search-bar-button">Search</button>
       </div>
     </div>
   </nav>

@@ -8,33 +8,30 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css/main.css">
   </head>
   <body>
     <div id="main_nav">
-      <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light justify-content-between">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                <a class="nav-link" href="/">Course Overflow <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/account">My Account<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/logout">Log Out<span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
+          <ul class="navbar-nav">
+            <li class="nav-item active" id="course-overflow">
+              <a class="nav-link" href="/"><span id="course-logo">course</span><span id="overflow-logo">overflow</span><span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+          <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+              <a class="btn btn-secondary mr-2" role="button" href="/account">My Account<span class="sr-only">(current)</span></a>
+              <a class="btn btn-outline-warning" role="button" href="/logout">Log Out<span class="sr-only">(current)</span></a>
+          </div>
         </div>
       </nav>
     </div>
     <div id="ratings">
-      <div class="container">
+      <div class="container mt-5">
           <h3 id="name">Rate</h3> <br>
         <form>
             <div class="form-group">

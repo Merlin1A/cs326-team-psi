@@ -231,3 +231,17 @@
   position: absolute;
   width: 1px;
 }
+
+#course-logo,
+#overflow-logo{
+  font-weight: bold;
+  font-size: larger;
+}
+
+#overflow-logo{
+  color: #ffc107;
+}
+
+#main-nav{
+  background-color: #6c757d;
+}
