@@ -37,10 +37,10 @@ function getProgressColor(progress) {
 function getCourseCode(course) {
   let colon_index = 0
   for (let i = 8; i < course.length; ++i) {
-      if (course[i] === ':') {
-          colon_index = i;
-          break;
-      }
+    if (course[i] === ':') {
+      colon_index = i;
+      break;
+    }
   }
   return course.substring(8, colon_index);
 }
@@ -48,17 +48,17 @@ function getCourseCode(course) {
 function getCourseCodeReviews(course) {
   let underscore_index = 0
   for (let i = 0; i < course.length; ++i) {
-      if (course[i] === '_') {
-          underscore_index = i;
-          break;
-      }
+    if (course[i] === '_') {
+      underscore_index = i;
+      break;
+    }
   }
   return course.substring(0, underscore_index);
 }
 
 function setStorage(courseName) {
-    window.localStorage.setItem('course', JSON.stringify(courseName));
-    window.localStorage.setItem('coursecode', JSON.stringify(getCourseCode(courseName)));
+  window.localStorage.setItem('course', JSON.stringify(courseName));
+  window.localStorage.setItem('coursecode', JSON.stringify(getCourseCode(courseName)));
 }
 
 function upVote(id) {
@@ -141,11 +141,11 @@ function getCourseCriteria(criteriaArr) {
 }
 
 function populateCourses(courses) {
-    const ranking = document.getElementById('ranking');
-    ranking.innerHTML = '';
-    let course_id = 1;
-    courses.forEach(function (course) {
-      ranking.innerHTML += `<div class="ranking">
+  const ranking = document.getElementById('ranking');
+  ranking.innerHTML = '';
+  let course_id = 1;
+  courses.forEach(function (course) {
+    ranking.innerHTML += `<div class="ranking">
             <div class="col d-flex justify-content-center mb-2">
               <div class="card rounded-lg w-100 shadow">
                 <div class="card-body">
@@ -271,8 +271,8 @@ function populateCourses(courses) {
               </div>
             </div>
         </div>`;
-      course_id += 1;
-    });
+    course_id += 1;
+  });
   $(function () {
 
     $(".progress").each(function () {
@@ -301,11 +301,17 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-// const websiteName = 'http://localhost:3000/';
+// const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
-  $.getJSON(websiteName + "courses", function (data) { populateCourses(data); });
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items.sort(function (a, b) {
+      return b.overall_rating - a.overall_rating;
+    })
+    populateCourses(items);
+  });
 }
 
 function getReviews(id) {
@@ -318,4 +324,120 @@ function postVote(course_code, rid, vote) {
   });
 }
 
+$.getJSON(websiteName + "courses", function (data) {
+  $(document).ready(function (){
+    let items = [];
+    $.each(data, function(index, obj){
+      items.push(obj.course_name);
+    })
+    $("#search-bar-text").autocomplete({
+      source: items
+    });
+  });
+});
+
+document.getElementById("search-bar-button").addEventListener("click", () => {
+  let key = document.getElementById("search-bar-text").value;
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items = data.filter(function(obj){
+      return obj.course_name === key;
+    });
+    populateCourses(items);
+  })
+});
+
+document.getElementById("enjoyed-course").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items.sort(function (a, b) {
+      return b.enjoyed_course - a.enjoyed_course;
+    })
+    populateCourses(items);
+  });
+});
+
+document.getElementById("overall-difficulty").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items.sort(function (a, b) {
+      return b.overall_difficulty - a.overall_difficulty;
+    })
+    populateCourses(items);
+  });
+});
+
+document.getElementById("most-reviewed").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items.sort(function (a, b) {
+      return b.number_reviews - a.number_reviews;
+    })
+    populateCourses(items);
+  });
+});
+
+document.getElementById("most-rating").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items.sort(function (a, b) {
+      return b.number_ratings - a.number_ratings;
+    })
+    populateCourses(items);
+  });
+});
+
+document.getElementById("default-reset").addEventListener("click", getCourses);
+
+document.getElementById("IE").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items = data.filter(function (obj) {
+      return obj.course_criteria.includes('IE');
+    });
+    populateCourses(items);
+  });
+});
+
+document.getElementById("200-lvl").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items = data.filter(function (obj) {
+      return obj.course_criteria.includes('200+');
+    });
+    populateCourses(items);
+  });
+});
+
+document.getElementById("300-lvl").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items = data.filter(function (obj) {
+      return obj.course_criteria.includes('300+');
+    });
+    populateCourses(items);
+  });
+});
+
+document.getElementById("400-lvl").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items = data.filter(function (obj) {
+      return obj.course_criteria.includes('400+');
+    });
+    populateCourses(items);
+  });
+});
+
+document.getElementById("400-lvl").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items = data.filter(function (obj) {
+      return obj.course_criteria.includes('400+');
+    });
+    populateCourses(items);
+  });
+});
+
 window.onload = getCourses();
+
