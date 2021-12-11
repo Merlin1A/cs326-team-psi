@@ -1,67 +1,92 @@
-<!doctype html> <html lang="en">
-  <head>
-      <title>Course Overflow</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!doctype html>
+<html lang="en">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css">
-  </head>
-  <body>
+<head>
+  <title>Course Overflow</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light justify-content-between">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Course Overflow<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-      <li class="nav-item active">
-        <a class="nav-link" href="/account">My Account<span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="/logout">Log Out<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<div class="btn-group ml-25 px-5">
-    <div class="dropdown">
-    <button type="button" id="filterCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Filter
-    </button>
-    <div class="dropdown-menu" aria-labelledby="filterCourses">
-      <a class="dropdown-item" href="#">100 Level</a>
-      <a class="dropdown-item" href="#">200 Level</a>
-      <a class="dropdown-item" href="#">300 Level</a>
-      <a class="dropdown-item" href="#">400 Level</a>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Course Overflow<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item active">
+          <a class="nav-link" href="/account">My Account<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/logout">Log Out<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
     </div>
+  </nav>
+  <nav class="navbar navbar-light bg-dark">
+    <div class="btn-group ml-25">
+      <div class="dropdown">
+        <button type="button" id="filterCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Filter
+        </button>
+        <div class="dropdown-menu" aria-labelledby="filterCourses">
+          <a class="dropdown-item" id="IE">Intergative Experience (IE)</a>
+          <a class="dropdown-item" id="200-lvl">200 Level</a>
+          <a class="dropdown-item" id="300-lvl">300 Level</a>
+          <a class="dropdown-item" id="400-lvl">400 Level</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button type="button" id="sortCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          Sort
+        </button>
+        <div class="dropdown-menu" aria-labelledby="sortCourses">
+          <a class="dropdown-item" id="enjoyed-course">Enjoyed Course</a>
+          <a class="dropdown-item" id="overall-difficulty">Overall Difficulty</a>
+          <a class="dropdown-item" id="most-reviewed">Most Reviewed</a>
+          <a class="dropdown-item" id="most-rating">Most Ratings</a>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" id="default-reset" value="Reset">Reset to Default</button>
+      <div class="form-inline">
+        <input class="mr-2 form-control" type="text" placeholder="Search for courses by name" aria-label="Search" id="search-bar-text">
+        <button class="btn btn-warning" id="search-bar-button">Search</button>
+      </div>
     </div>
-    <div class="dropdown">
-    <button type="button" id="sortCourses" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Sort
-    </button>
-    <div class="dropdown-menu" aria-labelledby="sortCourses">
-      <a class="dropdown-item" href="#">Rankings</a>
-      <a class="dropdown-item" href="#">Overall Difficulty</a>
-      <a class="dropdown-item" href="#">Most Reviewed</a>
-    </div>
-    </div>
-    </div>
-    </div>
-    <div class="ranking" id="ranking"></div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="render_courses.js"></script>
-  </body>
+  </nav>
+  <div class="ranking" id="ranking"></div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
+    crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="render_courses.js"></script>
+</body>
+
 </html>

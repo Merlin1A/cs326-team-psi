@@ -28,19 +28,20 @@
     <div id="login">
       <div class="col d-flex justify-content-center mb-2 centered">
         <div class="card border-dark card rounded-lg w-50 shadow text-center">
-        <div class="card-body">
-        <h5 class="card-title">Login</h5>
-        <form action="/login" method="post">
-          <div class="input-group mb-3">
-              <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username"/>
+          <div class="card-body">
+            <h5 class="card-title">Login</h5>
+            <form action="/login" method="post">
+              <div class="input-group mb-3">
+                  <input type="text" name="username" class="form-control" placeholder="Username" aria-label="Username"/>
+              </div>
+              <div class="input-group mb-3">
+                  <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Username"/>
+              </div>
+              <button type="submit" class="btn btn-primary">Sign-in</button>
+              <a href="/register" class="btn btn-primary">Register</a>
+            </form>
           </div>
-          <div class="input-group mb-3">
-              <input type="password" name="password" class="form-control" placeholder="Password" aria-label="Username"/>
-          </div>
-          <button type="submit" class="btn btn-primary">Sign-in</button>
-          <a href="/register" class="btn btn-primary">Register</a>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
     <!-- Optional JavaScript -->
