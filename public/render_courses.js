@@ -128,15 +128,18 @@ function getCourseCriteria(criteriaArr) {
       ans += '<span class="badge badge-warning">IE</span> ';
     }
     else if (criteria === "200+") {
-      ans += '<span class="badge badge-success">200+</span> ';
+      ans += '<span class="badge badge-success">200</span> ';
     }
     else if (criteria === "300+") {
-      ans += '<span class="badge badge-danger">300+</span> ';
+      ans += '<span class="badge badge-danger">300</span> ';
     }
     else if (criteria === "400+") {
       ans += '<span class="badge badge-primary">400+</span> ';
     }
   });
+  if(!criteriaArr.includes("200+") && !criteriaArr.includes("300+") && !criteriaArr.includes("400+")){
+    ans += '<span class="badge badge-info">100</span> ';
+  }
   return ans;
 }
 
@@ -394,6 +397,16 @@ document.getElementById("IE").addEventListener("click", () => {
     let items = data;
     items = data.filter(function (obj) {
       return obj.course_criteria.includes('IE');
+    });
+    populateCourses(items);
+  });
+});
+
+document.getElementById("100-lvl").addEventListener("click", () => {
+  $.getJSON(websiteName + "courses", function (data) {
+    let items = data;
+    items = data.filter(function (obj) {
+      return (!obj.course_criteria.includes('200+') && !obj.course_criteria.includes('300+') && !obj.course_criteria.includes('400+'));
     });
     populateCourses(items);
   });
