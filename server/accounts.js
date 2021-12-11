@@ -1,4 +1,5 @@
 import passport from 'passport';
+import crypto from 'crypto';
 import { Strategy as LocalStrategy } from 'passport-local'
 import { MongoClient } from 'mongodb';
 import { createRequire } from 'module';
@@ -44,14 +45,18 @@ export async function validatePassword(username, password) {
 
         const database = client.db("accounts");
         const users = database.collection("info");
-        const query = { "username": username, "password": password };
+        const query = { "username": username };
 
         user_account = await users.findOne(query);
     } finally {
         await client.close();
     }
 
-    if (user_account === null) {
+    const hash = user_account.hash;
+    const salt = user_account.salt;
+
+
+    if (verifyHash(password, salt) !== hash) {
         return false;
     }
     return true;
@@ -107,7 +112,9 @@ export async function addUser(username, password) {
             // IMPLEMENT ^
         }
 
-        const user = { username: username, password: password };
+        const salt_hash = hashPass(password);
+
+        const user = { username: username, hash: salt_hash.hash, salt: salt_hash.salt };
         await users.insertOne(user);
     } finally {
         await client.close();
@@ -131,7 +138,8 @@ export async function changePass(username, newPass) {
         const database = client.db("accounts");
         const users = database.collection("info");
         const query = { 'username': username };
-        const updateArg = { $set: { 'password': newPass } };
+        const hash_salt = hashPass(newPass);
+        const updateArg = { $set: { 'hash': hash_salt.hash, 'salt': hash_salt.salt } };
 
         user_account = await users.updateOne(query, updateArg);
     } finally {
@@ -173,6 +181,22 @@ export function checkLoggedIn(req, res, next) {
 // Checks if the email used to register is a umass email address, redirecting them to the register page if not
 export function checkEmail(req, res, next) {
     req.body.username.endsWith('umass.edu') ? next() : res.redirect('/register');
+}
+
+
+// Utility Functions
+
+function hashPass(password){
+    const salt = crypto.randomBytes(16).toString('hex');
+    const hash = crypto.pbkdf2Sync(password, salt, 1000, 64, `sha512`).toString(`hex`);
+
+    return {'hash': hash, 'salt': salt};
+}
+
+function verifyHash(password, salt){
+    const hash = crypto.pbkdf2Sync(password, salt, 1000, 64, `sha512`).toString(`hex`);
+
+    return hash;
 }
 
 
