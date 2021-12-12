@@ -73,10 +73,15 @@ app.route('/nan')
 app.route('/login')
   .post(passport.authenticate('local', {
     'successRedirect': '/main',
-    'failureRedirect': '/login'
+    'failureRedirect': '/failedlogin'
   }))
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/login.html');
+  });
+
+app.route('/failedlogin')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/failedlogin.html');
   });
 
 app.route('/logout')
@@ -100,7 +105,7 @@ app.route('/register')
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/createacc.html');
   })
-  .post(checkEmail, asyncMiddleware(sendEmail), addUser, (req, res) => {
+  .post(checkEmail, asyncMiddleware(sendEmail), asyncMiddleware(addUser), (req, res) => {
     res.redirect('/verify');
   });
 
@@ -124,18 +129,13 @@ app.get('/account/user', (req, res) => {
   res.send(JSON.stringify(req.user));
 });
 
-app.post('/account/password', checkLoggedIn, changeUserPassword, (req, res) => {
+app.post('/account/password', checkLoggedIn, asyncMiddleware(changeUserPassword), (req, res) => {
   res.redirect('/account');
 });
 
-app.post('/account/delete', checkLoggedIn, deleteUser, (req, res) => {
-  res.logout();
+app.post('/account/delete', checkLoggedIn, asyncMiddleware(deleteUser), (req, res) => {
+  req.logout();
   res.redirect('/login');
-});
-
-app.post('/account/create', (req, res) => {
-  // TODO
-  res.send();
 });
 
 app.get('/courses', asyncMiddleware(async (req, res, next) => {

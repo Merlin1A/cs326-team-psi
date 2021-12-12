@@ -1,4 +1,4 @@
-const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
 // const websiteName = 'http://localhost:3000/';
 
 function populateUser(data) {
@@ -11,8 +11,7 @@ function getUser() {
 }
 
 document.getElementById("delete-acc").addEventListener('click', () => {
-    window.alert("Your account has been successfully deleted. Please close this alert to return to the homepage.");
-    window.location = '/';
+    window.alert("Your account has been successfully deleted.");
 });
 
 document.getElementById("change-pass").addEventListener('click', () => {

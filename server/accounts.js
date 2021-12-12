@@ -26,7 +26,6 @@ export const authStrat = new LocalStrategy(
             return done(null, false, { 'message': 'Wrong password or Username' });
         }
 
-        // should create a user object here, associated with a unique identifier
         return done(null, username);
     });
 
@@ -44,23 +43,23 @@ export async function validatePassword(username, password) {
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const users = database.collection("info");
+        const collection = client.db("accounts").collection("info");
         const query = { "username": username };
 
-        user_account = await users.findOne(query);
+        user_account = await collection.findOne(query);
     } finally {
         await client.close();
     }
 
-    const hash = user_account.hash;
-    const salt = user_account.salt;
-
-
-    if (verifyHash(password, salt) !== hash) {
+    if(user_account === null){
         return false;
     }
-    return true;
+    else{
+        const hash = user_account.hash;
+        const salt = user_account.salt;
+    
+        return verifyHash(password, salt) !== hash ? false : true;
+    }
 }
 
 /**
@@ -75,11 +74,10 @@ export async function findAccount(username) {
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const users = database.collection("info");
+        const collection = client.db("accounts").collection("info");
         const query = { "username": username };
 
-        user_account = await users.findOne(query);
+        user_account = await collection.findOne(query);
     } finally {
         await client.close();
     }
@@ -91,7 +89,7 @@ export async function findAccount(username) {
 }
 
 /** 
- * This function attempts to create a user 
+ * This function attempts to create an account 
  * @param {string} username 
  * @param {string} password
  * @returns nothing
@@ -102,19 +100,15 @@ export async function createAccount(username, password) {
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const users = database.collection("info");
+        const collection = client.db("accounts").collection("info");
 
         const isDuplicate = await findAccount(username);
-        if (isDuplicate) {
-            return;
-            // IMPLEMENT ^
+        if (!isDuplicate) {
+            const salt_hash = hashPass(password);
+            const user = { username: username, hash: salt_hash.hash, salt: salt_hash.salt, status: "unverified" };
+
+            await collection.insertOne(user);
         }
-
-        const salt_hash = hashPass(password);
-
-        const user = { username: username, hash: salt_hash.hash, salt: salt_hash.salt, status: "unverified" };
-        await users.insertOne(user);
     } finally {
         await client.close();
     }
@@ -133,13 +127,12 @@ export async function changePass(username, newPass) {
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const users = database.collection("info");
+        const collection = client.db("accounts").collection("info");
         const query = { 'username': username };
         const hash_salt = hashPass(newPass);
         const updateArg = { $set: { 'hash': hash_salt.hash, 'salt': hash_salt.salt } };
 
-        user_account = await users.updateOne(query, updateArg);
+        user_account = await collection.updateOne(query, updateArg);
     } finally {
         await client.close();
     }
@@ -147,7 +140,7 @@ export async function changePass(username, newPass) {
 
 /**
  * This function changes an account's status to verified
- * @param {string} email a user's email address
+ * @param {string} email 
  * @returns nothing
  */
  export async function verifyAccount(email){
@@ -156,12 +149,11 @@ export async function changePass(username, newPass) {
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const users = database.collection("info");
+        const collection = client.db("accounts").collection("info");
         const query = { 'username': email };
         const updateArg = { $set: { status: "verified"} };
 
-        await users.updateOne(query, updateArg);
+        await collection.updateOne(query, updateArg);
     } finally {
         await client.close();
     }
@@ -174,16 +166,14 @@ export async function changePass(username, newPass) {
  */
 export async function deleteAccount(username) {
     const client = new MongoClient(uri);
-    let user_account = null;
 
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const users = database.collection("info");
+        const collection = client.db("accounts").collection("info");
         const query = { "username": username };
 
-        user_account = await users.deleteOne(query);
+        await collection.deleteOne(query);
     } finally {
         await client.close();
     }
@@ -191,8 +181,8 @@ export async function deleteAccount(username) {
 
 /**
  * This function attempts to add a verification code for a specified email address
- * @param {string} email a user's email address
- * @returns {number} a unique five digit number for email verification 
+ * @param {string} email 
+ * @returns a unique five digit number for email verification 
  */
 export async function addCode(email){
     const client = new MongoClient(uri);
@@ -202,8 +192,7 @@ export async function addCode(email){
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const collection = database.collection("emailCodes");
+        const collection = client.db("accounts").collection("emailCodes");
         const document = {email: email, code: code, timestamp: timestamp};
 
         await collection.insertOne(document);
@@ -216,8 +205,8 @@ export async function addCode(email){
 
 /**
  * This function attempts to find a verification code for a specified email address
- * @param {string} email a user's email address
- * @returns {number} a unique five digit number for email verification 
+ * @param {string} email 
+ * @returns a unique five digit number for email verification 
  */
 export async function getCode(email){
     const client = new MongoClient(uri);
@@ -226,8 +215,7 @@ export async function getCode(email){
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const collection = database.collection("emailCodes");
+        const collection = client.db("accounts").collection("emailCodes");
         const query = { email: email };
 
         const document = await collection.findOne(query);
@@ -252,11 +240,10 @@ export async function clearCodes(){
     try {
         await client.connect();
 
-        const database = client.db("accounts");
-        const codes = database.collection("emailCodes");
+        const collection = client.db("accounts").collection("emailCodes");
         const query = { timestamp: { $lt: interval } };
 
-        await codes.deleteMany(query);
+        await collection.deleteMany(query);
     } finally {
         await client.close();
     }
@@ -265,9 +252,9 @@ export async function clearCodes(){
 // Helper Functions
 
 /**
- * 
- * @param 
- * @returns 
+ * Computes the hash of a string
+ * @param password the plaintext password
+ * @returns an object containing the hash and salt
  */
 function hashPass(password){
     const salt = crypto.randomBytes(16).toString('hex');
@@ -277,9 +264,10 @@ function hashPass(password){
 }
 
 /**
- * 
- * @param 
- * @returns 
+ * Computes the hash of a given password and its salt
+ * @param password the plaintext password
+ * @param salt the salt to generate the hash
+ * @returns the hash of the password using the salt
  */
 function verifyHash(password, salt){
     const hash = crypto.pbkdf2Sync(password, salt, 1000, 64, `sha512`).toString(`hex`);

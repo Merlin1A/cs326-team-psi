@@ -304,7 +304,7 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
 // const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
