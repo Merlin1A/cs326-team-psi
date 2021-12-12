@@ -1,4 +1,4 @@
-import { createAccount, deleteAccount, verifyAccount, addCode, getCode } from "./accounts.js";
+import { changePass, createAccount, deleteAccount, verifyAccount, addCode, getCode } from "./accounts.js";
 
 // Middleware functions
 
