@@ -64,6 +64,9 @@ export async function insertReview(rev) {
     try {
         await client.connect();
         const database = client.db("course");
+        const courses = database.collection("courses");
+        const course = await courses.findOne({"course_code" : rev.course_code});
+        await courses.updateOne({"course_code" : rev.course_code}, {$set : {"number_reviews" : course.number_reviews + 1}})
         const reviews = database.collection("reviews");
         await reviews.insertOne(rev);
     } finally {

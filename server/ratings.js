@@ -12,27 +12,16 @@ else {
     uri = process.env.MONGODB_URI + 'accounts?retryWrites=true&w=majority';
 }
 
-export async function fetchCourses() {
+export async function postRating(newEnjoyment, newHours, newRating, newDifficulty, coursecode, uid) {
     const client = new MongoClient(uri);
     try {
         await client.connect();
         const database = client.db("course");
         const courses = database.collection("courses");
-        const ans = await courses.find({}).toArray();
-        return ans;
-    } finally {
-        await client.close();
-    }
-}
-
-export async function fetchCourse(coursecode) {
-    const client = new MongoClient(uri);
-    try {
-        await client.connect();
-        const database = client.db("course");
-        const courses = database.collection("courses");
-        const ans = await courses.findOne({"course_code" : coursecode});
-        return ans;
+        const course = await courses.findOne({"course_code" : coursecode});
+        const users = course.rated;
+        users[uid] = null;
+        await courses.updateOne({"course_code" : coursecode}, {$set : {"average_hours" : newHours, "enjoyed_course": newEnjoyment, "overall_rating" : newRating, "overall_difficulty" : newDifficulty, "number_ratings" : course.number_ratings + 1, "rated" : users}});
     } finally {
         await client.close();
     }

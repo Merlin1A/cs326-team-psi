@@ -41,23 +41,23 @@
       <h3 id="name">Rate</h3> <br>
       <form>
         <div class="form-group">
-          <h5>Would you take this course again?</h5>
-          <label for="takeagain">(between 0 and 10):</label>
-          <input type="range" id="takeagain" name="takeagain" min="0" max="10" step="1"
+            <h5>How difficult was this course?</h5>
+          <label for="difficulty">(between 0 and 10):</label>
+          <input type="range" id="difficulty" name="difficulty" min="0" max="10" step="1"
             oninput="this.nextElementSibling.value = this.value">
           <output>5</output>
         </div>
         <div class="form-group">
-          <h5>Did you enjoy the material for this course?</h5>
+          <h5>How would you rate this course overall?</h5>
+          <label for="rating">(between 0 and 10):</label>
+          <input type="range" id="rating" name="rating" min="0" max="10" step="1"
+            oninput="this.nextElementSibling.value = this.value">
+          <output>5</output>
+        </div>
+        <div class="form-group">
+          <h5>How enjoyable was this course?</h5>
           <label for="enjoyment">(between 0 and 10):</label>
           <input type="range" id="enjoyment" name="enjoyment" min="0" max="10" step="1"
-            oninput="this.nextElementSibling.value = this.value">
-          <output>5</output>
-        </div>
-        <div class="form-group">
-          <h5>Did you find the resources helpful?</h5>
-          <label for="resources">(between 0 and 10):</label>
-          <input type="range" id="resources" name="resources" min="0" max="10" step="1"
             oninput="this.nextElementSibling.value = this.value">
           <output>5</output>
         </div>

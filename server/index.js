@@ -10,8 +10,9 @@ import { Strategy as LocalStrategy } from 'passport-local';
 import { MongoClient } from 'mongodb';
 
 import { authStrat, clearCodes } from './accounts.js';
-import { fetchCourses } from './courses.js';
+import { fetchCourses, fetchCourse } from './courses.js';
 import { fetchReviews, fetchReview, insertReview, updateReview, deleteReview } from './reviews.js';
+import { postRating } from './ratings.js';
 import { checkLoggedIn, checkEmail, sendEmail, verifyUser, addUser, changeUserPassword, asyncMiddleware, deleteUser } from './middleware.js';
 
 
@@ -197,10 +198,27 @@ app.post('/course/review/vote', asyncMiddleware(async (req, res, next) => {
   }
 }));
 
-app.post('/course/survey/new', (req, res) => {
-  // TODO
-  res.send()
-});
+app.post('/course/survey/new', asyncMiddleware(async (req, res, next) => {
+  /*
+    if there is an error thrown in getUserFromDb, asyncMiddleware
+    will pass it to next() and express will handle the error;
+  */
+  if (req.isAuthenticated()) {
+    let hash = createHash('sha256');
+    hash.update(req.user);
+    const uid = hash.digest('hex');
+    const coursecode = req.query.coursecode.substring(1, req.query.coursecode.length-1)
+    const course = await fetchCourse(coursecode);
+    if (!course.rated.hasOwnProperty(uid)) {
+        const newHours = ((course.number_ratings * course.average_hours) + req.query.weeklyhours) / (course.number_ratings + 1)
+        const newRating = ((course.number_ratings * course.overall_rating) + req.query.rating * 10) / (course.number_ratings + 1)
+        const newDifficulty = ((course.number_ratings * course.overall_difficulty) + req.query.difficulty * 10) / (course.number_ratings + 1)
+        const newEnjoyment = ((course.number_ratings * course.enjoyed_course) + req.query.enjoyment * 10) / (course.number_ratings + 1)
+        postRating(newEnjoyment, newHours, newRating, newDifficulty, coursecode, uid);
+    }
+    res.send("rated");
+  }
+}));
 
 app.use('/', express.static('./public/'));
 

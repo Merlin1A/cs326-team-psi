@@ -5,8 +5,8 @@ function postReview(coursecode, comment) {
   $.post(websiteName + "course/review/new?comment=" + String(comment) + "&coursecode=" + String(coursecode));
 }
 
-function postRating(coursecode, takeagain, enjoyment, resources, weeklyhours) {
-  $.post(websiteName + "course/survey/new?takeagain=" + String(takeagain) + "&enjoyment=" + String(enjoyment) + "&resources=" + String(resources) + "&weeklyhours=" + String(weeklyhours) + "&coursecode=" + String(coursecode));
+function postRating(coursecode, difficulty, rating, enjoyment, weeklyhours) {
+  $.post(websiteName + "course/survey/new?difficulty=" + String(difficulty) + "&enjoyment=" + String(enjoyment) + "&rating=" + String(rating) + "&weeklyhours=" + String(weeklyhours) + "&coursecode=" + String(coursecode));
 }
 
 window.onload = () => {
@@ -20,12 +20,12 @@ document.getElementById("review-submit").addEventListener('click', () => {
     postReview(coursecode.substring(1,coursecode.length-1), review);
 });
 document.getElementById("rating-submit").addEventListener('click', () => {
-    const wouldTakeAgain = document.getElementById("takeagain").value;
-    const enjoyedMaterial = document.getElementById("enjoyment").value;
-    const resourcesUseful = document.getElementById("resources").value;
+    const difficulty = document.getElementById("difficulty").value;
+    const rating = document.getElementById("rating").value;
+    const enjoyment = document.getElementById("enjoyment").value;
     const hoursSpent = document.getElementById("weekly-hours").value;
     const coursecode = window.localStorage.getItem('coursecode');
-    postRating(coursecode, wouldTakeAgain, enjoyedMaterial, resourcesUseful, hoursSpent);
+    postRating(coursecode, difficulty, rating, enjoyment, hoursSpent);
 
 });
 
