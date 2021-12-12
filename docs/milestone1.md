@@ -2,7 +2,7 @@
 
 Team Name: *Team Psi*
 
-Appication Name: *Course Overflow*
+Application Name: *Course Overflow*
 
 ## Team Overview
 * [Jesse Brookins](https://github.com/Merlin1A)
