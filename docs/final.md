@@ -52,7 +52,7 @@ We are creating an in-house API that will act as an intermediary between our dat
 
 ### Database <br /> 
 #### Database: account
-The account database has the collection info, which stores user information.
+The account database has two collections: info and emailCodes. The info collection contains a user account's general information. The emailCodes collection hosts verification codes for accounts pending verification; the timestamp is used to dispose of old codes.
 
 ##### Collection: info
 * info document <br />
