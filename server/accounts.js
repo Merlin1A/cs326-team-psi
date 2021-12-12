@@ -51,14 +51,15 @@ export async function validatePassword(username, password) {
         await client.close();
     }
 
-    const hash = user_account.hash;
-    const salt = user_account.salt;
-
-
-    if (verifyHash(password, salt) !== hash) {
+    if(user_account === null){
         return false;
     }
-    return true;
+    else{
+        const hash = user_account.hash;
+        const salt = user_account.salt;
+    
+        return verifyHash(password, salt) !== hash ? false : true;
+    }
 }
 
 /**
