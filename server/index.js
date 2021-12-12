@@ -118,6 +118,11 @@ app.route('/verify')
     res.redirect('/login');
   });
 
+app.route('/failedverify')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/failedverification.html');
+  });
+
 app.route('/ratings')
   .get(checkLoggedIn, (req, res) => {
     res.sendFile(process.cwd() + '/public/ratings.html');

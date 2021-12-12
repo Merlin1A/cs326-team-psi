@@ -24,7 +24,7 @@ export async function sendEmail(req, res, next) {
 // Attempts to verify an account
 export async function verifyUser(req, res, next){
     const code = await getCode(req.body.email);
-    code === parseInt(req.body.code) ? await verifyAccount(req.body.email) : res.redirect('/verify');
+    code === parseInt(req.body.code) ? await verifyAccount(req.body.email) : res.redirect('/failedverify');
 
     next();
 }
