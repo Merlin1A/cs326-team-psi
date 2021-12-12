@@ -1,7 +1,7 @@
 
 ### Heroku Deployment
-https://courseoverflow.herokuapp.com
-https://courseoverflow.app
+- https://courseoverflow.herokuapp.com
+- https://courseoverflow.app
 
 <hr /> <br />
 
