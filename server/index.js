@@ -60,7 +60,7 @@ app.route('/')
     res.sendFile(process.cwd() + '/public/landing.html');
   });
 
-app.route('/index')
+app.route('/courses')
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/index.html');
   });
@@ -77,7 +77,7 @@ app.route('/logoutmsg')
 
 app.route('/login')
   .post(passport.authenticate('local', {
-    'successRedirect': '/index',
+    'successRedirect': '/courses',
     'failureRedirect': '/login'
   }))
   .get((req, res) => {
