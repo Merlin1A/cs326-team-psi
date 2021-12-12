@@ -2,9 +2,9 @@ import { changePass, createAccount, deleteAccount, verifyAccount, addCode, getCo
 
 // Middleware functions
 
-// Checks if an user is logged in, redirecting them to the login page if not
+// Checks if an user is logged in, redirecting them to the failure page if not
 export function checkLoggedIn(req, res, next) {
-    req.isAuthenticated() ? next() : res.redirect('/login');
+    req.isAuthenticated() ? next() : res.redirect('/nan');
 }
 
 // Checks if the email used to register is a umass email address, redirecting them to the register page if not
