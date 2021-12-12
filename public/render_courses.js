@@ -304,8 +304,8 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-// const websiteName = 'http://localhost:3000/';
+// const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) {

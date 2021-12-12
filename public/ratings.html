@@ -1,86 +1,101 @@
 <!doctype html>
 <html lang="en">
-  <head>
-      <title>Course Overflow</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/main.css">
-  </head>
-  <body>
-    <div id="main_nav">
-      <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item active" id="course-overflow">
-              <a class="nav-link" href="/main"><span id="course-logo">course</span><span id="overflow-logo">overflow</span><span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
-              <a class="btn btn-secondary mr-2" role="button" href="/account">My Account<span class="sr-only">(current)</span></a>
-              <a class="btn btn-outline-warning" role="button" href="/logout">Log Out<span class="sr-only">(current)</span></a>
-          </div>
-        </div>
-      </nav>
-    </div>
-    <div id="ratings">
-      <div class="container mt-5">
-          <h3 id="name">Rate</h3> <br>
-        <form>
-            <div class="form-group">
-                <h5>Would you take this course again?</h5>
-                <label for="takeagain">(between 0 and 10):</label>
-                    <input type="range" id="takeagain" name="takeagain"
-                    min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
-                    <output>5</output>
-            </div>
-            <div class="form-group">
-                <h5>Did you enjoy the material for this course?</h5>
-                <label for="enjoyment">(between 0 and 10):</label>
-                    <input type="range" id="enjoyment" name="enjoyment"
-                    min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
-                    <output>5</output>
-            <div class="form-group">
-                <h5>Did you find the resources helpful?</h5>
-                <label for="resources">(between 0 and 10):</label>
-                    <input type="range" id="resources" name="resources"
-                    min="0" max="10" step="1" oninput="this.nextElementSibling.value = this.value">
-                    <output>5</output>
-            </div>
-            <div class="form-group">
-                <h5>How much time did you spend per week on the course?</h5>
-                <label for="weekly-hours">Hours (between 0 and 20):</label>
-                    <input type="range" id="weekly-hours" name="weekly-hours"
-                    min="0" max="20" step="1" oninput="this.nextElementSibling.value = this.value">
-                    <output>10</output>
-            </div>
-        </form>
-        <div class="form-floating">
-          <button type="submit" class="btn btn-primary mb-3" id="rating-submit">Submit rating</button>
-        </div>
-        <br> <hr> <br>
-        <h3 id="name2"></h3> <br>
-        <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a review here" id="enter-review"></textarea>
-        </div>
-        <br> <br>
-        <div class="form-floating">
-            <button type="submit" class="btn btn-primary mb-3" id="review-submit">Submit review</button>
+<head>
+  <title>Course Overflow</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+  <div id="main_nav">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark justify-content-between">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active" id="course-overflow">
+            <a class="nav-link" href="/main"><span id="course-logo">course</span><span
+                id="overflow-logo">overflow</span><span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+        <div class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+          <a class="btn btn-secondary mr-2" role="button" href="/account">My Account<span
+              class="sr-only">(current)</span></a>
+          <a class="btn btn-outline-warning" role="button" href="/logout">Log Out<span
+              class="sr-only">(current)</span></a>
         </div>
       </div>
+    </nav>
+  </div>
+  <div id="ratings">
+    <div class="container mt-5">
+      <h3 id="name">Rate</h3> <br>
+      <form>
+        <div class="form-group">
+          <h5>Would you take this course again?</h5>
+          <label for="takeagain">(between 0 and 10):</label>
+          <input type="range" id="takeagain" name="takeagain" min="0" max="10" step="1"
+            oninput="this.nextElementSibling.value = this.value">
+          <output>5</output>
+        </div>
+        <div class="form-group">
+          <h5>Did you enjoy the material for this course?</h5>
+          <label for="enjoyment">(between 0 and 10):</label>
+          <input type="range" id="enjoyment" name="enjoyment" min="0" max="10" step="1"
+            oninput="this.nextElementSibling.value = this.value">
+          <output>5</output>
+        </div>
+        <div class="form-group">
+          <h5>Did you find the resources helpful?</h5>
+          <label for="resources">(between 0 and 10):</label>
+          <input type="range" id="resources" name="resources" min="0" max="10" step="1"
+            oninput="this.nextElementSibling.value = this.value">
+          <output>5</output>
+        </div>
+        <div class="form-group">
+          <h5>How much time did you spend per week on the course?</h5>
+          <label for="weekly-hours">Hours (between 0 and 20):</label>
+          <input type="range" id="weekly-hours" name="weekly-hours" min="0" max="20" step="1"
+            oninput="this.nextElementSibling.value = this.value">
+          <output>10</output>
+        </div>
+      </form>
+      <div class="form-floating">
+        <button type="submit" class="btn btn-primary mb-3" id="rating-submit">Submit rating</button>
+      </div>
+      <br>
+      <hr> <br>
+      <h3 id="name2">name</h3> <br>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a review here" id="enter-review"></textarea>
+      </div>
+      <br> <br>
+      <div class="form-floating">
+        <button type="submit" class="btn btn-primary mb-3" id="review-submit">Submit review</button>
+      </div>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="rating.js"></script>
-  </body>
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="rating.js"></script>
+</body>
+
 </html>
