@@ -1,6 +1,7 @@
 
 ### Heroku Deployment
-https://courseoverflow.herokuapp.com
+- https://courseoverflow.herokuapp.com
+- https://courseoverflow.app
 
 <hr /> <br />
 
@@ -22,11 +23,79 @@ Course Overflow is designed to be an information repository on computer science 
 * [Lynn Li](https://github.com/lynnli0) <br />
  <i> @lynnli0 </i>
 ### User Interface <br /> 
-A final up-to-date list/table describing your application’s user interface. This should include the name of the UI view and its purpose. You should include a screenshot of each of your UI views.
+<img width="1440" alt="course_cards" src="https://user-images.githubusercontent.com/38598996/145729413-37a235a5-f360-46d8-8ddb-f63d55ffba7e.png">
+<img width="1440" alt="account" src="https://user-images.githubusercontent.com/38598996/145729422-9cc191d6-0097-4f72-95f4-aab33e597313.png">
+<img width="1440" alt="landing" src="https://user-images.githubusercontent.com/38598996/145729425-540a13f0-5247-474d-94e9-365b94aecedf.png">
+<img width="1440" alt="invalid-cred" src="https://user-images.githubusercontent.com/38598996/145729429-1f3198ae-c636-441f-927c-4159fa7bcd26.png">
+
 ### APIs <br /> 
-A final up-to-date list/table describing your application’s API
+#### CRUD
+* Creation: User Accounts, Reviews & Data Points
+* Read: Viewing Courses & Statistics
+* Updating: Overall Course Statistics & Course Ratings
+* Deletion: Downvoted Reviews & Account Termination
+
+#### API Details 
+We are creating an in-house API that will act as an intermediary between our database and interface. It will deliver a user response from the server (receiving a request) and send a response from the server back to the user, which will appear in our interface. The following section details our API endpoints.
+
+##### API Endpoints
+* (GET) /: Gets static HTML and client-side javascript from the public folder and relays it to the user.
+* (POST) /account/create: sends data from the user's input (new account information such as email, name, and password) to the server and creates a new account to access the site.
+* (GET) /account/login: retrieves users' login information from the server for them to access the site.
+* (PUT) /account/update: updates user's existing account information.
+* (DELETE) /account/delete: deletes user's account.
+* (GET) /courses: retrieves course information from the server; this information comes from a list of course objects as outlined below.
+* (POST) /courses/review/new: sends data from user's input (new review written by the user) to the server and creates a new review for course.
+* (POST) /courses/review/vote: sends data from user's input (new vote from the user) to server and creates new vote for the course.
+* (GET) /courses/reviews: retrieves the course reviews from the server; this data comes as a list of review objects as outlined below.
+* (POST) /courses/survey/new: sends data from user's input (new survey filled by the user) to server.
+
 ### Database <br /> 
-A final up-to-date representation of your database including a brief description of each of the entities in your data model and their relationships if any.
+#### Database: account
+The account database has the collection info, which stores user information such as the user's username(verified UMass email) and password.
+
+##### Collection: info
+* info document <br />
+{ <br />
+  "_id": \<ObjectId1>\, <br />
+  "username": String, //email for user <br />
+  "password": String, //password for user <br />
+}
+
+
+#### Database: course
+The course database has two collections: courses and reviews. The courses collection contains information on the course as well as metrics for the course. The reviews collection holds information on each review for each course.
+
+##### Collection: courses
+*  courses document <br />
+{ <br />
+  "_id": \<ObjectId1>\,<br />
+  "course_name": String, //the name of course <br />
+  "course_description": String, //description for course <br />
+  "credits": Number, //the number of credits for course <br />
+  "course_homepage": String, //url of course homepage <br />
+  "professors": String[], //professors for course <br />
+  "number_reviews": Integer, //number of reviews for course <br />
+  "number_ratings": Integer, //number of ratings for course <br />
+  "overall_difficulty": Integer, //percentage of difficulty for course <br />
+  "overall_rating": Integer, //percentage of overall rating for course <br />
+  "course_criteria": Integer[], //course level and which requirements course fulfills <br />
+  "enjoyed_course": Integer, //percentage of enjoyment for course <br />
+}
+
+##### Collection: reviews
+* reviews document <br />
+{ <br />
+  "_id": \<ObjectId1>\,<br />
+  "course_code": Integer, //the number associated with course<br />
+  "user_id": String, //unique hash for each user <br />
+  "uid": String, //unique hash for each review <br />
+  "comment": String, //review written by user <br />
+  "upvotes": Integer, //number of upvotes <br />
+  "downvotes": Integer, //number of downvotes <br />
+  "voted": \<ObjectVote>\, //keep track of which users have voted <br />
+}
+
 ### URL Routes/Mappings <br />
 A final up-to-date table of all the URL routes that your application supports and a short description of what those routes are used for. You should also indicate any authentication and permissions on those routes.
 ### Authentication/Authorization <br />
