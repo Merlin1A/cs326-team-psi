@@ -23,10 +23,20 @@ Course Overflow is designed to be an information repository on computer science 
 * [Lynn Li](https://github.com/lynnli0) <br />
  <i> @lynnli0 </i>
 ### User Interface <br /> 
-<img width="1440" alt="course_cards" src="https://user-images.githubusercontent.com/38598996/145729413-37a235a5-f360-46d8-8ddb-f63d55ffba7e.png">
-<img width="1440" alt="account" src="https://user-images.githubusercontent.com/38598996/145729422-9cc191d6-0097-4f72-95f4-aab33e597313.png">
-<img width="1440" alt="landing" src="https://user-images.githubusercontent.com/38598996/145729425-540a13f0-5247-474d-94e9-365b94aecedf.png">
-<img width="1440" alt="invalid-cred" src="https://user-images.githubusercontent.com/38598996/145729429-1f3198ae-c636-441f-927c-4159fa7bcd26.png">
+<img width="1440" alt="landing" src="https://user-images.githubusercontent.com/38598996/145733793-c20ecf8c-a97e-4238-a9ab-d32483c7b6b3.png">
+<img width="1440" alt="landing-cont" src="https://user-images.githubusercontent.com/38598996/145733792-94886ad1-331a-4da8-94b9-f05a5c0d656e.png">
+<img width="1440" alt="account-creation" src="https://user-images.githubusercontent.com/38598996/145733776-153c8bd3-47bc-4b0e-b660-28a997a803f3.png">
+<img width="1425" alt="email-verification" src="https://user-images.githubusercontent.com/38598996/145733789-80e21a19-fb67-4c53-b2b0-6a93673fbe08.png">
+<img width="1440" alt="failed-ver" src="https://user-images.githubusercontent.com/38598996/145733790-9a74173d-89f4-4ad8-bcab-2a8ea120118e.png">
+<img width="1440" alt="login" src="https://user-images.githubusercontent.com/38598996/145733794-f49c22ba-28c3-4ade-b2e8-6dfaaf3bd603.png">
+<img width="1440" alt="invalid-cred" src="https://user-images.githubusercontent.com/38598996/145733791-d06029f0-4fb5-4def-95f8-12c45406ebfc.png">
+<img width="1440" alt="course_cards" src="https://user-images.githubusercontent.com/38598996/145733784-1419be01-c466-428b-9c58-c3ace5a051c3.png">
+<img width="1440" alt="card-expansion" src="https://user-images.githubusercontent.com/38598996/145733781-7cfa98a9-d502-40bf-bbe4-257b9cd9c911.png">
+<img width="1440" alt="ratings-pt1" src="https://user-images.githubusercontent.com/38598996/145733801-54144b69-820d-4c36-a1e2-e3300893f0bb.png">
+<img width="1440" alt="ratings-pt2" src="https://user-images.githubusercontent.com/38598996/145733802-382877c7-dd59-427d-b15d-26044441734f.png">
+<img width="1440" alt="account" src="https://user-images.githubusercontent.com/38598996/145733779-14d139f9-4c1a-4405-b832-ce40cabe169c.png">
+<img width="1440" alt="logout" src="https://user-images.githubusercontent.com/38598996/145733795-ad38817c-a71b-4903-bd72-764eb017261c.png">
+<img width="1440" alt="not-logged" src="https://user-images.githubusercontent.com/38598996/145733798-fcaa136f-6fee-4393-b66e-485cb95490da.png">
 
 ### APIs <br /> 
 #### CRUD
