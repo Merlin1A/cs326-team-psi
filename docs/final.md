@@ -64,6 +64,15 @@ The account database has the collection info, which stores user information.
   "status": String, //whether a user is verified or unverified <br />
 }
 
+##### Collection: emailCodes
+* emailCodes document <br />
+{ <br />
+  "_id": \<ObjectId1>\, <br />
+  "email": String, //email for user <br />
+  "code": Int32, //the code emailed to the user for verification <br />
+  "timestamp": Double, //time elapsed since unix epoch <br />
+}
+
 #### Database: course
 The course database has two collections: courses and reviews. The courses collection contains information on the course as well as metrics for the course. The reviews collection holds information on each review for each course.
 
