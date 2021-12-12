@@ -36,7 +36,6 @@ app.use(express.urlencoded({ 'extended': true })); // allow URLencoded data
 
 app.use('/', express.static('./public/'));
 
-
 const session = {
   secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
   resave: false,
@@ -58,9 +57,19 @@ passport.deserializeUser((uid, done) => {
   done(null, uid);
 });
 
+app.route('/')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/landing.html');
+  });
+
+app.route('/index')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/index.html');
+  });
+
 app.route('/login')
   .post(passport.authenticate('local', {
-    'successRedirect': '/',
+    'successRedirect': '/index.html',
     'failureRedirect': '/login'
   }))
   .get((req, res) => {
@@ -70,7 +79,7 @@ app.route('/login')
 app.route('/logout')
   .get((req, res) => {
     req.logout();
-    res.redirect('/login');
+    res.redirect('/');
   });
 
 app.route('/account')
