@@ -9,51 +9,37 @@ import expressSession from 'express-session';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { MongoClient } from 'mongodb';
 
-import { authStrat, validatePassword, findUser, addUser, changePass, deleteAccount, checkLoggedIn, checkEmail } from './accounts.js';
+import { authStrat, clearCodes } from './accounts.js';
 import { fetchCourses } from './courses.js';
 import { fetchReviews, fetchReview, insertReview, updateReview, deleteReview } from './reviews.js';
+import { checkLoggedIn, checkEmail, sendEmail, verifyUser, addUser, changeUserPassword, asyncMiddleware, deleteUser } from './middleware.js';
 
 
+const app = express();
 const PORT = process.env.PORT || 3000;
 const headerText = { 'Content-Type': 'application/json;charset=utf-8' };
-const app = express();
-
-
-function genHexString(len) {
-  const hex = '0123456789ABCDEF';
-  let output = '';
-  for (let i = 0; i < len; ++i) {
-    output += hex.charAt(Math.floor(Math.random() * hex.length));
-  }
-  return output;
-}
-const asyncMiddleware = fn => (req, res, next) => {
-  Promise.resolve(fn(req, res, next)).catch(next);
-}
-
-app.use(express.json()); // lets you handle JSON input
-app.use(express.urlencoded({ 'extended': true })); // allow URLencoded data
-
 const session = {
-  secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
+  secret: process.env.SECRET || 'SECRET', 
   resave: false,
   saveUninitialized: false
 };
 
+app.use(express.json()); 
+app.use(express.urlencoded({ 'extended': true })); 
 app.use(expressSession(session));
 passport.use(authStrat);
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Convert user object to a unique identifier.
 passport.serializeUser((user, done) => {
   done(null, user);
 });
 
-// Convert a unique identifier to a user object.
 passport.deserializeUser((uid, done) => {
   done(null, uid);
 });
+
+setTimeout(clearCodes, 1800000);
 
 app.route('/')
   .get((req, res) => {
@@ -103,7 +89,7 @@ app.route('/logout')
 
 app.route('/account')
   .get(checkLoggedIn, (req, res) => {
-    res.sendFile(process.cwd() + '/public/settings.html');
+    res.sendFile(process.cwd() + '/public/account.html');
   })
   .post((req, res) => {
     res.send();
@@ -113,12 +99,15 @@ app.route('/register')
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/createacc.html');
   })
-  .post(checkEmail, (req, res) => {
-    const username = req.body.username;
-    const password = req.body.password;
+  .post(checkEmail, asyncMiddleware(sendEmail), addUser, (req, res) => {
+    res.redirect('/verify');
+  });
 
-    addUser(username, password);
-
+app.route('/verify')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/verify.html');
+  })
+  .post(asyncMiddleware(verifyUser), (req, res) => {
     res.redirect('/login');
   });
 
@@ -134,20 +123,12 @@ app.get('/account/user', (req, res) => {
   res.send(JSON.stringify(req.user));
 });
 
-app.post('/account/password', checkLoggedIn, (req, res) => {
-  const newPass = req.body.password;
-  const user = req.user;
-
-  changePass(user, newPass);
-
+app.post('/account/password', checkLoggedIn, changeUserPassword, (req, res) => {
   res.redirect('/account');
 });
 
-app.post('/account/delete', (req, res) => {
-  const user = req.user;
-
-  deleteAccount(user);
-
+app.post('/account/delete', checkLoggedIn, deleteUser, (req, res) => {
+  res.logout();
   res.redirect('/login');
 });
 
@@ -226,3 +207,22 @@ app.use('/', express.static('./public/'));
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
 });
+
+
+// Helper functions
+
+/**
+ * Generates a hexadecimal string
+ * @param {number} len length of hexadecimal string to generate
+ * @returns {string} random hexadecimal string of length len
+ */
+ function genHexString(len) {
+  const hex = '0123456789ABCDEF';
+  let output = '';
+
+  for (let i = 0; i < len; ++i) {
+    output += hex.charAt(Math.floor(Math.random() * hex.length));
+  }
+  return output;
+}
+
