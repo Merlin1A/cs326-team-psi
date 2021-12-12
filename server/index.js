@@ -40,6 +40,7 @@ passport.deserializeUser((uid, done) => {
   done(null, uid);
 });
 
+clearCodes();
 setTimeout(clearCodes, 1800000);
 
 app.route('/')
