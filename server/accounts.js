@@ -1,9 +1,10 @@
-import passport from 'passport';
 import crypto from 'crypto';
-import { Strategy as LocalStrategy } from 'passport-local'
+import passport from 'passport';
+
 import { MongoClient } from 'mongodb';
 import { createRequire } from 'module';
- 
+import { Strategy as LocalStrategy } from 'passport-local'
+
 const require = createRequire(import.meta.url);
 let uri;
 let secrets;
@@ -31,7 +32,7 @@ export const authStrat = new LocalStrategy(
 
 
 /**
- * This function verifies that a set of credentials are valid 
+ * This function verifies that a set of credentials are valid and the associated account is verified 
  * @param {string} username 
  * @param {string} password 
  * @returns {boolean} true if the credentials are valid, false otherwise
@@ -62,13 +63,12 @@ export async function validatePassword(username, password) {
     return true;
 }
 
-
 /**
- * This function attempts to find a user in the database 
+ * This function attempts to find an account in the database 
  * @param {string} username 
- * @returns true if the user exists, false otherwise
+ * @returns {boolean} true if the user exists, false otherwise
  */
-export async function findUser(username) {
+export async function findAccount(username) {
     const client = new MongoClient(uri);
     let user_account = null;
 
@@ -90,23 +90,22 @@ export async function findUser(username) {
     return true;
 }
 
-
 /** 
  * This function attempts to create a user 
  * @param {string} username 
  * @param {string} password
- * @returns Nothing currently
+ * @returns nothing
  */
-export async function addUser(username, password) {
+export async function createAccount(username, password) {
     const client = new MongoClient(uri);
-
+    
     try {
         await client.connect();
 
         const database = client.db("accounts");
         const users = database.collection("info");
 
-        const isDuplicate = await findUser(username);
+        const isDuplicate = await findAccount(username);
         if (isDuplicate) {
             return;
             // IMPLEMENT ^
@@ -114,19 +113,18 @@ export async function addUser(username, password) {
 
         const salt_hash = hashPass(password);
 
-        const user = { username: username, hash: salt_hash.hash, salt: salt_hash.salt };
+        const user = { username: username, hash: salt_hash.hash, salt: salt_hash.salt, status: "unverified" };
         await users.insertOne(user);
     } finally {
         await client.close();
     }
 }
 
-
 /**
  * This function attempts to change a user's password 
  * @param {string} username 
  * @param {string} newPass
- * @returns Nothing currently
+ * @returns nothing
  */
 export async function changePass(username, newPass) {
     const client = new MongoClient(uri);
@@ -147,11 +145,32 @@ export async function changePass(username, newPass) {
     }
 }
 
+/**
+ * This function changes an account's status to verified
+ * @param {string} email a user's email address
+ * @returns nothing
+ */
+ export async function verifyAccount(email){
+    const client = new MongoClient(uri);
+
+    try {
+        await client.connect();
+
+        const database = client.db("accounts");
+        const users = database.collection("info");
+        const query = { 'username': email };
+        const updateArg = { $set: { status: "verified"} };
+
+        await users.updateOne(query, updateArg);
+    } finally {
+        await client.close();
+    }
+}
 
 /**
  * This function attempts to delete a user in the database 
  * @param {string} username 
- * @returns 
+ * @returns nothing
  */
 export async function deleteAccount(username) {
     const client = new MongoClient(uri);
@@ -170,22 +189,86 @@ export async function deleteAccount(username) {
     }
 }
 
+/**
+ * This function attempts to add a verification code for a specified email address
+ * @param {string} email a user's email address
+ * @returns {number} a unique five digit number for email verification 
+ */
+export async function addCode(email){
+    const client = new MongoClient(uri);
+    const code = Math.floor(Math.random()*90000) + 10000;
+    const timestamp = Date.now();
 
-// Middleware functions
+    try {
+        await client.connect();
 
-// Checks if an user is logged in, redirecting them to the login page if not
-export function checkLoggedIn(req, res, next) {
-    req.isAuthenticated() ? next() : res.redirect('/nan');
+        const database = client.db("accounts");
+        const collection = database.collection("emailCodes");
+        const document = {email: email, code: code, timestamp: timestamp};
+
+        await collection.insertOne(document);
+    } finally {
+        await client.close();
+    }
+
+    return code;
 }
 
-// Checks if the email used to register is a umass email address, redirecting them to the register page if not
-export function checkEmail(req, res, next) {
-    req.body.username.endsWith('umass.edu') ? next() : res.redirect('/register');
+/**
+ * This function attempts to find a verification code for a specified email address
+ * @param {string} email a user's email address
+ * @returns {number} a unique five digit number for email verification 
+ */
+export async function getCode(email){
+    const client = new MongoClient(uri);
+    let code;
+
+    try {
+        await client.connect();
+
+        const database = client.db("accounts");
+        const collection = database.collection("emailCodes");
+        const query = { email: email };
+
+        const document = await collection.findOne(query);
+
+        document !== null ? code = document.code : code = null;
+    } finally {
+        await client.close();
+    }
+
+    return code
 }
 
+/**
+ * This function removes all codes over 30 minutes old 
+ * @returns nothing
+ */
+export async function clearCodes(){
+    const client = new MongoClient(uri);
+    const time = Date.now();
+    const interval = time - 1800000;
 
-// Utility Functions
+    try {
+        await client.connect();
 
+        const database = client.db("accounts");
+        const codes = database.collection("emailCodes");
+        const query = { timestamp: { $lt: interval } };
+
+        await codes.deleteMany(query);
+    } finally {
+        await client.close();
+    }
+}
+
+// Helper Functions
+
+/**
+ * 
+ * @param 
+ * @returns 
+ */
 function hashPass(password){
     const salt = crypto.randomBytes(16).toString('hex');
     const hash = crypto.pbkdf2Sync(password, salt, 1000, 64, `sha512`).toString(`hex`);
@@ -193,6 +276,11 @@ function hashPass(password){
     return {'hash': hash, 'salt': salt};
 }
 
+/**
+ * 
+ * @param 
+ * @returns 
+ */
 function verifyHash(password, salt){
     const hash = crypto.pbkdf2Sync(password, salt, 1000, 64, `sha512`).toString(`hex`);
 
