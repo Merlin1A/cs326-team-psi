@@ -104,7 +104,7 @@ app.route('/register')
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/createacc.html');
   })
-  .post(checkEmail, asyncMiddleware(sendEmail), addUser, (req, res) => {
+  .post(checkEmail, asyncMiddleware(sendEmail), asyncMiddleware(addUser), (req, res) => {
     res.redirect('/verify');
   });
 
@@ -128,18 +128,13 @@ app.get('/account/user', (req, res) => {
   res.send(JSON.stringify(req.user));
 });
 
-app.post('/account/password', checkLoggedIn, changeUserPassword, (req, res) => {
+app.post('/account/password', checkLoggedIn, asyncMiddleware(changeUserPassword), (req, res) => {
   res.redirect('/account');
 });
 
-app.post('/account/delete', checkLoggedIn, deleteUser, (req, res) => {
+app.post('/account/delete', checkLoggedIn, asyncMiddleware(deleteUser), (req, res) => {
   res.logout();
   res.redirect('/login');
-});
-
-app.post('/account/create', (req, res) => {
-  // TODO
-  res.send();
 });
 
 app.get('/courses', asyncMiddleware(async (req, res, next) => {

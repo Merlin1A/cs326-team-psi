@@ -166,7 +166,6 @@ export async function changePass(username, newPass) {
  */
 export async function deleteAccount(username) {
     const client = new MongoClient(uri);
-    let user_account = null;
 
     try {
         await client.connect();
@@ -174,7 +173,7 @@ export async function deleteAccount(username) {
         const collection = client.db("accounts").collection("info");
         const query = { "username": username };
 
-        user_account = await collection.deleteOne(query);
+        await collection.deleteOne(query);
     } finally {
         await client.close();
     }

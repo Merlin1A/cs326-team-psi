@@ -30,22 +30,22 @@ export async function verifyUser(req, res, next){
 }
 
 // Add an unverified user
-export function addUser(req, res, next){
+export async function addUser(req, res, next){
     createAccount(req.body.email, req.body.password);
     
     next();
 }
 
 // Change a user's password
-export function changeUserPassword(req, res, next){
+export async function changeUserPassword(req, res, next){
     changePass(req.user, req.body.password);
     
     next();
 }
 
 // Delete a user
-export function deleteUser(req, res, next){
-    deleteAccount(req.user);
+export async function deleteUser(req, res, next){
+    await deleteAccount(req.user);
 
     next();
 }
