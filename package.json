@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/Merlin1A/cs326-team-psi#readme",
   "dependencies": {
-    "acorn": "^8.6.0",
     "crypto": "^1.0.1",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
