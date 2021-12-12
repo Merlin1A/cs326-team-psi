@@ -34,8 +34,6 @@ const asyncMiddleware = fn => (req, res, next) => {
 app.use(express.json()); // lets you handle JSON input
 app.use(express.urlencoded({ 'extended': true })); // allow URLencoded data
 
-app.use('/', express.static('./public/'));
-
 const session = {
   secret: process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
   resave: false,
@@ -67,9 +65,19 @@ app.route('/index')
     res.sendFile(process.cwd() + '/public/index.html');
   });
 
+app.route('/landing')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/landing.html');
+  });
+
+app.route('/logoutmsg')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/logout.html');
+  });
+
 app.route('/login')
   .post(passport.authenticate('local', {
-    'successRedirect': '/index.html',
+    'successRedirect': '/index',
     'failureRedirect': '/login'
   }))
   .get((req, res) => {
@@ -79,7 +87,7 @@ app.route('/login')
 app.route('/logout')
   .get((req, res) => {
     req.logout();
-    res.redirect('/');
+    res.redirect('/logoutmsg');
   });
 
 app.route('/account')
@@ -194,6 +202,7 @@ app.post('/course/survey/new', (req, res) => {
   res.send()
 });
 
+app.use('/', express.static('./public/'));
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`);
