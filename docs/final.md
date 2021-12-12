@@ -52,16 +52,17 @@ We are creating an in-house API that will act as an intermediary between our dat
 
 ### Database <br /> 
 #### Database: account
-The account database has the collection info, which stores user information such as the user's username(verified UMass email) and password.
+The account database has the collection info, which stores user information.
 
 ##### Collection: info
 * info document <br />
 { <br />
   "_id": \<ObjectId1>\, <br />
   "username": String, //email for user <br />
-  "password": String, //password for user <br />
+  "hash": String, //hash from user's password and salt <br />
+  "salt": String, //salt for password hashing <br />
+  "status": String, //whether a user is verified or unverified <br />
 }
-
 
 #### Database: course
 The course database has two collections: courses and reviews. The courses collection contains information on the course as well as metrics for the course. The reviews collection holds information on each review for each course.
