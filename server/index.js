@@ -72,10 +72,15 @@ app.route('/nan')
 app.route('/login')
   .post(passport.authenticate('local', {
     'successRedirect': '/main',
-    'failureRedirect': '/login'
+    'failureRedirect': '/failedlogin'
   }))
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/login.html');
+  });
+
+app.route('/failedlogin')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/failedlogin.html');
   });
 
 app.route('/logout')
