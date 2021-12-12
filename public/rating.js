@@ -1,5 +1,5 @@
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-//const websiteName = 'http://localhost:3000/';
+// const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function postReview(coursecode, comment) {
   $.post(websiteName + "course/review/new?comment=" + String(comment) + "&coursecode=" + String(coursecode));
