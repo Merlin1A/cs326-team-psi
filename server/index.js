@@ -133,7 +133,7 @@ app.post('/account/password', checkLoggedIn, asyncMiddleware(changeUserPassword)
 });
 
 app.post('/account/delete', checkLoggedIn, asyncMiddleware(deleteUser), (req, res) => {
-  res.logout();
+  req.logout();
   res.redirect('/login');
 });
 
