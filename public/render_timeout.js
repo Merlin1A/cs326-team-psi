@@ -1,3 +1,3 @@
 setTimeout(function () {
     window.location = "/";
- }, 2000)
+ }, 5000)

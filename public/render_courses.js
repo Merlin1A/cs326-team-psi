@@ -161,7 +161,7 @@ function populateCourses(courses) {
                       <a onclick="getReviews(this.id.substring(0, 5))" class="btn btn-primary" id="${getCourseCode(course.course_name) + "_details"}" data-toggle="collapse" href="#${"collapse" + String(course_id)}" aria-expanded="false" aria-controls="${"collapse" + String(course_id)}">
                         Click to see more
                       </a>
-                      <a onclick="setStorage('${course.course_name}')" class="btn btn-warning" id="rate${String(course_id)}" href="ratings.html">
+                      <a onclick="setStorage('${course.course_name}')" class="btn btn-warning" id="rate${String(course_id)}" href="/ratings">
                         Rate or review this class 
                       </a>
                     </div>
@@ -304,8 +304,8 @@ function populateCourses(courses) {
   });
 }
 
-const websiteName = 'https://courseoverflow.herokuapp.com/';
-// const websiteName = 'http://localhost:3000/';
+// const websiteName = 'https://courseoverflow.herokuapp.com/';
+const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) {

@@ -61,8 +61,11 @@ app.route('/')
   });
 
 app.route('/main')
-  .get((req, res) => {
+  .get(checkLoggedIn, (req, res) => {
     res.sendFile(process.cwd() + '/public/index.html');
+  })
+  .post((req, res) => {
+    res.send();
   });
 
 app.route('/landing')
@@ -73,6 +76,11 @@ app.route('/landing')
 app.route('/logoutmsg')
   .get((req, res) => {
     res.sendFile(process.cwd() + '/public/logout.html');
+  });
+
+app.route('/nan')
+  .get((req, res) => {
+    res.sendFile(process.cwd() + '/public/cannotaccess.html');
   });
 
 app.route('/login')
@@ -88,6 +96,9 @@ app.route('/logout')
   .get((req, res) => {
     req.logout();
     res.redirect('/logoutmsg');
+  })
+  .post((req, res) => {
+    res.send();
   });
 
 app.route('/account')
@@ -109,6 +120,14 @@ app.route('/register')
     addUser(username, password);
 
     res.redirect('/login');
+  });
+
+app.route('/ratings')
+  .get(checkLoggedIn, (req, res) => {
+    res.sendFile(process.cwd() + '/public/ratings.html');
+  })
+  .post((req, res) => {
+    res.send();
   });
 
 app.get('/account/user', (req, res) => {
