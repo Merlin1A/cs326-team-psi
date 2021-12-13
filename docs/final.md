@@ -220,7 +220,7 @@ A conclusion describing your team’s experience in working on this project. Thi
 * Account (2.5 pts)
   * Users can delete their account 
 * Review (2.5 pts)
-  * A review is deleted if it recieves enough downvotes 
+  * A review is deleted if it recieves enough downvotes (after 10 downvotes)
 
 
 ## Total: ___ / 100 PTS
