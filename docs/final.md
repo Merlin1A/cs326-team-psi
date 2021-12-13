@@ -23,20 +23,48 @@ Course Overflow is designed to be an information repository on computer science 
 * [Lynn Li](https://github.com/lynnli0) <br />
  <i> @lynnli0 </i>
 ### User Interface <br /> 
-<img width="1440" alt="landing" src="https://user-images.githubusercontent.com/38598996/145733793-c20ecf8c-a97e-4238-a9ab-d32483c7b6b3.png">
-<img width="1440" alt="landing-cont" src="https://user-images.githubusercontent.com/38598996/145733792-94886ad1-331a-4da8-94b9-f05a5c0d656e.png">
-<img width="1440" alt="account-creation" src="https://user-images.githubusercontent.com/38598996/145733776-153c8bd3-47bc-4b0e-b660-28a997a803f3.png">
-<img width="1425" alt="email-verification" src="https://user-images.githubusercontent.com/38598996/145733789-80e21a19-fb67-4c53-b2b0-6a93673fbe08.png">
-<img width="1440" alt="failed-ver" src="https://user-images.githubusercontent.com/38598996/145733790-9a74173d-89f4-4ad8-bcab-2a8ea120118e.png">
-<img width="1440" alt="login" src="https://user-images.githubusercontent.com/38598996/145733794-f49c22ba-28c3-4ade-b2e8-6dfaaf3bd603.png">
-<img width="1440" alt="invalid-cred" src="https://user-images.githubusercontent.com/38598996/145733791-d06029f0-4fb5-4def-95f8-12c45406ebfc.png">
-<img width="1440" alt="course_cards" src="https://user-images.githubusercontent.com/38598996/145733784-1419be01-c466-428b-9c58-c3ace5a051c3.png">
-<img width="1440" alt="card-expansion" src="https://user-images.githubusercontent.com/38598996/145733781-7cfa98a9-d502-40bf-bbe4-257b9cd9c911.png">
-<img width="1440" alt="ratings-pt1" src="https://user-images.githubusercontent.com/38598996/145733801-54144b69-820d-4c36-a1e2-e3300893f0bb.png">
-<img width="1440" alt="ratings-pt2" src="https://user-images.githubusercontent.com/38598996/145733802-382877c7-dd59-427d-b15d-26044441734f.png">
-<img width="1440" alt="account" src="https://user-images.githubusercontent.com/38598996/145733779-14d139f9-4c1a-4405-b832-ce40cabe169c.png">
-<img width="1440" alt="logout" src="https://user-images.githubusercontent.com/38598996/145733795-ad38817c-a71b-4903-bd72-764eb017261c.png">
-<img width="1440" alt="not-logged" src="https://user-images.githubusercontent.com/38598996/145733798-fcaa136f-6fee-4393-b66e-485cb95490da.png">
+* Landing/Homepage Page <br />
+The Landing/Homepage page allows current users to login to the site and for prospective users, they are able to read about the site's features beforehand and register for an account.
+  * first half of landing/homepage
+  * <img width="1440" alt="landing" src="https://user-images.githubusercontent.com/38598996/145733793-c20ecf8c-a97e-4238-a9ab-d32483c7b6b3.png">
+  * second half of landing/homepage
+  * <img width="1440" alt="landing-cont" src="https://user-images.githubusercontent.com/38598996/145733792-94886ad1-331a-4da8-94b9-f05a5c0d656e.png">
+* Sign-up Page <br />
+The Sign-up page allows for UMass students with valid UMass emails to sign up for an account. After submitting the registration form, the page will redirect to another page for email verification. <br />
+* <img width="1440" alt="account-creation" src="https://user-images.githubusercontent.com/38598996/145733776-153c8bd3-47bc-4b0e-b660-28a997a803f3.png">
+* Verification Page <br />
+The Verification Page will verify whether of not the user's email is valid. If it is, then the user should be able to recieve a verification code in their inbox and use it to verify themsleves on the verification page.  <br />
+* <img width="1425" alt="email-verification" src="https://user-images.githubusercontent.com/38598996/145733789-80e21a19-fb67-4c53-b2b0-6a93673fbe08.png">
+* Failed Verification Page <br />
+The Failed Verification Page will verify whether of not the user's email is valid. If it is, then the user should be able to recieve a verification code in their inbox and use it to verify themsleves on the verification page. 
+* <img width="1440" alt="failed-ver" src="https://user-images.githubusercontent.com/38598996/145733790-9a74173d-89f4-4ad8-bcab-2a8ea120118e.png">
+* Login Page <br />
+The Login Page allows for users to login and use their credentials in order to access the entire site. If the email or password do not match or an account cannot be found, it will redirect to the invalid credentials page. 
+* <img width="1440" alt="login" src="https://user-images.githubusercontent.com/38598996/145733794-f49c22ba-28c3-4ade-b2e8-6dfaaf3bd603.png">
+* Invalid Credentials Page <br />
+If the user input wrong credentials in the login form or an account cannot be found, this page will appear and then redirect the user back to the login page.
+* <img width="1440" alt="invalid-cred" src="https://user-images.githubusercontent.com/38598996/145733791-d06029f0-4fb5-4def-95f8-12c45406ebfc.png">
+* Courses Page <br />
+The Courses Page contains content from all Computer Science courses from CICS (as scraped from the CICS Course Guide site). Each course is a card and the user can click on the "Click to see more" button in order to view course information, metrics, and reviews. The user can also upvote or downvote reviews and if the review recieves enough downvotes, it will be deleted. The user can also click on the "Rate or review this class" button which will redirect them to the Ratings page where they can rate/review the course. 
+   * Course Cards
+   * <img width="1440" alt="course_cards" src="https://user-images.githubusercontent.com/38598996/145733784-1419be01-c466-428b-9c58-c3ace5a051c3.png">
+   * Course Card Expanded
+   * <img width="1440" alt="card-expansion" src="https://user-images.githubusercontent.com/38598996/145733781-7cfa98a9-d502-40bf-bbe4-257b9cd9c911.png">
+* Ratings Page <br />
+The Ratings Page contains two forms: 1) Rating form and 2) Review form. The user can either fill only one of the two forms or both. When the user clicks submit, the information will be updated in the card that the rating/review belongs to.
+  * Rating Form
+  * <img width="1440" alt="ratings-pt1" src="https://user-images.githubusercontent.com/38598996/145733801-54144b69-820d-4c36-a1e2-e3300893f0bb.png">
+  * Review Form
+  * <img width="1440" alt="ratings-pt2" src="https://user-images.githubusercontent.com/38598996/145733802-382877c7-dd59-427d-b15d-26044441734f.png">
+* Account Page <br />
+The Account Page allows for users to modify their account settings, such as password, and delete their account. If they delete their account, then it will redirect them to the Login page.
+* <img width="1440" alt="account" src="https://user-images.githubusercontent.com/38598996/145733779-14d139f9-4c1a-4405-b832-ce40cabe169c.png">
+* Logout Page <br />
+When the user clicks on the "Log Out" button, it will redirect them to this logout page where it alerts the user that they have been successfully logged out and after 5 seconds, it will then redirect to the landing/homepage page.
+* <img width="1440" alt="logout" src="https://user-images.githubusercontent.com/38598996/145733795-ad38817c-a71b-4903-bd72-764eb017261c.png">
+* Not Logged In Page
+If the user is not logged into the site and they try to access certain views without credentials, it will redirect them to the landing/homepage page.
+* <img width="1440" alt="not-logged" src="https://user-images.githubusercontent.com/38598996/145733798-fcaa136f-6fee-4393-b66e-485cb95490da.png">
 
 ### APIs <br /> 
 #### CRUD
