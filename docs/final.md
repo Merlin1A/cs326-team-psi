@@ -188,11 +188,11 @@ Overall, this project was a good lesson on the varying aspects of creating an ap
 
 ### General ___ / 25 pts
 * Authentication (15 pts)
-  * New users can create account through register page (5 pts)
+  * New users can create a verified account through register page (5 pts)
   * User can login with their credentials (5 pts)
   * Certain pages (courses page, account settings, ratings page, etc.) are only accessible if user is logged in. (5 pts)
 * Page routing (5 pts)
-* Linting/Code style (5 pts)
+* A custom domain is used with email verification (5 pts)
 
 ### Courses Page ___ / 25 pts
 * Users can view courses (shown as cards), their metrics (overall rating, enjoyed the course, and overall difficulty), and the number of reviews and ratings each course has. (10 pts)
