@@ -169,6 +169,7 @@ A breakdown of the division of labor for each team member — that is, saying wh
 A conclusion describing your team’s experience in working on this project. This should include what you learned through the design and implementation process, the difficulties you encountered, what your team would have liked to know before starting the project that would have helped you later, and any other technical hurdles that your team encountered.
 
 <hr /> <br />
+# Rubric
   
 ### Video Demo ___ / 10
 
@@ -221,3 +222,6 @@ A conclusion describing your team’s experience in working on this project. Thi
   * Users can delete their account 
 * Review (2.5 pts)
   * A review is deleted if it recieves enough downvotes 
+
+
+## Total: ___ / 100 PTS
