@@ -167,7 +167,8 @@ A breakdown of the division of labor for each team member — that is, saying wh
 A conclusion describing your team’s experience in working on this project. This should include what you learned through the design and implementation process, the difficulties you encountered, what your team would have liked to know before starting the project that would have helped you later, and any other technical hurdles that your team encountered.
 
 <hr /> <br />
-# Rubric
+
+## Rubric
   
 ### Video Demo ___ / 10
 
