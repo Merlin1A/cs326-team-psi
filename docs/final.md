@@ -178,6 +178,10 @@ Designed and created the initial layout/wireframe using Whimiscal with Jesse and
 ### Conclusion <br /> 
 A conclusion describing your team’s experience in working on this project. This should include what you learned through the design and implementation process, the difficulties you encountered, what your team would have liked to know before starting the project that would have helped you later, and any other technical hurdles that your team encountered.
 
+Our experience was pretty straightforward. We used online resources, guided by the information in the lecture, to create a fully functioning web application. When we ran into issues, we consulted documentation, error logs, and web forums. Through the design and implementation process, we got a clear picture of how to create a fully functioning, standalone web application. In terms of difficulties, we found that making html templates, and their associated client-side javscript, was cumbersome and painstaking; javscript rendering engines would have made this a much more clean and productive experience, but they were disallowed. In terms of information we would have wanted to know, the documentation for the final project was always available, so we always did know the relevent project parameters.
+
+Overall, this project was a good lesson on the varying aspects of creating an application on the web.
+
 <hr /> <br />
 
 ## Rubric
