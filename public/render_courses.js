@@ -305,7 +305,6 @@ function populateCourses(courses) {
 }
 
 const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
-// const websiteName = 'http://localhost:3000/';
 
 function getCourses() {
   $.getJSON(websiteName + "courses", function (data) {

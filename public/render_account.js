@@ -1,5 +1,5 @@
 const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
-// const websiteName = 'http://localhost:3000/';
+
 
 function populateUser(data) {
     const user_field = document.getElementById('user_email');

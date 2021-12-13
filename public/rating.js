@@ -1,5 +1,4 @@
-// const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
-const websiteName = 'http://localhost:3000/';
+const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
 
 function postReview(coursecode, comment) {
   $.post(websiteName + "course/review/new?comment=" + String(comment) + "&coursecode=" + String(coursecode));
