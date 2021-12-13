@@ -1,5 +1,5 @@
-const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
-//const websiteName = 'http://localhost:3000/';
+// const websiteName = window.location.protocol + "//" + window.location.hostname + "/";
+const websiteName = 'http://localhost:3000/';
 
 function postReview(coursecode, comment) {
   $.post(websiteName + "course/review/new?comment=" + String(comment) + "&coursecode=" + String(coursecode));
@@ -10,15 +10,17 @@ function postRating(coursecode, difficulty, rating, enjoyment, weeklyhours) {
 }
 
 window.onload = () => {
-let course_name = window.localStorage.getItem('course');
-document.getElementById("name").innerText = course_name.substring(1,course_name.length-1);
-document.getElementById("name2").innerText = "Write a review for " + course_name.substring(1,course_name.length-1);
+    const course_name = window.localStorage.getItem('course');
+    document.getElementById("name").innerText = course_name.substring(1,course_name.length-1);
+    document.getElementById("name2").innerText = "Write a review for " + course_name.substring(1,course_name.length-1);
 };
+
 document.getElementById("review-submit").addEventListener('click', () => {
     const review = document.getElementById('enter-review').value;
     const coursecode = window.localStorage.getItem('coursecode');
     postReview(coursecode.substring(1,coursecode.length-1), review);
 });
+
 document.getElementById("rating-submit").addEventListener('click', () => {
     const difficulty = document.getElementById("difficulty").value;
     const rating = document.getElementById("rating").value;
@@ -30,19 +32,19 @@ document.getElementById("rating-submit").addEventListener('click', () => {
 });
 
 function validateRating(){
-    let firstYes = document.getElementById("yes-ans");
-    let secYes = document.getElementById("yes-ans-1");
-    let thirdYes = document.getElementById("yes-ans-2");
+    const firstYes = document.getElementById("yes-ans");
+    const secYes = document.getElementById("yes-ans-1");
+    const thirdYes = document.getElementById("yes-ans-2");
  
-    let firstMay = document.getElementById("maybe-ans");
-    let secMay = document.getElementById("maybe-ans-1");
-    let thirdMay = document.getElementById("maybe-ans-2");
+    const firstMay = document.getElementById("maybe-ans");
+    const secMay = document.getElementById("maybe-ans-1");
+    const thirdMay = document.getElementById("maybe-ans-2");
  
-    let firstNo = document.getElementById("no-ans");
-    let secNo = document.getElementById("no-ans-1");
-    let thirdNo = document.getElementById("no-ans-2");
+    const firstNo = document.getElementById("no-ans");
+    const secNo = document.getElementById("no-ans-1");
+    const thirdNo = document.getElementById("no-ans-2");
  
-    let time = document.getElementById("weekly-hours");
+    const time = document.getElementById("weekly-hours");
  
     if(!firstYes.checked && !firstMay.checked && !firstNo.checked){
         alert("Please select a choice for 'Would you take this course again?'.");
@@ -62,7 +64,7 @@ function validateRating(){
  }
  
  function validateReview(){
-     let review = document.getElementById('enter-review').value;
+     const review = document.getElementById('enter-review').value;
      if(review.length === 0){
          alert("Please enter a review.");
      }
