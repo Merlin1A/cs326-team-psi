@@ -145,11 +145,9 @@ The course database has two collections: courses and reviews. The courses collec
 }
 
 ### URL Routes/Mappings <br />
-A final up-to-date table of all the URL routes that your application supports and a short description of what those routes are used for. You should also indicate any authentication and permissions on those routes.
-
-'/' (no path) - Leads to the Homepage/Landing page. No authentication is necessary in order to access it. Users can either login or sign up which will redirect them to the corresponding page.
-'/landing' - Leads to the Homepage/Landing page as well. Similar to the '/' route. No authentication required.
-'/main' - Leads to the courses page which has all course information. Users can rate or review a course, and in the navbar, users can either logout or go to account settings. Authentication is required. 
+* '/' (no path) - Leads to the Homepage/Landing page. No authentication is necessary in order to access it. Users can either login or sign up which will redirect them to the corresponding page.
+* '/landing' - Leads to the Homepage/Landing page as well. Similar to the '/' route. No authentication required.
+* '/main' - Leads to the courses page which has all course information. Users can rate or review a course, and in the navbar, users can either logout or go to account settings. Authentication is required. 
 * '/logoutmsg' - Leads to the Logout page when the user clicks logout. It will then redirect to the Homepage/Landing page in 5 seconds. No authentication necessary.
 * '/logout' - Leads to the Logout page as well. Similar to '/logoutmsg'. No authentication required.
 * '/nan' - Leads to a Not Logged In page if the user tries to access a permission-specific page without correct permissions/credentials. After 5 seconds, it will redirect to the Homepage/Landing page. No authentication required.
